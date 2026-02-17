@@ -1,0 +1,284 @@
+/* =========================================================
+   product.css
+   Dipakai untuk: product.html
+   Catatan:
+   - Spacing antar section pakai GLOBAL: .section-space / .section-space-first / .section-space-bottom
+   - Jangan pakai margin-top manual antar blok di sini
+   ========================================================= */
+
+:root {
+  --wrapMax: 1440px;
+  --wrapPad: clamp(16px, 4vw, 50px);
+  --shadowSoft: 0 10px 24px rgba(0, 0, 0, .08);
+  --shadowHover: 0 18px 36px rgba(0, 0, 0, .12);
+}
+
+/* =========================================================
+   PAGE WRAPPER
+   ========================================================= */
+.product-page {
+  background: #fff;
+  padding-bottom: 0;
+  /* bottom spacing dikontrol section-space-bottom */
+}
+
+/* =========================================================
+   HERO / BANNER
+   ========================================================= */
+.product-hero {
+  height: 350px;
+  background: url("../image/statistic/2.jpg") center/cover no-repeat;
+  border-radius: 0 0 18px 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, .05), rgba(0, 0, 0, 0));
+  pointer-events: none;
+}
+
+/* =========================================================
+   TOOLBAR
+   - margin-top DIHAPUS (jarak dari section-space)
+   ========================================================= */
+
+.product-toolbar {
+  max-width: var(--wrapMax);
+  margin: 0 auto;
+  padding: 0 var(--wrapPad);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+/* tombol category */
+.product-cat-btn {
+  font-size: 1.05rem;
+  border-radius: 12px;
+  padding: .55rem 1.0rem;
+  text-transform: none;
+}
+
+/* search */
+.product-search {
+  display: flex;
+  align-items: center;
+  height: 45px;
+}
+
+.product-search-input {
+  height: 45px;
+  border: 2px solid rgba(139, 30, 30, .55);
+  border-right: 0;
+  padding: 0 14px;
+  font-size: 1rem;
+  border-radius: 12px 0 0 12px;
+  outline: none;
+  width: 220px;
+  line-height: 1;
+  box-shadow: none;
+}
+
+.product-search-input::placeholder {
+  letter-spacing: .6px;
+  font-weight: 700;
+}
+
+.product-search-input:focus {
+  box-shadow: none;
+  border-color: rgba(139, 30, 30, .75);
+}
+
+.product-search-input:focus+.product-search-btn {
+  border-color: rgba(139, 30, 30, .75);
+}
+
+.product-search-btn {
+  height: 45px;
+  width: 46px;
+  border: 2px solid rgba(139, 30, 30, .55);
+  border-left: 0;
+  background: #fff;
+  color: var(--primary);
+  border-radius: 0 12px 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================================================
+   GRID WRAP
+   - padding-top dirapihin, jarak antar blok pakai section-space
+   ========================================================= */
+.product-grid-wrap {
+  max-width: var(--wrapMax);
+  margin: 0 auto;
+  padding: 0 var(--wrapPad);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: clamp(14px, 2vw, 30px);
+  row-gap: clamp(18px, 2.2vw, 30px);
+}
+
+/* =========================================================
+   PRODUCT CARD
+   ========================================================= */
+.p-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, .06);
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: var(--shadowSoft);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.p-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadowHover);
+  border-color: rgba(139, 30, 30, .18);
+}
+
+.p-img {
+  height: 200px;
+  border: 2px solid rgba(139, 30, 30, .35);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.p-img img {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: #fff;
+  display: block;
+  object-fit: cover;
+}
+
+.p-body {
+  padding-top: 12px;
+  padding-inline: 4px;
+}
+
+.p-cat {
+  font-family: "Viga", sans-serif;
+  font-size: .92rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-top: 15px;
+}
+
+.p-name {
+  font-family: "Viga", sans-serif;
+  font-weight: 800;
+  font-size: 1.08rem;
+  color: var(--primary);
+  line-height: 1.25;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  min-height: calc(1.25em * 2);
+}
+
+.product-grid-gap {
+  margin-top: 25px;
+}
+
+.p-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.p-price {
+  font-family: "Viga", sans-serif;
+  font-weight: 900;
+  font-size: 1.05rem;
+  color: #111;
+  white-space: nowrap;
+}
+
+/* tombol view (boleh tetap di sini) */
+.p-view {
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  color: #fff;
+  font-weight: 900;
+  border-radius: 12px;
+  padding: .48rem .95rem;
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .7px;
+  box-shadow: 0 10px 18px rgba(139, 30, 30, .16);
+  text-decoration: none;
+  flex: 0 0 auto;
+}
+
+.p-view:hover {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+  color: #fff;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 991px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .product-search-input {
+    width: 190px;
+  }
+
+  .p-img {
+    height: 260px;
+  }
+
+  .product-grid-gap {
+    margin-top: 18px;
+  }
+}
+
+@media (max-width: 575px) {
+  .product-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .toolbar-left,
+  .toolbar-right {
+    width: 100%;
+  }
+
+  .product-search {
+    width: 100%;
+  }
+
+  .product-search-input {
+    width: 100%;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .p-img {
+    height: 300px;
+  }
+}

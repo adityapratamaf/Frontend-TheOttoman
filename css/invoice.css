@@ -1,0 +1,215 @@
+/* =========================================================
+   invoice.css
+   Dipakai untuk: invoice.html (MAIN ONLY)
+   Mengandalkan global.css untuk var(--primary) + font import
+   ========================================================= */
+
+.invoice-page {
+  font-family: "Viga", sans-serif;
+}
+
+/* Title */
+.inv-title {
+  text-align: center;
+  font-family: "Calistoga", serif;
+  color: var(--primary);
+  font-size: 1.50rem;
+  letter-spacing: 1px;
+  margin: 1.2rem 0 2.2rem;
+  text-transform: uppercase;
+}
+
+.pg {
+  text-decoration: none;
+  font-family: "Viga", sans-serif;
+  font-weight: 900;
+  font-size: 1.0rem;
+  color: #111;
+  padding: 6px 10px;
+  border-radius: 10px;
+  transition: background .15s ease, color .15s ease;
+}
+
+.pg:hover {
+  background: rgba(139, 30, 30, .08);
+}
+
+.pg.active {
+  background: var(--primary);
+  color: #fff;
+}
+
+
+/* Wrap */
+.inv-table-wrap {
+  margin-top: 0.3rem;
+}
+
+/* Mobile: keep layout SAME by enabling horizontal scroll */
+.inv-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 4px;
+  /* biar scrollbar ga nempel */
+}
+
+/* Table base */
+.inv-table {
+  width: 100%;
+  min-width: 980px;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+/* Header */
+.inv-table thead th {
+  background: var(--primary);
+  color: #fff;
+  font-weight: 900;
+  font-size: 1.25rem;
+  padding: 14px 16px;
+  text-align: center;
+  white-space: nowrap;
+  border-bottom: 2px solid rgba(255, 255, 255, .18);
+  /* biar tegas */
+}
+
+.inv-table thead th:first-child {
+  border-top-left-radius: 12px;
+}
+
+.inv-table thead th:last-child {
+  border-top-right-radius: 12px;
+}
+
+
+/* Body cells */
+.inv-table tbody td {
+  padding: 18px 16px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.15rem;
+  color: #111;
+  border-bottom: none;
+}
+
+/* Row separators: red line full table width (match mockup) */
+.inv-table tbody td {
+  padding: 18px 16px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.15rem;
+  color: #111;
+  border-bottom: 2px solid rgba(139, 30, 30, .35);
+  background: transparent;
+}
+
+
+
+.inv-table tbody tr:hover td {
+  background: rgba(139, 30, 30, .10);
+}
+
+.inv-table tbody tr:hover {
+  transform: translateY(-1px);
+}
+
+/* Column sizing to match spacing */
+.col-no {
+  width: 90px;
+}
+
+.col-id {
+  width: 280px;
+  text-align: left !important;
+  padding-left: 26px !important;
+}
+
+.col-date {
+  width: 180px;
+}
+
+.col-item {
+  width: 150px;
+}
+
+.col-price {
+  width: 220px;
+}
+
+.col-status {
+  width: 160px;
+}
+
+.col-action {
+  width: 120px;
+}
+
+/* Eye button */
+.eye-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: var(--primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 10px 22px rgba(139, 30, 30, .18);
+}
+
+.eye-btn i {
+  font-size: 1.05rem;
+}
+
+.eye-btn:hover {
+  color: #fff;
+  background: var(--primary-dark);
+}
+
+
+/* Pager (match mockup: arrow - 1 - arrow) */
+.inv-pager {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.pg-arrow {
+  border: none;
+  background: transparent;
+  color: #111;
+  font-size: 1.1rem;
+  padding: 6px 8px;
+}
+
+.pg-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  background: var(--primary);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 0.95rem;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 575px) {
+  .inv-title {
+    font-size: 1.7rem;
+    margin-bottom: 1.4rem;
+  }
+
+  /* keep same look: just scroll */
+  .pagination-range {
+    font-size: 0.95rem;
+  }
+}

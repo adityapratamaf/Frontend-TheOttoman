@@ -1,0 +1,511 @@
+/* =========================================================
+   checkout.css
+   Dipakai untuk: checkout.html (MAIN ONLY)
+   Note: boleh pakai global.css untuk warna & button
+   ========================================================= */
+
+.checkout-page {
+  font-family: "Viga", sans-serif;
+  color: #222;
+}
+
+/* title */
+.co-title {
+  text-align: center;
+  font-family: "Calistoga", serif;
+  color: var(--primary);
+  font-size: 1.50rem;
+  letter-spacing: 1px;
+  margin: 1.2rem 0 2.2rem;
+  text-transform: uppercase;
+}
+
+/* 2 columns like mockup */
+.co-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* section heads */
+.co-section-head {
+  font-family: "Viga", sans-serif;
+  color: var(--primary);
+  font-weight: 900;
+  font-size: 1.15rem;
+  margin: 0 0 0.7rem;
+}
+
+/* label & fields */
+.co-label {
+  display: block;
+  color: var(--primary);
+  font-weight: 900;
+  margin: 0 0 0.35rem;
+}
+
+.co-field {
+  margin-bottom: 0.95rem;
+}
+
+.co-input,
+.co-select,
+.co-textarea {
+  border: 1.8px solid rgba(139, 30, 30, .45);
+  border-radius: 10px;
+  padding: .65rem .7rem;
+  font-weight: 800;
+  color: #222;
+  background: #fff;
+}
+
+.form-control.co-input,
+.form-control.co-textarea,
+.form-select.co-select {
+  box-shadow: none !important;
+}
+
+.form-control.co-input:focus,
+.form-control.co-textarea:focus,
+.form-select.co-select:focus {
+  border-color: rgba(139, 30, 30, .75);
+  box-shadow: 0 0 0 .15rem rgba(139, 30, 30, .12) !important;
+}
+
+.co-textarea {
+  resize: none;
+}
+
+.co-select {
+  appearance: auto;
+  background: #fff;
+}
+
+.co-select-small {
+  max-width: 320px;
+}
+
+/* checkbox line */
+.co-checkline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  color: var(--primary);
+  margin: 0.15rem 0 1rem;
+}
+
+.co-check {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary);
+}
+
+/* =========================
+   SELECT CHEVRON (match profile)
+   ========================= */
+.form-select.co-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* kasih ruang buat icon */
+  padding-right: 44px;
+
+  /* icon chevron custom */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%238b1e1e' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 18px 18px;
+}
+
+/* optional: kalau ada IE lama (boleh skip) */
+.form-select.co-select::-ms-expand {
+  display: none;
+}
+
+
+/* =========================
+   RIGHT: product list
+========================= */
+
+.co-products {
+  margin-top: 0.3rem;
+}
+
+.co-item {
+  display: grid;
+  grid-template-columns: 18px 72px 1fr 140px 40px 160px;
+  gap: 16px;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.co-no {
+  color: var(--primary);
+  font-weight: 900;
+}
+
+.co-thumb {
+  width: 72px;
+  height: 72px;
+  border: 2px solid rgba(139, 30, 30, .65);
+  border-radius: 8px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.co-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.co-prod-title {
+  color: var(--primary);
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+.co-unit,
+.co-total {
+  color: var(--primary);
+  font-weight: 900;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.co-qty {
+  color: #222;
+  font-weight: 900;
+  text-align: center;
+}
+
+.co-line {
+  border-bottom: 1.6px solid rgba(139, 30, 30, .55);
+  margin: 6px 0;
+}
+
+/* =========================
+   Payment
+========================= */
+
+.co-paygrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  align-items: center;
+}
+
+.co-subhead {
+  color: var(--primary);
+  font-weight: 900;
+  margin: 0 0 0.5rem;
+}
+
+.co-bank {
+  color: #666;
+  font-weight: 800;
+  line-height: 1.5;
+  padding-top: 24px;
+  /* align like mockup */
+}
+
+/* summary */
+.co-summary {
+  margin-top: 6px;
+}
+
+.co-grand {
+  display: inline-flex;
+  gap: 10px;
+  align-items: baseline;
+  font-weight: 900;
+}
+
+.co-grand-label {
+  color: #222;
+  font-weight: 900;
+}
+
+.co-grand-sep {
+  font-weight: 900;
+  color: #222;
+}
+
+.co-grand-val {
+  color: var(--primary);
+  font-weight: 900;
+}
+
+.co-note {
+  margin: 0.7rem 0 0;
+  color: #777;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+/* upload */
+.co-upload {
+  margin-top: 8px;
+}
+
+.co-file {
+  width: 100%;
+  max-width: 360px;
+  border: 1.8px solid rgba(139, 30, 30, .45);
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+  background: #fff;
+}
+
+.co-file-tag {
+  background: #eee;
+  padding: 0.45rem 0.7rem;
+  font-weight: 900;
+  color: #222;
+  border-right: 1.8px solid rgba(139, 30, 30, .35);
+}
+
+.co-file-name {
+  padding: 0.45rem 0.7rem;
+  font-weight: 900;
+  color: var(--primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.co-paybtn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 0.45rem 1.4rem;
+  border-radius: 10px;
+  font-weight: 900;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+/* @media (max-width: 991px){
+  .co-grid{
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .co-item{
+    grid-template-columns: 18px 72px 1fr;
+    grid-template-areas:
+      "no thumb name"
+      "no thumb meta";
+    align-items: start;
+  }
+
+  .co-name{ grid-column: 3; }
+
+  .co-unit, .co-qty, .co-total{
+    grid-column: 3;
+    margin-top: 6px;
+  }
+  .co-unit{ display: inline-block; margin-right: 14px; }
+  .co-qty{ display: inline-block; margin-right: 14px; }
+  .co-total{ display: inline-block; }
+
+  .co-paygrid{
+    grid-template-columns: 1fr;
+  }
+
+  .co-bank{
+    padding-top: 0;
+  }
+} */
+
+/* @media (max-width: 575px){
+  .co-title{
+    font-size: 1.7rem;
+  }
+
+  .co-select-small{
+    max-width: 100%;
+  }
+
+  .co-file{
+    max-width: 100%;
+  }
+
+  .co-paybtn{
+    width: 180px;
+  }
+} */
+
+@media (max-width: 575px) {
+
+  /* grid utama jadi 1 kolom */
+  .co-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .co-title {
+    font-size: 1.6rem;
+    margin: 1rem 0 1.4rem;
+  }
+
+  /* ======================
+     PRODUCT LIST (MOBILE)
+     ====================== */
+
+  .co-item {
+    display: grid;
+    grid-template-columns: 22px 74px 1fr;
+    grid-template-areas:
+      "no thumb name"
+      "no thumb unit"
+      "no thumb qty"
+      "no thumb total";
+    column-gap: 12px;
+    row-gap: 6px;
+    padding: 12px 0;
+    align-items: start;
+    /* biarin start untuk teks */
+  }
+
+  .co-thumb {
+    grid-area: thumb;
+    width: 74px;
+    height: 74px;
+    align-self: center;
+    /* center vertikal */
+    justify-self: center;
+    /* center horizontal di kolom thumb */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .co-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+
+
+  .co-no {
+    grid-area: no;
+  }
+
+  .co-name {
+    grid-area: name;
+  }
+
+  .co-unit {
+    grid-area: unit;
+  }
+
+  .co-qty {
+    grid-area: qty;
+  }
+
+  .co-total {
+    grid-area: total;
+  }
+
+
+  .co-prod-title {
+    font-size: 1rem;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .co-no {
+    grid-area: no;
+    display: flex;
+    align-items: center;
+    /* center vertikal */
+    justify-content: center;
+    /* center horizontal */
+    height: 100%;
+    /* biar ngisi area grid */
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: var(--primary);
+  }
+
+
+  /* rata kiri semua meta */
+  .co-unit,
+  .co-qty,
+  .co-total {
+    justify-self: start;
+    text-align: left;
+    white-space: nowrap;
+    font-size: .95rem;
+    font-weight: 900;
+    color: var(--primary);
+    margin: 0;
+  }
+
+  .co-line {
+    margin: 6px 0;
+  }
+
+  /* form kecil lain */
+  .co-select-small {
+    max-width: 100%;
+  }
+
+  .co-file {
+    max-width: 100%;
+  }
+
+  .co-upload {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    gap: 10px;
+  }
+
+  .co-paygrid {
+    grid-template-columns: 1fr !important;
+    gap: 10px;
+    align-items: start;
+  }
+
+  .co-bank {
+    padding-top: 0 !important;
+    margin-top: 4px;
+    width: 100%;
+  }
+
+
+  .co-paybtn {
+    margin: 0 !important;
+    margin-top: 6px !important;
+    padding: .65rem 1rem;
+    width: 100%;
+  }
+
+  /* kalau section checkout terakhir masih punya padding bawah besar */
+  .checkout-page,
+  .checkout-page main,
+  .co-grid {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* rapetin section terakhir sebelum footer */
+  .co-summary {
+    margin-bottom: 8px;
+  }
+
+}

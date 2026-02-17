@@ -1,0 +1,212 @@
+/* =========================================================
+   blog-detail.css
+   Dipakai untuk: blog-detail.html (MAIN ONLY)
+   Konsisten: Calistoga (judul) + Viga (isi)
+   ========================================================= */
+
+.blogd-page {
+  font-family: "Viga", sans-serif;
+}
+
+.blogd-topbar {
+  margin-bottom: 12px;
+}
+
+.blogd-back {
+  text-decoration: none;
+  font-weight: 900;
+  color: var(--primary);
+}
+
+.blogd-back i {
+  margin-right: 6px;
+}
+
+/* Hero */
+.blogd-hero {
+  border: 2px solid rgba(139, 30, 30, .28);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.blogd-hero-img {
+  height: 280px;
+  background: #f6f6f6;
+}
+
+.blogd-hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.blogd-hero-body {
+  padding: 16px 18px 18px;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1.6px solid rgba(139, 30, 30, .35);
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 900;
+}
+
+.dot {
+  color: rgba(0, 0, 0, .35);
+  font-weight: 900;
+}
+
+.date,
+.author {
+  color: rgba(0, 0, 0, .65);
+  font-size: 0.9rem;
+}
+
+.blogd-title {
+  font-family: "Calistoga", serif;
+  color: #111;
+  font-size: 2.0rem;
+  line-height: 1.15;
+  margin: 0 0 10px;
+}
+
+.blogd-sub {
+  margin: 0;
+  color: #222;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+/* Article */
+.blogd-content {
+  margin-top: 18px;
+}
+
+.blogd-article {
+  border: 2px solid rgba(139, 30, 30, .18);
+  border-radius: 12px;
+  padding: 16px 16px 18px;
+  background: #fff;
+}
+
+.blogd-article h2 {
+  font-family: "Calistoga", serif;
+  color: var(--primary);
+  font-size: 1.2rem;
+  margin: 10px 0 8px;
+}
+
+.blogd-article p {
+  margin: 0 0 12px;
+  font-weight: 700;
+  color: #222;
+  line-height: 1.65;
+  font-size: 0.95rem;
+}
+
+.blogd-quote {
+  border-left: 5px solid var(--primary);
+  background: rgba(139, 30, 30, .06);
+  border-radius: 10px;
+  padding: 14px 14px;
+  margin: 14px 0;
+}
+
+.blogd-quote .q {
+  font-weight: 900;
+  color: #111;
+  line-height: 1.5;
+}
+
+/* Actions */
+.blogd-actions {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Sidebar */
+.blogd-side .side-box {
+  border: 2px solid rgba(139, 30, 30, .18);
+  border-radius: 12px;
+  background: #fff;
+  padding: 14px;
+}
+
+.side-title {
+  font-family: "Calistoga", serif;
+  color: var(--primary);
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+
+.side-item {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.side-item:hover {
+  background: rgba(139, 30, 30, .05);
+}
+
+.si-img {
+  width: 70px;
+  height: 56px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f6f6f6;
+  border: 1.6px solid rgba(139, 30, 30, .22);
+}
+
+.si-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.si-meta {
+  font-weight: 800;
+  color: rgba(0, 0, 0, .6);
+  font-size: 0.82rem;
+  margin-bottom: 4px;
+}
+
+.si-name {
+  font-weight: 900;
+  color: #111;
+  line-height: 1.2;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 575px) {
+  .blogd-hero-img {
+    height: 210px;
+  }
+
+  .blogd-title {
+    font-size: 1.55rem;
+  }
+}

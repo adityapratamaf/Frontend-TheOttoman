@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>THE OTTOMAN</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- FontAwesome v5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Viga&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/cart.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg ott-navbar py-2">
+    <div class="container ott-container">
+
+      <!-- <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <img src="image/logo/1.png" alt="Logo" style="width:40px;height:40px;border-radius:8px;">
+      </a> -->
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#ottNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="ottNav">
+        <ul class="navbar-nav mx-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link ott-navlink" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link ott-navlink" href="about.html">About</a></li>
+
+          <li class="nav-item d-none d-lg-block">
+            <a class="nav-link p-0" href="index.html" aria-label="Home">
+              <img src="image/logo/1.png" alt="Logo" style="width:40px;height:40px;border-radius:8px;">
+            </a>
+          </li>
+
+          <li class="nav-item"><a class="nav-link ott-navlink" href="product.html">Product</a></li>
+          <li class="nav-item"><a class="nav-link ott-navlink" href="blog.html">Blog</a></li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-3 justify-content-lg-end">
+          <a class="icon-btn" href="cart.html" aria-label="Cart"><i class="fas fa-shopping-cart"></i></a>
+          <a class="icon-btn" href="profile.html" aria-label="User"><i class="fas fa-user"></i></a>
+          <a class="icon-btn" href="login.html" aria-label="Logout"><i class="fas fa-sign-out-alt"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container ott-container py-4 cart-page">
+
+    <h2 class="cart-title">CART SHOPPING</h2>
+
+    <section class="cart-table">
+
+      <!-- HEADER -->
+      <div class="cart-head-row">
+        <div class="cart-head-left">
+          <div class="c-checkall">
+            <label class="checkall">
+              <input id="checkAll" type="checkbox">
+              <span>Check All</span>
+            </label>
+          </div>
+
+          <div class="c-h h-product">Product</div>
+          <div class="c-h">Price Unit</div>
+          <div class="c-h">Price Total</div>
+          <div class="c-h">Quantity</div>
+          <div class="c-h c-trash"></div>
+        </div>
+
+        <div class="cart-head-right">
+          <div class="c-h c-totalcart">Total Cart</div>
+        </div>
+      </div>
+
+      <div class="cart-body-grid">
+        <div class="cart-list">
+          <!-- Item 1 -->
+          <div class="cart-row" data-unit="790000">
+            <div class="c-check">
+              <input class="row-check" type="checkbox" checked>
+            </div>
+
+            <div class="c-img">
+              <div class="cart-imgbox">
+                <img src="image/product/1.jpg" alt="">
+              </div>
+            </div>
+
+            <div class="c-name">
+              <div class="cart-name">Traditional Carpet<br>Turkey</div>
+            </div>
+
+            <div class="c-unit">
+              <div class="cart-price" data-role="unitText">IDR 790.000</div>
+            </div>
+
+            <div class="c-total">
+              <div class="cart-price" data-role="rowTotalText">IDR 2.730.000</div>
+            </div>
+
+            <div class="c-qty">
+              <div class="qty" data-min="1">
+                <button class="qty-btn" type="button" data-act="minus" aria-label="Decrease">−</button>
+                <div class="qty-num" data-role="qtyVal">3</div>
+                <button class="qty-btn" type="button" data-act="plus" aria-label="Increase">+</button>
+              </div>
+            </div>
+
+            <div class="c-del">
+              <button class="trash-btn" type="button" aria-label="Remove item">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="cart-row" data-unit="790000">
+            <div class="c-check">
+              <input class="row-check" type="checkbox" checked>
+            </div>
+
+            <div class="c-img">
+              <div class="cart-imgbox">
+                <img src="image/blog/1.jpg" alt="">
+              </div>
+            </div>
+
+            <div class="c-name">
+              <div class="cart-name">Copper Serving<br>Tray</div>
+            </div>
+
+            <div class="c-unit">
+              <div class="cart-price" data-role="unitText">IDR 790.000</div>
+            </div>
+
+            <div class="c-total">
+              <div class="cart-price" data-role="rowTotalText">IDR 2.730.000</div>
+            </div>
+
+            <div class="c-qty">
+              <div class="qty" data-min="1">
+                <button class="qty-btn" type="button" data-act="minus" aria-label="Decrease">−</button>
+                <div class="qty-num" data-role="qtyVal">3</div>
+                <button class="qty-btn" type="button" data-act="plus" aria-label="Increase">+</button>
+              </div>
+            </div>
+
+            <div class="c-del">
+              <button class="trash-btn" type="button" aria-label="Remove item">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="cart-row" data-unit="790000">
+            <div class="c-check">
+              <input class="row-check" type="checkbox" checked>
+            </div>
+
+            <div class="c-img">
+              <div class="cart-imgbox">
+                <img src="image/product/3.jpg" alt="">
+              </div>
+            </div>
+
+            <div class="c-name">
+              <div class="cart-name">Mosaic Table<br>Lamp</div>
+            </div>
+
+            <div class="c-unit">
+              <div class="cart-price" data-role="unitText">IDR 790.000</div>
+            </div>
+
+            <div class="c-total">
+              <div class="cart-price" data-role="rowTotalText">IDR 2.730.000</div>
+            </div>
+
+            <div class="c-qty">
+              <div class="qty" data-min="1">
+                <button class="qty-btn" type="button" data-act="minus" aria-label="Decrease">−</button>
+                <div class="qty-num" data-role="qtyVal">3</div>
+                <button class="qty-btn" type="button" data-act="plus" aria-label="Increase">+</button>
+              </div>
+            </div>
+
+            <div class="c-del">
+              <button class="trash-btn" type="button" aria-label="Remove item">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="cart-row" data-unit="790000">
+            <div class="c-check">
+              <input class="row-check" type="checkbox" checked>
+            </div>
+
+            <div class="c-img">
+              <div class="cart-imgbox">
+                <img src="image/product/4.jpg" alt="">
+              </div>
+            </div>
+
+            <div class="c-name">
+              <div class="cart-name">Mosaic Table<br>Lamp</div>
+            </div>
+
+            <div class="c-unit">
+              <div class="cart-price" data-role="unitText">IDR 790.000</div>
+            </div>
+
+            <div class="c-total">
+              <div class="cart-price" data-role="rowTotalText">IDR 2.730.000</div>
+            </div>
+
+            <div class="c-qty">
+              <div class="qty" data-min="1">
+                <button class="qty-btn" type="button" data-act="minus" aria-label="Decrease">−</button>
+                <div class="qty-num" data-role="qtyVal">3</div>
+                <button class="qty-btn" type="button" data-act="plus" aria-label="Increase">+</button>
+              </div>
+            </div>
+
+            <div class="c-del">
+              <button class="trash-btn" type="button" aria-label="Remove item">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="cart-row" data-unit="790000">
+            <div class="c-check">
+              <input class="row-check" type="checkbox">
+            </div>
+
+            <div class="c-img">
+              <div class="cart-imgbox">
+                <img src="image/product/5.jpg" alt="">
+              </div>
+            </div>
+
+            <div class="c-name">
+              <div class="cart-name">Mosaic Table<br>Lamp</div>
+            </div>
+
+            <div class="c-unit">
+              <div class="cart-price" data-role="unitText">IDR 790.000</div>
+            </div>
+
+            <div class="c-total">
+              <div class="cart-price" data-role="rowTotalText">IDR 2.730.000</div>
+            </div>
+
+            <div class="c-qty">
+              <div class="qty" data-min="1">
+                <button class="qty-btn" type="button" data-act="minus" aria-label="Decrease">−</button>
+                <div class="qty-num" data-role="qtyVal">3</div>
+                <button class="qty-btn" type="button" data-act="plus" aria-label="Increase">+</button>
+              </div>
+            </div>
+
+            <div class="c-del">
+              <button class="trash-btn" type="button" aria-label="Remove item">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Total -->
+        <aside class="cart-summary">
+          <div class="sum-amount" id="cartGrandTotal">IDR 7.110.000</div>
+          <button id="checkoutBtn" type="button" class="btn btn-ott btn-sm sum-btn" disabled>
+            CHECKOUT
+          </button>
+        </aside>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Logic Cart
+  - Tidak Semua Product Di Ceklis
+  - Perbarui Total Baris Jika Jumlah Berubah
+  - Perbarui Total Semua (Hanya Item Yg Di Ceklis)
+  - Ceklis Semua
+  - Hapus Item  -->
+  <script>
+    function formatIDR(num) {
+      const s = Math.round(num).toString();
+      const withDots = s.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+      return `IDR ${withDots}`;
+    }
+
+    function updateRowTotal(row) {
+      const unit = parseInt(row.dataset.unit || "0", 10);
+      const qtyEl = row.querySelector('[data-role="qtyVal"]');
+      const totalEl = row.querySelector('[data-role="rowTotalText"]');
+      const qty = parseInt(qtyEl?.textContent.trim() || "1", 10);
+
+      const total = unit * qty;
+      if (totalEl) totalEl.textContent = formatIDR(total);
+      return total;
+    }
+
+    function updateCheckoutState() {
+      const btn = document.getElementById("checkoutBtn");
+      if (!btn) return;
+
+      const anyChecked = Array.from(document.querySelectorAll(".row-check"))
+        .some(c => c.checked);
+
+      btn.disabled = !anyChecked;
+    }
+
+    function syncCheckAllState() {
+      const checkAll = document.getElementById("checkAll");
+      const checks = Array.from(document.querySelectorAll(".row-check"));
+
+      if (!checkAll) return;
+
+      if (checks.length === 0) {
+        checkAll.checked = false;
+        checkAll.indeterminate = false;
+        return;
+      }
+
+      const allChecked = checks.every(c => c.checked);
+      const noneChecked = checks.every(c => !c.checked);
+
+      checkAll.checked = allChecked;
+      checkAll.indeterminate = (!allChecked && !noneChecked);
+    }
+
+    function updateGrandTotal() {
+      const rows = document.querySelectorAll(".cart-row");
+      let sum = 0;
+
+      rows.forEach(row => {
+        const checked = row.querySelector(".row-check")?.checked;
+        if (!checked) return;
+        sum += updateRowTotal(row);
+      });
+
+      const grandEl = document.getElementById("cartGrandTotal");
+      if (grandEl) grandEl.textContent = formatIDR(sum);
+
+      updateCheckoutState();
+    }
+
+    function handleQtyClick(btn) {
+      const row = btn.closest(".cart-row");
+      const qtyWrap = btn.closest(".qty");
+      const qtyEl = row?.querySelector('[data-role="qtyVal"]');
+      if (!row || !qtyWrap || !qtyEl) return;
+
+      const min = parseInt(qtyWrap.dataset.min || "1", 10);
+      let qty = parseInt(qtyEl.textContent.trim() || "1", 10);
+
+      const act = btn.dataset.act;
+      if (act === "minus") qty -= 1;
+      if (act === "plus") qty += 1;
+
+      qty = Math.max(min, qty);
+      qtyEl.textContent = qty;
+
+      updateRowTotal(row);
+      updateGrandTotal();
+    }
+
+    function removeRow(btn) {
+      const row = btn.closest(".cart-row");
+      if (!row) return;
+      row.remove();
+      syncCheckAllState();
+      updateGrandTotal();
+    }
+
+    (function initCart() {
+      // Default All Unchecked
+      document.querySelectorAll(".row-check").forEach(c => (c.checked = false));
+
+      // Set Banyak Baris Dengan Qty
+      document.querySelectorAll(".cart-row").forEach(row => updateRowTotal(row));
+
+      // Inisiasi UI State
+      syncCheckAllState();
+      updateGrandTotal();
+
+      // Check All
+      const checkAll = document.getElementById("checkAll");
+      if (checkAll) {
+        checkAll.addEventListener("change", () => {
+          document.querySelectorAll(".row-check").forEach(c => (c.checked = checkAll.checked));
+          syncCheckAllState();
+          updateGrandTotal();
+        });
+      }
+
+      // Baris Checkbox Toggle
+      document.addEventListener("change", (e) => {
+        if (e.target.classList.contains("row-check")) {
+          syncCheckAllState();
+          updateGrandTotal();
+        }
+      });
+
+      // Qty +/- & Trash
+      document.addEventListener("click", (e) => {
+        const qtyBtn = e.target.closest(".qty-btn");
+        if (qtyBtn && qtyBtn.dataset.act) {
+          handleQtyClick(qtyBtn);
+          return;
+        }
+
+        const trashBtn = e.target.closest(".trash-btn");
+        if (trashBtn) {
+          removeRow(trashBtn);
+        }
+      });
+
+      // Checkout Tombol
+      document.getElementById("checkoutBtn")?.addEventListener("click", () => {
+        if (document.getElementById("checkoutBtn").disabled) return;
+        window.location.href = "checkout.html";
+      });
+    })();
+  </script>
+
+  <!-- Footer -->
+  <footer class="ott-footer">
+    <div class="footer-top">
+      <div class="container ott-container">
+        <div class="row g-4 align-items-start">
+          <div class="col-lg-4">
+            <div class="footer-title">THE OTTOMAN</div>
+            <p class="footer-p mt-3">
+              Inspired by the rich heritage of Turkey, The Ottoman curates timeless pieces that tell stories of
+              culture, craftsmanship, and beauty.
+            </p>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <div class="footer-head">Product</div>
+            <ul class="footer-list">
+              <li><a class="footer-link" href="#">Home & Living</a></li>
+              <li><a class="footer-link" href="#">Carpets & Rugs</a></li>
+              <li><a class="footer-link" href="#">Mosaic Lamps</a></li>
+              <li><a class="footer-link" href="#">Fashion & Textiles</a></li>
+              <li><a class="footer-link" href="#">Gourmet</a></li>
+              <li><a class="footer-link" href="#">Souvenirs & Gifts</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <div class="footer-head">Customer Care</div>
+            <ul class="footer-list">
+              <li><a class="footer-link" href="#">Contact Us</a></li>
+              <li><a class="footer-link" href="#">Shipping & Delivery</a></li>
+              <li><a class="footer-link" href="#">Returns & Exchanges</a></li>
+              <li><a class="footer-link" href="#">FAQ</a></li>
+              <li><a class="footer-link" href="#">Privacy Policy</a></li>
+              <li><a class="footer-link" href="#">Terms & Conditions</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <div class="footer-head">About</div>
+            <ul class="footer-list">
+              <li><a class="footer-link" href="#">Our Story</a></li>
+              <li><a class="footer-link" href="#">Authenticity Promise</a></li>
+              <li><a class="footer-link" href="#">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <div class="footer-head">Visit & Contact</div>
+            <div class="footer-contact">
+              <div>info@theottoman.com</div>
+              <div>BSD - Ruko Pasar Modern Timur 2</div>
+              <div>Lotte Mall Jakarta - 2F HomeLiving</div>
+            </div>
+
+            <div class="footer-icons mt-3">
+              <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+              <a href="#" aria-label="Email"><i class="far fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="container ott-container">
+        © 2026 The Ottoman. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

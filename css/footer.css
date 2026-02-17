@@ -1,0 +1,178 @@
+/* =========================================================
+   footer.css
+   Dipakai untuk: FOOTER (footer.html)
+   ========================================================= */
+
+.ott-footer {
+  background: var(--primary);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.ott-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, .10), rgba(0, 0, 0, .10)), url("https://images.unsplash.com/photo-1541414771459-08f80135b807?auto=format&fit=crop&w=2200&q=80");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.16;
+}
+
+.ott-footer .inner {
+  position: relative;
+  z-index: 2;
+}
+
+.footer-title {
+  font-family: "Calistoga", serif;
+  font-size: 1.50rem;
+  letter-spacing: 0.8px;
+  margin-bottom: 0.6rem;
+}
+
+.footer-p {
+  font-size: 0.9rem;
+  opacity: 0.92;
+  line-height: 1.45;
+  margin: 0;
+  max-width: 340px;
+}
+
+.footer-head {
+  font-family: "Calistoga", serif;
+  margin-bottom: 0.55rem;
+  font-size: 1.05rem;
+}
+
+.footer-link {
+  display: block;
+  color: #fff;
+  opacity: 0.92;
+  text-decoration: none;
+  margin: 0.25rem 0;
+  font-size: 0.88rem;
+}
+
+.footer-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.footer-icons a {
+  color: #fff;
+  font-size: 1.25rem;
+  margin-right: 0.75rem;
+  opacity: 0.95;
+}
+
+.footer-icons a:hover {
+  opacity: 1;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, .18);
+  padding: 1rem 0;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  opacity: 0.95;
+  text-align: center;
+}
+
+/* ===== FOOTER WRAPPER ===== */
+.ott-footer {
+  color: #fff;
+}
+
+/* ===== TOP FOOTER AREA ===== */
+.footer-top {
+  background: var(--primary);
+  /* #8B1E1E */
+  padding: 3.5rem 0 3rem;
+  /* atas & bawah mirip screenshot */
+}
+
+/* matiin overlay background image kalau mau clean kayak screenshot */
+.ott-footer::before {
+  display: none !important;
+}
+
+/* Title / text */
+.footer-title {
+  font-family: "Calistoga", serif;
+  font-size: 2rem;
+  letter-spacing: .5px;
+}
+
+.footer-p {
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 480px;
+  margin: 0;
+  font-weight: 600;
+  opacity: .95;
+}
+
+/* Column headings */
+.footer-head {
+  font-family: "Calistoga", serif;
+  font-size: 1.35rem;
+  margin-bottom: .8rem;
+}
+
+/* Bullet list */
+.footer-list {
+  padding-left: 1.1rem;
+  /* supaya bullet keliatan */
+  margin: 0;
+}
+
+.footer-list li {
+  margin: .35rem 0;
+}
+
+/* Links */
+.footer-link {
+  color: #fff;
+  text-decoration: none;
+  opacity: .95;
+  font-weight: 600;
+}
+
+.footer-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Contact block */
+.footer-contact {
+  font-weight: 600;
+  opacity: .95;
+  line-height: 1.8;
+  font-size: 0.88rem;
+}
+
+/* Social icons kanan */
+.footer-icons a {
+  color: #fff;
+  font-size: 1.6rem;
+  margin-right: .85rem;
+  opacity: .95;
+}
+
+.footer-icons a:hover {
+  opacity: 1;
+}
+
+/* ===== BOTTOM STRIP ===== */
+.footer-bottom-bar {
+  background: #7A1A1A;
+  /* sedikit lebih gelap */
+  font-family: "Calistoga", serif;
+  padding: 1.4rem 0;
+  /* tinggi strip bawah */
+  text-align: center;
+  font-weight: 700;
+  font-size: 1rem;
+}

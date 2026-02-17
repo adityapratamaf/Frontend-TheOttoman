@@ -1,0 +1,137 @@
+/* =========================================================
+   header.css
+   Dipakai untuk: GLOBAL TOKEN, TYPOGRAPHY, BUTTON, NAVBAR
+   ========================================================= */
+
+/* === Global Theme Tokens (dipakai semua halaman) === */
+:root {
+    --primary: #8B1E1E;
+    /* warna utama */
+    --primary-dark: #741818;
+    --cream: #ffffff;
+    --text: #1a1a1a;
+    --muted: #666;
+
+    --radius: 18px;
+    --shadow: 0 14px 30px rgba(0, 0, 0, .10);
+    --border: 1px solid rgba(0, 0, 0, .06);
+
+    /* best seller spacing tokens (dipakai index.css) */
+    --arrowSize: 42px;
+    --arrowGap: 14px;
+}
+
+/* === Base Typography (global) === */
+body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: "Viga", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.font-title,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Calistoga", serif;
+    letter-spacing: 0.3px;
+}
+
+/* === Layout Container (dipakai semua halaman) === */
+.ott-container {
+    max-width: 1440px;
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+}
+
+/* === Helpers === */
+.text-ott {
+    color: var(--primary) !important;
+}
+
+.bg-ott {
+    background: var(--primary) !important;
+}
+
+.border-ott {
+    border-color: rgba(139, 30, 30, .35) !important;
+}
+
+/* === Buttons (dipakai semua halaman) === */
+.btn-ott {
+    background: var(--primary);
+    border: 1px solid var(--primary);
+    color: #fff;
+    font-weight: 800;
+    border-radius: 10px;
+    padding: 0.55rem 1.05rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    box-shadow: 0 8px 18px rgba(139, 30, 30, .18);
+}
+
+.btn-ott:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+    color: #fff;
+}
+
+.btn-ott-outline {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    font-weight: 800;
+    border-radius: 10px;
+    padding: 0.55rem 1.05rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+.btn-ott-outline:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+/* === NAVBAR (header.html / navbar section) === */
+.ott-navbar {
+    background: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, .05);
+}
+
+.ott-navlink {
+    color: var(--primary) !important;
+    font-weight: 800;
+    text-transform: capitalize;
+}
+
+.ott-navlink:hover {
+    color: var(--primary-dark) !important;
+}
+
+.brand-center {
+    font-family: "Calistoga", serif;
+    color: var(--primary);
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+}
+
+.icon-btn {
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+
+/* === Responsive global tweaks (mobile/tablet) === */
+@media (max-width: 991px) {
+    .brand-center {
+        font-size: 1.35rem;
+    }
+
+    .ott-container {
+        padding-left: 18px !important;
+        padding-right: 18px !important;
+    }
+}

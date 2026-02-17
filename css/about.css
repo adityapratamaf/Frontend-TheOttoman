@@ -1,0 +1,357 @@
+/* =========================================================
+   about.css
+   Dipakai untuk: about.html
+   ========================================================= */
+
+.about-page {
+  padding-top: 1.2rem;
+  padding-bottom: 0;
+}
+
+
+/* =========================================================
+   TOP COLLAGE + ORNAMENT
+   ========================================================= */
+.about-top {
+  position: relative;
+  padding: 2.2rem 0 1.2rem;
+}
+
+/* Ornament kiri/kanan */
+.about-orn {
+  position: absolute;
+  top: 30px;
+  width: 250px;
+  height: 500px;
+  background-image: url("../image/ornament/ornament.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+}
+
+.about-orn-left {
+  left: -20px;
+}
+
+.about-orn-right {
+  right: -20px;
+  transform: scaleX(-1);
+}
+
+@media (max-width: 991px) {
+  .about-orn {
+    display: none;
+  }
+}
+
+/* Collage container */
+.about-collage {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 760px;
+  height: clamp(360px, 55vw, 520px);
+  margin: 0 auto;
+}
+
+/* Semua gambar collage */
+.col-img {
+  position: absolute;
+  border-radius: 14px;
+  object-fit: cover;
+  box-shadow: var(--shadow);
+}
+
+/* Posisi center (X & Y) untuk semua foto */
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5 {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Tengah */
+.col-3 {
+  width: 336px;
+  height: 493px;
+  left: 50%;
+  z-index: 2;
+}
+
+/* Inner kiri/kanan */
+.col-2 {
+  width: 202px;
+  height: 382px;
+  left: calc(50% - 170px);
+  z-index: 1;
+}
+
+.col-4 {
+  width: 202px;
+  height: 382px;
+  left: calc(50% + 170px);
+  z-index: 1;
+}
+
+/* Outer kiri/kanan */
+.col-1 {
+  width: 135px;
+  height: 252px;
+  left: calc(50% - 285px);
+  z-index: 0;
+}
+
+.col-5 {
+  width: 135px;
+  height: 252px;
+  left: calc(50% + 285px);
+  z-index: 0;
+}
+
+/* Mobile collage */
+@media (max-width: 575px) {
+  .about-collage {
+    max-width: 360px;
+    height: 300px;
+    overflow: hidden;
+  }
+
+  .col-3 {
+    width: 165px;
+    height: 250px;
+    left: 50%;
+  }
+
+  .col-2 {
+    width: 110px;
+    height: 200px;
+    left: calc(50% - 115px);
+  }
+
+  .col-4 {
+    width: 110px;
+    height: 200px;
+    left: calc(50% + 115px);
+  }
+}
+
+
+/* =========================================================
+   WHY THE OTTOMAN
+   ========================================================= */
+.about-why {
+  padding: 0;
+}
+
+.about-title {
+  color: var(--primary);
+  font-family: "Calistoga", serif;
+  font-size: 1.50rem;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  margin: 0 0 .55rem;
+}
+
+.about-desc {
+  color: var(--primary);
+  font-weight: 600;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 560px;
+  text-align: justify;
+}
+
+.about-logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.about-logo-box img {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   VALUE ICONS
+   Catatan:
+   - Spacing antar section pakai global (.section-space)
+   ========================================================= */
+.about-values {
+  margin: 0;
+  /* HAPUS margin manual supaya konsisten */
+  margin-top: var(--section-space);
+}
+
+/* =========================================================
+   STORIES / IG
+   Catatan:
+   - Spacing antar section pakai global (.section-space)
+   ========================================================= */
+.about-stories {
+  margin: 0;
+  /* HAPUS margin manual supaya konsisten */
+  margin-top: var(--section-space);
+}
+
+.story-card {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.story-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.story-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  font-size: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .25);
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.story-card:hover .story-play {
+  background: var(--primary);
+  color: #fff;
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+/* NOTE: .story-col gak dipakai karena kamu pakai Bootstrap row-cols-* */
+
+
+/* =========================================================
+   STORE PRESENCE
+   Catatan:
+   - Padding section gak perlu, spacing pakai global (.section-space)
+   ========================================================= */
+.store-presence {
+  padding: 0;
+  /* biar konsisten dengan index */
+}
+
+.store-sub {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.store-card {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, .08);
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, .04);
+}
+
+.store-img img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.store-body {
+  padding: 1rem 1rem 1.1rem;
+}
+
+.store-address {
+  color: var(--primary);
+  font-weight: 700;
+  line-height: 1.55;
+  margin: 0 0 .9rem;
+  font-size: .92rem;
+}
+
+.store-actions {
+  display: flex;
+  gap: .75rem;
+  justify-content: center;
+}
+
+
+
+/* =========================================================
+   GALLERY MOSAIC
+   ========================================================= */
+.about-gallery {
+  padding: 0 0 3px;
+  margin: 0;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "g1 g2 g3 g4"
+    "g5 g6 g6 g7";
+  gap: 3px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 0;
+  display: block;
+}
+
+.gallery-grid .g1 {
+  grid-area: g1;
+}
+
+.gallery-grid .g2 {
+  grid-area: g2;
+}
+
+.gallery-grid .g3 {
+  grid-area: g3;
+}
+
+.gallery-grid .g4 {
+  grid-area: g4;
+}
+
+.gallery-grid .g5 {
+  grid-area: g5;
+}
+
+.gallery-grid .g6 {
+  grid-area: g6;
+}
+
+.gallery-grid .g7 {
+  grid-area: g7;
+}
+
+@media (max-width: 576px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "g1""g2""g3""g4""g5""g6""g7";
+  }
+
+  .gallery-grid img {
+    height: 190px;
+  }
+}

@@ -1,0 +1,558 @@
+<!-- header.html -->
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>THE OTTOMAN</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- FontAwesome v5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Viga&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/blog.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg ott-navbar py-2">
+    <div class="container ott-container">
+
+      <!-- <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <img src="image/logo/1.png" alt="Logo" style="width:40px;height:40px;border-radius:8px;">
+      </a> -->
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#ottNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="ottNav">
+        <ul class="navbar-nav mx-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link ott-navlink" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link ott-navlink" href="about.html">About</a></li>
+
+          <li class="nav-item d-none d-lg-block">
+            <a class="nav-link p-0" href="index.html" aria-label="Home">
+              <img src="image/logo/1.png" alt="Logo" style="width:40px;height:40px;border-radius:8px;">
+            </a>
+          </li>
+
+          <li class="nav-item"><a class="nav-link ott-navlink" href="product.html">Product</a></li>
+          <li class="nav-item"><a class="nav-link ott-navlink" href="blog.html">Blog</a></li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-3 justify-content-lg-end">
+          <a class="icon-btn" href="cart.html" aria-label="Cart"><i class="fas fa-shopping-cart"></i></a>
+          <a class="icon-btn" href="profile.html" aria-label="User"><i class="fas fa-user"></i></a>
+          <a class="icon-btn" href="login.html" aria-label="Logout"><i class="fas fa-sign-out-alt"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container ott-container py-4 blog-page">
+
+    <h1 class="blog-title">BLOG</h1>
+
+    <section class="blog-bar">
+      <div class="row g-3 align-items-center">
+        <div class="col-12 col-md-6">
+          <div class="blog-search">
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <input type="text" class="form-control" placeholder="Search" aria-label="Search">
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 d-flex justify-content-md-end">
+          <select class="form-select blog-select" aria-label="Filter category">
+            <option selected>All Category</option>
+            <option>Tips & Care</option>
+            <option>Turkish Culture</option>
+            <option>Home & Living</option>
+            <option>Product Update</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured -->
+    <section class="blog-featured mt-4">
+      <a class="featured-card" href="blog-detail.html">
+        <div class="featured-img">
+          <img src="image/blog/1.jpg"
+            alt="Featured blog image">
+        </div>
+
+        <div class="featured-body">
+          <div class="meta">
+            <span class="pill">Tips & Care</span>
+            <span class="dot">•</span>
+            <span class="date">24 Jan 2026</span>
+          </div>
+
+          <h2 class="featured-title">How to Care for Turkish Carpets So They Last for Years</h2>
+          <p class="featured-desc">
+            Simple, practical steps to keep your carpet looking clean and vibrant—without damaging the fibers.
+          </p>
+
+          <div class="featured-actions">
+            <span class="btn btn-ott btn-sm">READ MORE</span>
+          </div>
+        </div>
+      </a>
+    </section>
+
+    <!-- List -->
+    <section class="blog-list mt-4">
+      <div class="row g-4">
+
+        <!-- Item 1 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="blog-card">
+            <a href="blog-detail.html" class="blog-thumb">
+              <img src="image/blog/2.jpg"
+                alt="">
+            </a>
+            <div class="blog-card-body">
+              <div class="meta">
+                <span class="pill">Turkish Culture</span>
+                <span class="dot">•</span>
+                <span class="date">20 Jan 2026</span>
+              </div>
+              <h3 class="blog-card-title">
+                <a href="blog-detail.html">The Meaning Behind Classic Anatolian Motifs</a>
+              </h3>
+              <p class="blog-card-desc">
+                Explore symbols commonly found in Turkish carpets and what they represent historically.
+              </p>
+              <a href="blog-detail.html" class="btn btn-ott btn-sm">READ</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="blog-card">
+            <a href="blog-detail.html" class="blog-thumb">
+              <img src="image/blog/3.jpg"
+                alt="">
+            </a>
+            <div class="blog-card-body">
+              <div class="meta">
+                <span class="pill">Home & Living</span>
+                <span class="dot">•</span>
+                <span class="date">18 Jan 2026</span>
+              </div>
+              <h3 class="blog-card-title">
+                <a href="blog-detail.html">Styling Rugs in Modern Minimal Interiors</a>
+              </h3>
+              <p class="blog-card-desc">
+                How to pair bold rugs with clean spaces without making your room feel crowded.
+              </p>
+              <a href="blog-detail.html" class="btn btn-ott btn-sm">READ</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="blog-card">
+            <a href="blog-detail.html" class="blog-thumb">
+              <img src="image/blog/1.jpg"
+                alt="">
+            </a>
+            <div class="blog-card-body">
+              <div class="meta">
+                <span class="pill">Product Update</span>
+                <span class="dot">•</span>
+                <span class="date">15 Jan 2026</span>
+              </div>
+              <h3 class="blog-card-title">
+                <a href="blog-detail.html">New Arrivals: Mosaic Lamps & Serving Trays</a>
+              </h3>
+              <p class="blog-card-desc">
+                A quick look at the newest curated pieces now available in our store.
+              </p>
+              <a href="blog-detail.html" class="btn btn-ott btn-sm">READ</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="blog-card">
+            <a href="blog-detail.html" class="blog-thumb">
+              <img src="image/blog/2.jpg"
+                alt="">
+            </a>
+            <div class="blog-card-body">
+              <div class="meta">
+                <span class="pill">Tips & Care</span>
+                <span class="dot">•</span>
+                <span class="date">10 Jan 2026</span>
+              </div>
+              <h3 class="blog-card-title">
+                <a href="blog-detail.html">Removing Dust Without Damaging the Weave</a>
+              </h3>
+              <p class="blog-card-desc">
+                Vacuuming, beating, and rotating—what’s safe and what to avoid for handmade rugs.
+              </p>
+              <a href="blog-detail.html" class="btn btn-ott btn-sm">READ</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="blog-card">
+            <a href="blog-detail.html" class="blog-thumb">
+              <img src="image/blog/3.jpg"
+                alt="">
+            </a>
+            <div class="blog-card-body">
+              <div class="meta">
+                <span class="pill">Turkish Culture</span>
+                <span class="dot">•</span>
+                <span class="date">08 Jan 2026</span>
+              </div>
+              <h3 class="blog-card-title">
+                <a href="blog-detail.html">Why Ottoman Craftsmanship Feels Timeless</a>
+              </h3>
+              <p class="blog-card-desc">
+                The story of artisanship, tradition, and why these pieces stay relevant today.
+              </p>
+              <a href="blog-detail.html" class="btn btn-ott btn-sm">READ</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="blog-card">
+            <a href="blog-detail.html" class="blog-thumb">
+              <img src="image/blog/2.jpg"
+                alt="">
+            </a>
+            <div class="blog-card-body">
+              <div class="meta">
+                <span class="pill">Home & Living</span>
+                <span class="dot">•</span>
+                <span class="date">05 Jan 2026</span>
+              </div>
+              <h3 class="blog-card-title">
+                <a href="blog-detail.html">Lighting Tips: Mosaic Lamps for Cozy Corners</a>
+              </h3>
+              <p class="blog-card-desc">
+                How to set warm ambiance with the right lamp position and layered lighting.
+              </p>
+              <a href="blog-detail.html" class="btn btn-ott btn-sm">READ</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Item 1 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="blog-card">
+            <a href="blog-detail.html" class="blog-thumb">
+              <img src="image/blog/2.jpg"
+                alt="">
+            </a>
+            <div class="blog-card-body">
+              <div class="meta">
+                <span class="pill">Turkish Culture</span>
+                <span class="dot">•</span>
+                <span class="date">20 Jan 2026</span>
+              </div>
+              <h3 class="blog-card-title">
+                <a href="blog-detail.html">The Meaning Behind Classic Anatolian Motifs</a>
+              </h3>
+              <p class="blog-card-desc">
+                Explore symbols commonly found in Turkish carpets and what they represent historically.
+              </p>
+              <a href="blog-detail.html" class="btn btn-ott btn-sm">READ</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="blog-card">
+            <a href="blog-detail.html" class="blog-thumb">
+              <img src="image/blog/3.jpg"
+                alt="">
+            </a>
+            <div class="blog-card-body">
+              <div class="meta">
+                <span class="pill">Home & Living</span>
+                <span class="dot">•</span>
+                <span class="date">18 Jan 2026</span>
+              </div>
+              <h3 class="blog-card-title">
+                <a href="blog-detail.html">Styling Rugs in Modern Minimal Interiors</a>
+              </h3>
+              <p class="blog-card-desc">
+                How to pair bold rugs with clean spaces without making your room feel crowded.
+              </p>
+              <a href="blog-detail.html" class="btn btn-ott btn-sm">READ</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="blog-card">
+            <a href="blog-detail.html" class="blog-thumb">
+              <img src="image/blog/1.jpg"
+                alt="">
+            </a>
+            <div class="blog-card-body">
+              <div class="meta">
+                <span class="pill">Product Update</span>
+                <span class="dot">•</span>
+                <span class="date">15 Jan 2026</span>
+              </div>
+              <h3 class="blog-card-title">
+                <a href="blog-detail.html">New Arrivals: Mosaic Lamps & Serving Trays</a>
+              </h3>
+              <p class="blog-card-desc">
+                A quick look at the newest curated pieces now available in our store.
+              </p>
+              <a href="blog-detail.html" class="btn btn-ott btn-sm">READ</a>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Pagination -->
+    <section class="pagination-title section-space section-space-bottom">
+      <div class="pagination-range" id="blogRange">View 1-6 From 0 Blogs</div>
+      <nav class="pager" id="blogPager" aria-label="Blog pagination"></nav>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="ott-footer">
+    <div class="footer-top">
+      <div class="container ott-container">
+        <div class="row g-4 align-items-start">
+          <div class="col-lg-4">
+            <div class="footer-title">THE OTTOMAN</div>
+            <p class="footer-p mt-3">
+              Inspired by the rich heritage of Turkey, The Ottoman curates timeless pieces that tell stories of
+              culture, craftsmanship, and beauty.
+            </p>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <div class="footer-head">Product</div>
+            <ul class="footer-list">
+              <li><a class="footer-link" href="#">Home & Living</a></li>
+              <li><a class="footer-link" href="#">Carpets & Rugs</a></li>
+              <li><a class="footer-link" href="#">Mosaic Lamps</a></li>
+              <li><a class="footer-link" href="#">Fashion & Textiles</a></li>
+              <li><a class="footer-link" href="#">Gourmet</a></li>
+              <li><a class="footer-link" href="#">Souvenirs & Gifts</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <div class="footer-head">Customer Care</div>
+            <ul class="footer-list">
+              <li><a class="footer-link" href="#">Contact Us</a></li>
+              <li><a class="footer-link" href="#">Shipping & Delivery</a></li>
+              <li><a class="footer-link" href="#">Returns & Exchanges</a></li>
+              <li><a class="footer-link" href="#">FAQ</a></li>
+              <li><a class="footer-link" href="#">Privacy Policy</a></li>
+              <li><a class="footer-link" href="#">Terms & Conditions</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <div class="footer-head">About</div>
+            <ul class="footer-list">
+              <li><a class="footer-link" href="#">Our Story</a></li>
+              <li><a class="footer-link" href="#">Authenticity Promise</a></li>
+              <li><a class="footer-link" href="#">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <div class="footer-head">Visit & Contact</div>
+            <div class="footer-contact">
+              <div>info@theottoman.com</div>
+              <div>BSD - Ruko Pasar Modern Timur 2</div>
+              <div>Lotte Mall Jakarta - 2F HomeLiving</div>
+            </div>
+
+            <div class="footer-icons mt-3">
+              <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+              <a href="#" aria-label="Email"><i class="far fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="container ott-container">
+        © 2026 The Ottoman. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Pagination & Search -->
+  <script>
+  (() => {
+    const blogCards = Array.from(document.querySelectorAll('.blog-list .col-12'));
+    const pager   = document.getElementById('blogPager');
+    const rangeEl = document.getElementById('blogRange');
+
+    const searchInput    = document.querySelector('.blog-search input');
+    const categorySelect = document.querySelector('.blog-select');
+
+    const perPage = 6;
+    let currentPage = 1;
+
+    let activeCards = blogCards.slice();
+    let currentQuery = '';
+    let currentCat = 'all category';
+
+    const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
+
+    function totalPages(){
+      return Math.max(1, Math.ceil(activeCards.length / perPage));
+    }
+
+    function setRangeText(){
+      const total = activeCards.length;
+      if(!rangeEl) return;
+
+      if(total === 0){
+        rangeEl.textContent = 'View 0-0 From 0 Blogs';
+        return;
+      }
+      const start = (currentPage - 1) * perPage + 1;
+      const end = Math.min(currentPage * perPage, total);
+      rangeEl.textContent = `View ${start}-${end} From ${total} Blogs`;
+    }
+
+    function showPage(page){
+      const pages = totalPages();
+      currentPage = clamp(page, 1, pages);
+
+      blogCards.forEach(c => (c.style.display = 'none'));
+
+      const startIdx = (currentPage - 1) * perPage;
+      const endIdx   = startIdx + perPage;
+
+      activeCards.slice(startIdx, endIdx).forEach(c => (c.style.display = ''));
+
+      setRangeText();
+      renderPager();
+    }
+
+    function makeLink(label, opts = {}){
+      const a = document.createElement('a');
+      a.href = '#';
+      a.className = 'pg' + (opts.active ? ' active' : '');
+      if(opts.ariaLabel) a.setAttribute('aria-label', opts.ariaLabel);
+      a.textContent = label;
+
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        if(opts.disabled) return;
+        opts.onClick?.();
+      });
+
+      return a;
+    }
+
+    function renderPager(){
+      if(!pager) return;
+      pager.innerHTML = '';
+
+      const pages = totalPages();
+
+      // Prev
+      pager.appendChild(makeLink('←', {
+        ariaLabel: 'Prev',
+        disabled: currentPage === 1,
+        onClick: () => showPage(currentPage - 1),
+      }));
+
+      // angka
+      for(let i = 1; i <= pages; i++){
+        pager.appendChild(makeLink(String(i), {
+          active: i === currentPage,
+          onClick: () => showPage(i),
+        }));
+      }
+
+      // Next
+      pager.appendChild(makeLink('→', {
+        ariaLabel: 'Next',
+        disabled: currentPage === pages,
+        onClick: () => showPage(currentPage + 1),
+      }));
+    }
+
+    function applyFilters(){
+      const q = (currentQuery || '').trim().toLowerCase();
+      const cat = (currentCat || 'all category').toLowerCase();
+
+      activeCards = blogCards.filter(card => {
+        const title = card.querySelector('.blog-card-title')?.textContent?.toLowerCase() || '';
+        const desc  = card.querySelector('.blog-card-desc')?.textContent?.toLowerCase() || '';
+        const pill  = card.querySelector('.pill')?.textContent?.toLowerCase() || '';
+
+        const matchSearch = (q === '') ? true : (title.includes(q) || desc.includes(q));
+        const matchCategory = (cat === 'all category') ? true : (pill === cat);
+
+        return matchSearch && matchCategory;
+      });
+
+      showPage(1);
+    }
+
+    // Realtime Search
+    if (searchInput){
+      searchInput.addEventListener('input', () => {
+        currentQuery = searchInput.value || '';
+        applyFilters();
+      });
+    }
+
+    // Category Filter
+    if (categorySelect){
+      categorySelect.addEventListener('change', () => {
+        currentCat = categorySelect.value || 'All Category';
+        applyFilters();
+      });
+    }
+
+    // Initial
+    applyFilters();
+  })();
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

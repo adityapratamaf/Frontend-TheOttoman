@@ -1,0 +1,196 @@
+/* =========================================================
+   global.css
+   Dipakai untuk: SEMUA HALAMAN
+   ========================================================= */
+
+/* === Section Title === */
+.section-title {
+  text-align: center;
+  color: var(--primary);
+  font-size: 1.50rem;
+  margin: 2.2rem 0 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Button Merah */
+.btn-ott {
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  color: #fff;
+  font-weight: 800;
+  border-radius: 10px;
+  padding: .55rem 1.05rem;
+  font-size: .85rem;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  box-shadow: none;
+  /* box-shadow:0 8px 18px rgba(139,30,30,.18); */
+}
+
+.btn-ott:hover {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+  color: #fff;
+}
+
+/* Button Outline Putih */
+.btn-ott-white-outline {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  font-weight: 800;
+  border-radius: 10px;
+  padding: .55rem 1.05rem;
+  font-size: .85rem;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+}
+
+.btn-ott-white-outline:hover {
+  background: #fff;
+  color: var(--primary);
+}
+
+/* =========================================================
+   OVERRIDE + SPACING SYSTEM 
+   ========================================================= */
+
+/* Spacing System */
+:root {
+  --section-space: 90px;
+  --section-space-sm: 60px;
+  --section-space-first: 70px;
+}
+
+/* Semua Section */
+.section-space {
+  margin-top: var(--section-space);
+}
+
+.section-space-first {
+  margin-top: var(--section-space-first);
+}
+
+.section-space-bottom {
+  margin-bottom: var(--section-space);
+}
+
+/* Mobile */
+@media (max-width: 991px) {
+  .section-space {
+    margin-top: var(--section-space-sm);
+  }
+
+  .section-space-first {
+    margin-top: 55px;
+  }
+
+  .section-space-bottom {
+    margin-bottom: var(--section-space-sm);
+  }
+}
+
+/* Title jangan ngatur jarak antar section.
+   Jarak antar section diatur oleh .section-space */
+.section-title {
+  margin: 0 0 1.3rem;
+  /* tetap ada jarak bawah sesuai design */
+}
+
+/* Anti margin-collapsing biar spacing konsisten */
+.section-space,
+.section-space-first {
+  padding-top: 1px;
+}
+
+
+/* =========================
+   MODAL STYLE
+========================= */
+.ott-modal {
+  border-radius: 15px;
+  overflow: hidden;
+  border: 0;
+}
+
+.ott-modal-head {
+  background: var(--primary);
+  color: #fff;
+  padding: 15px;
+  font-family: "Viga", sans-serif;
+  font-weight: 900;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.ott-modal-body {
+  padding-bottom: 15px;
+  text-align: left;
+  background: #fff;
+}
+
+.ott-modal-text {
+  font-family: "Viga", sans-serif;
+  font-weight: 900;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 15px;
+  color: #111;
+}
+
+.ott-modal-btn {
+  display: block;
+  margin: auto;
+  min-width: 100px;
+  border-radius: 15px;
+  font-size: 1rem;
+}
+
+.modal-dialog {
+  max-width: 520px;
+}
+
+/* =========================================================
+   PAGINATION
+   ========================================================= */
+.pagination-title {
+  text-align: center;
+  padding-bottom: 0;
+}
+
+.pagination-range {
+  font-family: "Viga", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pg {
+  text-decoration: none;
+  font-family: "Viga", sans-serif;
+  font-weight: 900;
+  font-size: 1.0rem;
+  color: #111;
+  padding: 6px 10px;
+  border-radius: 10px;
+  transition: background .15s ease, color .15s ease;
+}
+
+.pg:hover {
+  background: rgba(139, 30, 30, .08);
+}
+
+.pg.active {
+  background: var(--primary);
+  color: #fff;
+}

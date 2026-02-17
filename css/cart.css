@@ -1,0 +1,418 @@
+/* =========================================================
+   cart.css
+   Dipakai untuk: cart.html (MAIN ONLY)
+   Mengandalkan global.css untuk .btn-ott, variable warna, dll.
+   ========================================================= */
+
+.cart-page {
+  padding-top: .8rem;
+}
+
+.cart-title {
+  text-align: center;
+  font-family: "Calistoga", serif;
+  color: var(--primary);
+  font-size: 1.50rem;
+  letter-spacing: 1px;
+  margin: 1.2rem 0 2.2rem;
+  text-transform: uppercase;
+}
+
+/* ===== TABLE LAYOUT ===== */
+.cart-table {
+  margin-bottom: 1.2rem;
+}
+
+.cart-head-row {
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  /* SAMA kayak .cart-body-grid */
+  column-gap: 36px;
+  /* SAMA kayak .cart-body-grid */
+  align-items: center;
+  margin-bottom: .9rem;
+}
+
+.cart-head-left {
+  display: grid;
+  grid-template-columns: 36px 130px 1.2fr 0.95fr 1fr 0.9fr 70px;
+  align-items: center;
+  column-gap: 25px;
+  /* SAMA kayak .cart-row */
+  justify-items: center;
+}
+
+.cart-head-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-h {
+  font-family: "Viga", serif;
+  color: var(--primary);
+  font-size: 1.35rem;
+  text-align: center;
+  margin-left: 0;
+  /* penting: hapus offset */
+  justify-self: center;
+}
+
+.c-name {
+  justify-self: start;
+  /* kolomnya pas, teks tetap rapi */
+  text-align: left;
+}
+
+.c-unit {
+  text-align: center;
+}
+
+.c-total {
+  text-align: center;
+}
+
+.c-trash {
+  text-align: center;
+}
+
+.c-totalcart {
+  text-align: center;
+}
+
+.c-qty {
+  text-align: center;
+}
+
+.h-product {
+  grid-column: 3;
+  /* pas di area nama produk */
+}
+
+.c-checkall {
+  grid-column: 1 / 3;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.checkall {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.checkall input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+}
+
+/* left list + right summary */
+.cart-body-grid {
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  column-gap: 36px;
+  align-items: start;
+}
+
+/* ===== ROW ITEM ===== */
+.cart-list {
+  border-top: 1px solid rgba(139, 30, 30, .40);
+}
+
+.cart-row {
+  display: grid;
+  grid-template-columns: 36px 130px 1.2fr 0.95fr 1fr 0.9fr 70px;
+  align-items: center;
+  column-gap: 25px;
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(139, 30, 30, .40);
+}
+
+.c-check input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+}
+
+.cart-imgbox {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  border: 2px solid rgba(139, 30, 30, .65);
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: cover;
+}
+
+.cart-imgbox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cart-name {
+  color: var(--primary);
+  font-weight: 900;
+  font-size: 1.15rem;
+  line-height: 1.2;
+  max-width: 100%;
+}
+
+.cart-price {
+  color: var(--primary);
+  font-weight: 900;
+  font-size: 1.05rem;
+}
+
+/* ===== QTY (same concept as product detail) ===== */
+.qty {
+  display: inline-flex;
+  align-items: center;
+  background: var(--primary);
+  border-radius: 8px;
+  overflow: hidden;
+  height: 34px;
+}
+
+.qty-btn {
+  width: 34px;
+  height: 34px;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qty-num {
+  width: 38px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: var(--primary);
+  font-weight: 900;
+}
+
+/* trash */
+.trash-btn {
+  border: none;
+  background: transparent;
+  color: var(--primary);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trash-btn:hover {
+  opacity: .75;
+}
+
+/* ===== RIGHT SUMMARY ===== */
+.cart-summary {
+  padding-top: 72px;
+  /* biar sejajar kayak screenshot */
+  text-align: center;
+}
+
+.sum-amount {
+  color: var(--primary);
+  font-weight: 900;
+  font-size: 1.35rem;
+  margin-bottom: 16px;
+}
+
+.sum-btn {
+  padding: .55rem 1.25rem;
+  border-radius: 10px;
+  font-size: .78rem;
+  min-width: 150px;
+  letter-spacing: .6px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 575px) {
+  .cart-title {
+    font-size: 1.65rem;
+    margin: 1rem 0 1.4rem;
+  }
+
+  /* sembunyikan HANYA judul kolom (Product, Price Unit, dst) */
+  .cart-head-left .c-h,
+  .cart-head-right {
+    display: none !important;
+  }
+
+  /* optional: rapihin jarak header area */
+  .cart-head-row {
+    margin-bottom: .4rem;
+  }
+
+  /* Body grid: summary turun ke bawah */
+  .cart-body-grid {
+    grid-template-columns: 1fr;
+    row-gap: 18px;
+  }
+
+  .cart-list {
+    border-top: 0;
+  }
+
+  /* PRICE */
+  .c-unit,
+  .c-total {
+    justify-self: start;
+    text-align: left;
+  }
+
+  .c-qty {
+    justify-self: start;
+    text-align: left;
+  }
+
+  .c-del {
+    grid-area: name;
+    /* pindah ke baris pertama (area name) */
+    justify-self: end;
+    /* nempel kanan */
+    align-self: center;
+    /* center vertikal */
+    margin-left: 10px;
+  }
+
+  /* biar nama produk gak ketabrak trash */
+  .c-name {
+    padding-right: 34px;
+    /* kasih ruang untuk icon trash */
+  }
+
+  .sum-btn.disabled {
+    pointer-events: none;
+    opacity: .5;
+  }
+
+
+  /* Card item */
+  .cart-row {
+    grid-template-columns: 26px 110px 1fr;
+    grid-template-areas:
+      "check img name"
+      "check img unit"
+      "check img total"
+      "check img qty"
+      "check img del";
+    column-gap: 14px;
+    row-gap: 8px;
+
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(139, 30, 30, .28);
+  }
+
+  /* checkbox center sejajar tengah gambar */
+  .c-check {
+    grid-area: check;
+    display: flex;
+    align-items: center;
+    /* center vertikal di area check */
+    justify-content: center;
+    /* center horizontal */
+    padding-top: 0;
+    /* hapus yang bikin naik */
+    align-self: stretch;
+    /* biar ngisi tinggi grid-area */
+  }
+
+  /* tweak: geser sedikit ke bawah supaya pas center image */
+  .c-check input {
+    transform: translateY(6px);
+    /* naik/turun sesuai selera: 4-10px */
+  }
+
+  /* .c-check{ grid-area: check; align-self: start; padding-top: 6px; } */
+  .c-img {
+    grid-area: img;
+  }
+
+  .c-name {
+    grid-area: name;
+  }
+
+  .c-unit {
+    grid-area: unit;
+  }
+
+  .c-total {
+    grid-area: total;
+  }
+
+  .c-qty {
+    grid-area: qty;
+  }
+
+  .cart-imgbox {
+    width: 105px;
+    height: 105px;
+    border-radius: 10px;
+  }
+
+  .cart-name {
+    font-size: 1.02rem;
+    line-height: 1.25;
+  }
+
+  .cart-price {
+    font-size: .95rem;
+  }
+
+  /* Qty */
+  .qty {
+    height: 32px;
+    border-radius: 8px;
+  }
+
+  .qty-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+
+  .qty-num {
+    width: 36px;
+    height: 32px;
+  }
+
+  /* Summary jadi section bawah yang jelas */
+  .cart-summary {
+    padding-top: 14px;
+    border-top: 1px solid rgba(139, 30, 30, .28);
+    text-align: center;
+  }
+
+  .sum-amount {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+  }
+
+
+  .sum-btn {
+    width: 100%;
+    min-width: 0;
+    padding: .70rem 1rem;
+    font-size: .85rem;
+    border-radius: 12px;
+  }
+}

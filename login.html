@@ -1,0 +1,292 @@
+<!-- header.html -->
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>THE OTTOMAN</title>
+
+  <!-- Bootstrap 5 (Latest stable) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- FontAwesome v5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Viga&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body class="page-login">
+  
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg ott-navbar py-2">
+    <div class="container ott-container">
+
+      <!-- <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <img src="image/logo/1.png" alt="Logo" style="width:40px;height:40px;border-radius:8px;">
+      </a> -->
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#ottNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="ottNav">
+        <ul class="navbar-nav mx-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link ott-navlink" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link ott-navlink" href="about.html">About</a></li>
+
+          <li class="nav-item d-none d-lg-block">
+            <a class="nav-link p-0" href="index.html" aria-label="Home">
+              <img src="image/logo/1.png" alt="Logo" style="width:40px;height:40px;border-radius:8px;">
+            </a>
+          </li>
+
+          <li class="nav-item"><a class="nav-link ott-navlink" href="product.html">Product</a></li>
+          <li class="nav-item"><a class="nav-link ott-navlink" href="blog.html">Blog</a></li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-3 justify-content-lg-end">
+          <a class="icon-btn" href="cart.html" aria-label="Cart"><i class="fas fa-shopping-cart"></i></a>
+          <a class="icon-btn" href="profile.html" aria-label="User"><i class="fas fa-user"></i></a>
+          <a class="icon-btn" href="login.html" aria-label="Logout"><i class="fas fa-sign-out-alt"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="login-page">
+    <div class="login-shell">
+
+      <!-- Panel Gambar -->
+      <section class="login-pattern" aria-label="Pattern">
+        <img src="image/statistic/3.jpg" alt="Pattern" class="pattern-img">
+      </section>
+
+      <!-- Panel Form -->
+      <section class="login-panel">
+        <div class="login-inner">
+          <div class="login-logo">
+            <img src="image/logo/1.png" alt="The Ottoman Logo">
+            <div class="brand-sub">THE OTTOMAN<br><span>Carpets &amp; Homeliving</span></div>
+          </div>
+
+          <h1 class="login-title">WELCOME</h1>
+
+          <form id="loginForm" novalidate>
+            <!-- Email -->
+            <label class="form-label ott-label" for="email">Email</label>
+            <div class="ott-input">
+              <input type="email" class="form-control" id="email" placeholder="name@email.com" autocomplete="email"
+                required />
+              <span class="icon"><i class="far fa-envelope"></i></span>
+            </div>
+            <small id="emailHelp" class="err-text">Email must contain @ and .</small>
+
+            <!-- Password -->
+            <label class="form-label ott-label mt-3" for="password">Password</label>
+            <div class="ott-input">
+              <input type="password" class="form-control" id="password" placeholder="***************"
+                autocomplete="current-password" required />
+              <button class="icon-btn" id="togglePass" type="button" aria-label="Show password">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+            <small id="passHelp" class="err-text">Password is required</small>
+
+            <!-- Check -->
+            <div class="d-flex align-items-center justify-content-between mt-3">
+              <label class="remember d-flex align-items-center gap-2">
+                <input type="checkbox" id="rememberMe" />
+                <span>Remember me</span>
+              </label>
+
+              <div class="login-action-row mt-3">
+                <a class="btn btn-ott-outline btn-sm btn-forgot" href="forgot-password.html" role="button">
+                  FORGOT PASSWORD
+                </a>
+
+                <button id="btnLogin" class="btn btn-ott btn-sm btn-login" type="submit" disabled>
+                  LOGIN
+                </button>
+              </div>
+            </div>
+
+            <div class="login-divider"></div>
+
+            <!-- Google + Register -->
+            <button class="btn btn-ott-outline w-100 btn-social" type="button">
+              Login With Google
+            </button>
+
+            <a class="btn btn-ott-outline w-100 mt-3 btn-register" href="register.html" role="button">Registration New
+              Account</a>
+          </form>
+
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalSuccess" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content ott-modal">
+          <div class="ott-modal-head">
+            <h5 class="m-0">Login</h5>
+          </div>
+          <div class="ott-modal-body">
+            <p class="ott-modal-text">
+              Login Successfully<br>
+              Welcome !
+            </p>
+            <button type="button" class="btn btn-ott ott-modal-btn" data-bs-dismiss="modal">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalError" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content ott-modal">
+          <div class="ott-modal-head">
+            <h5 class="m-0">Login</h5>
+          </div>
+          <div class="ott-modal-body">
+            <p class="ott-modal-text">
+              Email or Password is Wrong<br>
+              Please check again for your account or forgot password if you need new password
+            </p>
+            <button type="button" class="btn btn-ott ott-modal-btn" data-bs-dismiss="modal">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    /**
+     * Validasi Email
+     */
+    function isValidEmail(value) {
+      const v = String(value || "").trim();
+      const at = v.indexOf("@");
+      if (at < 1) return false;
+      const dot = v.indexOf(".", at + 2);
+      return dot > at + 1 && dot < v.length - 1;
+    }
+
+    /**
+     * Update State Tombol Login
+     * - Kalau Email Valid & Password Tidak Null
+     * - Tampilkan Error Text 
+     */
+    function updateLoginState() {
+      const email = emailEl.value.trim();
+      const pass = passEl.value;
+
+      const emailOk = isValidEmail(email);
+      const passOk = pass.length > 0;
+
+      // Show / Hide Helper Error
+      emailHelpEl.style.display = (email.length > 0 && !emailOk) ? "block" : "none";
+      // passHelpEl.style.display  = (pass.length === 0) ? "block" : "none";
+      passHelpEl.style.display = "none";
+
+      btnLogin.disabled = !(emailOk && passOk);
+    }
+
+    /**
+     * Toggle Password
+     */
+    function togglePassword() {
+      const isHidden = passEl.type === "password";
+      passEl.type = isHidden ? "text" : "password";
+      togglePassBtn.innerHTML = isHidden ?
+        '<i class="fas fa-eye-slash"></i>' :
+        '<i class="fas fa-eye"></i>';
+      togglePassBtn.setAttribute("aria-label", isHidden ? "Hide password" : "Show password");
+    }
+
+    /**
+     * Handling Submit Login
+     * - Demo Akun Dumy
+     * - True -> Modal Success -> Home
+     * - False -> mModal Error
+     */
+    function handleLoginSubmit(e) {
+      e.preventDefault();
+
+      const email = emailEl.value.trim();
+      const pass = passEl.value;
+
+      // Kalau State Belum Valid, Jangan Proses 
+      if (btnLogin.disabled) return;
+
+      // Dummy Akun True
+      const VALID_EMAIL = "dimas.anggono@gmail.com";
+      const VALID_PASS = "123456";
+
+      const ok = (email === VALID_EMAIL && pass === VALID_PASS);
+
+      if (ok) {
+        // Simpan Email Kalau Remember Di Checklist
+        if (rememberEl.checked) {
+          localStorage.setItem("ott_remember_email", email);
+        } else {
+          localStorage.removeItem("ott_remember_email");
+        }
+
+        const modal = new bootstrap.Modal(document.getElementById("modalSuccess"));
+        modal.show();
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById("modalError"));
+        modal.show();
+      }
+    }
+
+    /**
+     * Init:
+     * - Get Remember Email
+     * - Listeners
+     * - Set State Awal Button
+     */
+    const emailEl = document.getElementById("email");
+    const passEl = document.getElementById("password");
+    const rememberEl = document.getElementById("rememberMe");
+    const btnLogin = document.getElementById("btnLogin");
+    const togglePassBtn = document.getElementById("togglePass");
+    const emailHelpEl = document.getElementById("emailHelp");
+    const passHelpEl = document.getElementById("passHelp");
+    const formEl = document.getElementById("loginForm");
+
+    // Prefill Email
+    const remembered = localStorage.getItem("ott_remember_email");
+    if (remembered) {
+      emailEl.value = remembered;
+      rememberEl.checked = true;
+    }
+
+    // Listeners
+    emailEl.addEventListener("input", updateLoginState);
+    passEl.addEventListener("input", updateLoginState);
+    togglePassBtn.addEventListener("click", togglePassword);
+    formEl.addEventListener("submit", handleLoginSubmit);
+
+    // Initial State
+    updateLoginState();
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

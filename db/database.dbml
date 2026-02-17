@@ -1,0 +1,364 @@
+// =======================================
+// E-COMMERCE DB (DBML for dbdiagram.io)
+// Includes: product, category, invoice, social_media, blog, testimoni, cart, order, user
+// Features:
+// - 1 product -> many images
+// - Order can use another shipping address (snapshot)
+// - Default address comes from user_addresses.is_default
+// - Metadata fields included
+// =======================================
+
+Table users {
+  id bigint [pk, increment]
+  full_name varchar(150) [not null]
+  email varchar(150) [not null, unique]
+  phone varchar(30)
+  password_hash varchar(255) [not null]
+  is_active boolean [not null, default: true]
+  last_login_at datetime
+  created_at datetime [not null]
+  updated_at datetime [not null]
+  deleted_at datetime
+}
+
+Table user_addresses {
+  id bigint [pk, increment]
+  user_id bigint [not null]
+  label varchar(50)
+  recipient_name varchar(150)
+  recipient_email varchar(150)
+  recipient_phone varchar(30)
+  province varchar(100) [not null]
+  city varchar(100) [not null]
+  district varchar(100) [not null]
+  sub_district varchar(100) [not null]
+  postal_code varchar(20) [not null]
+  address_line text [not null]
+  is_default boolean [not null, default: false]
+  created_at datetime [not null]
+  updated_at datetime [not null]
+  deleted_at datetime
+
+  Indexes {
+    (user_id)
+    (user_id, is_default)
+  }
+}
+
+Table categories {
+  id bigint [pk, increment]
+  parent_id bigint
+  name varchar(120) [not null]
+  slug varchar(150) [not null, unique]
+  description text
+  is_active boolean [not null, default: true]
+  created_at datetime [not null]
+  updated_at datetime [not null]
+  deleted_at datetime
+  Indexes {
+    (parent_id)
+  }
+}
+
+Table products {
+  id bigint [pk, increment]
+  category_id bigint [not null]
+  sku varchar(80) [not null, unique]
+  name varchar(200) [not null]
+  slug varchar(220) [not null, unique]
+  description text
+  price decimal(18,2) [not null]
+  cost_price decimal(18,2)
+  stock_qty int [not null, default: 0]
+  weight_gram int
+  status varchar(20) [not null, default: 'active', note: 'draft|active|inactive']
+  created_at datetime [not null]
+  updated_at datetime [not null]
+  deleted_at datetime
+  Indexes {
+    (category_id)
+    (slug)
+  }
+}
+
+Table product_images {
+  id bigint [pk, increment]
+  product_id bigint [not null]
+
+  image_url text [not null]
+  alt_text varchar(200)
+  is_primary boolean [not null, default: false]
+  sort_order int [not null, default: 0]
+
+  created_at datetime [not null]
+  updated_at datetime [not null]
+  deleted_at datetime
+
+  Indexes {
+    (product_id)
+    (product_id, is_primary)
+  }
+}
+
+Table carts {
+  id bigint [pk, increment]
+  user_id bigint [not null]
+
+  status varchar(20) [not null, default: 'active', note: 'active|checked_out|abandoned']
+
+  created_at datetime [not null]
+  updated_at datetime [not null]
+
+  Indexes {
+    (user_id)
+    (status)
+  }
+}
+
+Table cart_items {
+  id bigint [pk, increment]
+  cart_id bigint [not null]
+  product_id bigint [not null]
+
+  qty int [not null, default: 1]
+  price_snapshot decimal(18,2) [note: 'optional snapshot price when added to cart']
+
+  created_at datetime [not null]
+  updated_at datetime [not null]
+
+  Indexes {
+    (cart_id)
+    (product_id)
+    (cart_id, product_id)
+  }
+}
+
+Table orders {
+  id bigint [pk, increment]
+  user_id bigint [not null]
+
+  order_no varchar(50) [not null, unique]
+  order_date datetime [not null]
+
+  status varchar(20) [not null, default: 'pending', note: 'pending|paid|packed|shipped|delivered|cancelled|refunded']
+  payment_method varchar(80)
+  currency char(3) [not null, default: 'IDR']
+
+  subtotal decimal(18,2) [not null, default: 0]
+  discount_total decimal(18,2) [not null, default: 0]
+  shipping_cost decimal(18,2) [not null, default: 0]
+  tax_total decimal(18,2) [not null, default: 0]
+  grand_total decimal(18,2) [not null, default: 0]
+
+  note_shipping text
+
+  // reference to the chosen default address at checkout (optional)
+  default_address_id bigint [note: 'FK to user_addresses; default taken from user_addresses.is_default']
+
+  created_at datetime [not null]
+  updated_at datetime [not null]
+  deleted_at datetime
+
+  Indexes {
+    (user_id)
+    (order_no)
+    (status)
+    (default_address_id)
+  }
+}
+
+Table order_addresses {
+  id bigint [pk, increment]
+  order_id bigint [not null, unique, note: '1 order = 1 shipping address snapshot']
+
+  recipient_name varchar(150) [not null]
+  recipient_email varchar(150)
+  recipient_phone varchar(30)
+
+  province varchar(100) [not null]
+  city varchar(100) [not null]
+  district varchar(100) [not null]
+  sub_district varchar(100) [not null]
+  postal_code varchar(20) [not null]
+  address_line text [not null]
+
+  created_at datetime [not null]
+  updated_at datetime [not null]
+}
+
+Table order_items {
+  id bigint [pk, increment]
+  order_id bigint [not null]
+  product_id bigint [not null]
+
+  product_name_snapshot varchar(200) [not null]
+  product_detail_snapshot varchar(200) [note: 'e.g., Turkey, variant, note']
+
+  qty int [not null, default: 1]
+  price_unit decimal(18,2) [not null, default: 0]
+  price_total decimal(18,2) [not null, default: 0]
+
+  created_at datetime [not null]
+  updated_at datetime [not null]
+
+  Indexes {
+    (order_id)
+    (product_id)
+    (order_id, product_id)
+  }
+}
+
+Table invoices {
+  id bigint [pk, increment]
+  order_id bigint [not null, unique]
+
+  invoice_no varchar(50) [not null, unique]
+  transaction_id varchar(60) [not null, unique]
+
+  issued_at datetime [not null]
+  status varchar(20) [not null, default: 'unpaid', note: 'unpaid|paid|void']
+  paid_at datetime
+
+  total_amount decimal(18,2) [not null, default: 0]
+
+  created_at datetime [not null]
+  updated_at datetime [not null]
+
+  Indexes {
+    (order_id)
+    (transaction_id)
+  }
+}
+
+// BLOG
+Table blog_categories {
+  id bigint [pk, increment]
+  name varchar(120) [not null]
+  slug varchar(150) [not null, unique]
+
+  created_at datetime [not null]
+  updated_at datetime [not null]
+  deleted_at datetime
+}
+
+Table blog_posts {
+  id bigint [pk, increment]
+  author_user_id bigint [not null]
+
+  title varchar(200) [not null]
+  slug varchar(220) [not null, unique]
+  content text [not null]
+  cover_image_url text
+
+  status varchar(20) [not null, default: 'draft', note: 'draft|published|archived']
+  published_at datetime
+
+  created_at datetime [not null]
+  updated_at datetime [not null]
+  deleted_at datetime
+
+  Indexes {
+    (author_user_id)
+    (slug)
+    (status)
+  }
+}
+
+// Many-to-many blog_posts <-> blog_categories
+Table blog_post_categories {
+  post_id bigint [not null]
+  category_id bigint [not null]
+
+  created_at datetime [not null]
+
+  Indexes {
+    (post_id, category_id) [unique]
+    (category_id)
+  }
+}
+
+// SOCIAL MEDIA
+Table social_media_accounts {
+  id bigint [pk, increment]
+  platform varchar(50) [not null] // Instagram, TikTok, YouTube, etc
+  base_url varchar(200)
+  icon_url text
+
+  created_at datetime [not null]
+  updated_at datetime [not null]
+  deleted_at datetime
+}
+
+Table social_media_links {
+  id bigint [pk, increment]
+  account_id bigint [not null]
+
+  display_name varchar(120) [not null]
+  url text [not null]
+  is_active boolean [not null, default: true]
+  sort_order int [not null, default: 0]
+
+  created_at datetime [not null]
+  updated_at datetime [not null]
+  deleted_at datetime
+
+  Indexes {
+    (account_id)
+    (is_active)
+  }
+}
+
+// TESTIMONIAL
+Table testimonials {
+  id bigint [pk, increment]
+  user_id bigint
+  product_id bigint
+
+  rating int [not null, note: '1-5']
+  title varchar(150)
+  content text [not null]
+  is_approved boolean [not null, default: false]
+
+  created_at datetime [not null]
+  updated_at datetime [not null]
+  deleted_at datetime
+
+  Indexes {
+    (product_id)
+    (user_id)
+    (is_approved)
+  }
+}
+
+
+// =====================
+// RELATIONSHIPS (FK)
+// =====================
+
+Ref: user_addresses.user_id > users.id
+Ref: categories.parent_id > categories.id
+
+Ref: products.category_id > categories.id
+Ref: product_images.product_id > products.id
+
+Ref: carts.user_id > users.id
+Ref: cart_items.cart_id > carts.id
+Ref: cart_items.product_id > products.id
+
+Ref: orders.user_id > users.id
+Ref: orders.default_address_id > user_addresses.id
+
+Ref: order_addresses.order_id > orders.id
+Ref: order_items.order_id > orders.id
+Ref: order_items.product_id > products.id
+
+Ref: invoices.order_id > orders.id
+
+Ref: blog_posts.author_user_id > users.id
+Ref: blog_post_categories.post_id > blog_posts.id
+Ref: blog_post_categories.category_id > blog_categories.id
+
+Ref: social_media_links.account_id > social_media_accounts.id
+
+Ref: testimonials.user_id > users.id
+Ref: testimonials.product_id > products.id

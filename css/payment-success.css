@@ -1,0 +1,154 @@
+/* =========================================================
+   payment-success.css
+   Dipakai untuk: payment-success.html (MAIN ONLY)
+   Note: Mengandalkan global.css untuk variable warna (var--primary)
+   ========================================================= */
+
+.pay-success-page {
+  font-family: "Viga", sans-serif;
+}
+
+/* Layout wrapper */
+.ps-wrap {
+  min-height: calc(100vh - 3rem);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 28px;
+  padding: 1.2rem 0;
+}
+
+/* Left image */
+.ps-ill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ps-ill img {
+  width: min(520px, 100%);
+  height: auto;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+/* Right text */
+.ps-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* tengah seperti mockup */
+  justify-content: center;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.ps-title {
+  font-family: "Calistoga", serif;
+  color: var(--primary);
+  font-size: 2.25rem;
+  margin: 0 0 0.9rem;
+  letter-spacing: 0.4px;
+}
+
+.ps-sub {
+  font-family: "Calistoga", serif;
+  color: var(--primary);
+  font-size: 2.05rem;
+  margin: 0 0 2.2rem;
+  letter-spacing: 0.4px;
+}
+
+/* Buttons row */
+.ps-actions {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Button style dibuat mirip mockup */
+.ps-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  min-width: 140px;
+  padding: 0 18px;
+  border-radius: 10px;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+/* Outline HOME */
+.ps-btn-outline {
+  color: var(--primary);
+  border: 2px solid rgba(139, 30, 30, .55);
+  background: transparent;
+}
+
+.ps-btn-outline:hover {
+  background: rgba(139, 30, 30, .06);
+  color: var(--primary);
+}
+
+/* Solid INVOICE */
+.ps-btn-solid {
+  color: #fff;
+  background: var(--primary);
+  border: 2px solid var(--primary);
+  box-shadow: 0 10px 22px rgba(139, 30, 30, .18);
+}
+
+.ps-btn-solid:hover {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+  color: #fff;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 991px) {
+  .ps-wrap {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 0.8rem 0;
+  }
+
+  .ps-ill img {
+    width: min(520px, 100%);
+  }
+
+  .ps-title {
+    font-size: 2.0rem;
+  }
+
+  .ps-sub {
+    font-size: 1.75rem;
+    margin-bottom: 1.8rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .ps-ill img {
+    width: 100%;
+    border-radius: 14px;
+  }
+
+  .ps-title {
+    font-size: 1.7rem;
+  }
+
+  .ps-sub {
+    font-size: 1.5rem;
+  }
+
+  .ps-btn {
+    min-width: 150px;
+  }
+}

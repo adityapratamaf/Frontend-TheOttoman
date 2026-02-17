@@ -1,0 +1,224 @@
+/* =========================================================
+   invoice-detail.css
+   Dipakai untuk: invoice-detail.html (MAIN ONLY)
+   - Font: Viga (isi), Calistoga (judul)
+   - Table header merah sama kayak mockup
+   - Mobile: table scroll biar layout tetap sama
+   ========================================================= */
+
+.invd-page {
+  font-family: "Viga", sans-serif;
+}
+
+/* Title */
+.invd-title {
+  text-align: center;
+  font-family: "Calistoga", serif;
+  color: var(--primary);
+  font-size: 1.50rem;
+  letter-spacing: 1px;
+  margin: 1.2rem 0 2.2rem;
+  text-transform: uppercase;
+}
+
+/* =========================
+   KEY-VALUE BLOCKS
+========================= */
+.invd-top {
+  margin-bottom: 1.3rem;
+}
+
+.invd-top-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 60px;
+  align-items: start;
+}
+
+.invd-bottom {
+  margin-top: 1.55rem;
+}
+
+.invd-bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 60px;
+  align-items: start;
+}
+
+.invd-kv {
+  max-width: 520px;
+}
+
+.kv-row {
+  display: grid;
+  grid-template-columns: 150px 18px 1fr;
+  column-gap: 10px;
+  align-items: start;
+  margin: 6px 0;
+}
+
+.kv-row.kv-top {
+  align-items: start;
+  margin: 10px 0;
+}
+
+.k {
+  font-weight: 900;
+  color: #111;
+}
+
+.sep {
+  font-weight: 900;
+  color: #111;
+}
+
+.v {
+  font-weight: 800;
+  color: #111;
+  line-height: 1.35;
+}
+
+/* Right side align like mockup */
+.invd-kv-right {
+  justify-self: end;
+  text-align: left;
+}
+
+/* =========================
+   TABLE
+========================= */
+.invd-table-wrap {
+  margin-top: 1.2rem;
+}
+
+.invd-table thead th:first-child {
+  border-top-left-radius: 12px;
+}
+
+.invd-table thead th:last-child {
+  border-top-right-radius: 12px;
+}
+
+
+.invd-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 4px;
+}
+
+.invd-table tbody tr {
+  position: relative;
+  transition: background-color .2s ease;
+  border-bottom: 2px solid rgba(139, 30, 30, .35);
+}
+
+/* background hover */
+.invd-table tbody tr:hover {
+  background-color: rgba(139, 30, 30, 0.06);
+}
+
+/* garis bawah merah */
+.invd-table tbody tr::after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--primary);
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+
+
+.invd-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 980px;
+  /* menjaga proporsi kolom seperti mockup */
+}
+
+.invd-table thead th {
+  background: var(--primary);
+  color: #fff;
+  font-weight: 900;
+  font-size: 1.2rem;
+  padding: 12px 16px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.invd-table tbody td {
+  padding: 16px 16px;
+  font-size: 1.05rem;
+  color: #111;
+  vertical-align: top;
+}
+
+/* Column widths mirip mockup */
+.col-no {
+  width: 90px;
+}
+
+.col-product {
+  width: 320px;
+}
+
+.col-detail {
+  width: 180px;
+}
+
+.col-qty {
+  width: 150px;
+}
+
+.col-unit {
+  width: 220px;
+}
+
+.col-total {
+  width: 220px;
+}
+
+/* spacing table vs blocks */
+.invd-table tbody tr+tr td {
+  padding-top: 22px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 991px) {
+
+  .invd-top-grid,
+  .invd-bottom-grid {
+    column-gap: 30px;
+  }
+
+  .kv-row {
+    grid-template-columns: 140px 18px 1fr;
+  }
+}
+
+@media (max-width: 575px) {
+  .invd-title {
+    font-size: 1.7rem;
+    margin-bottom: 1.6rem;
+  }
+
+  /* stack blocks on mobile */
+  .invd-top-grid,
+  .invd-bottom-grid {
+    grid-template-columns: 1fr;
+    row-gap: 14px;
+  }
+
+  .invd-kv-right {
+    justify-self: start;
+  }
+
+  .kv-row {
+    grid-template-columns: 135px 18px 1fr;
+  }
+}

@@ -1,0 +1,603 @@
+/* =========================================================
+   product-detail.css
+   Dipakai untuk: product-detail.html
+   Catatan:
+   - Spacing antar section pakai GLOBAL:
+     .section-space / .section-space-first / .section-space-bottom
+   - Tidak mengubah layout HTML
+   ========================================================= */
+
+:root {
+  --arrowSize: 42px;
+  --arrowGap: 14px;
+}
+
+/* =========================================================
+   TOP GRID (thumb | image | info)
+   ========================================================= */
+.pd-top {
+  padding: 0;
+  /* spacing pakai global class */
+}
+
+.pd-grid {
+  display: grid;
+  grid-template-columns: 74px 1fr 1fr;
+  gap: 34px;
+  align-items: start;
+}
+
+/* =========================================================
+   THUMB STRIP
+   ========================================================= */
+.pd-thumbs {
+  border: 2px solid rgba(139, 30, 30, .35);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  height: 520px;
+}
+
+/* tombol panah */
+.thumb-nav {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.thumb-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  width: 100%;
+  align-items: center;
+  overflow-y: auto;
+  max-height: 420px;
+  padding: 10px 12px;
+}
+
+/* thumbnail button (SATU KALI SAJA, gak duplikat) */
+.thumb {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  border: 2px solid transparent;
+  background: #fff;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color .18s ease, transform .18s ease;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  object-position: center;
+}
+
+.thumb.active {
+  border-color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.thumb:hover {
+  border-color: rgba(139, 30, 30, .45);
+}
+
+/* =========================================================
+   BIG IMAGE BOX
+   ========================================================= */
+.pd-imagebox {
+  border: 2px solid rgba(139, 30, 30, .35);
+  border-radius: 10px;
+  padding: 0px;
+  height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.pd-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  padding: 0;
+}
+
+/* =========================================================
+   INFO
+   ========================================================= */
+.pd-title {
+  font-family: "Calistoga", serif;
+  color: var(--primary);
+  font-size: 2.0rem;
+  margin: 0 0 0.9rem;
+}
+
+.pd-desc {
+  color: #222;
+  font-weight: 600;
+  line-height: 1.55;
+  font-size: 0.92rem;
+  max-width: 520px;
+  margin: 0 0 1.3rem;
+  text-align: justify;
+}
+
+/* spec rows */
+.pd-spec {
+  display: grid;
+  gap: 20px;
+  margin-bottom: 1.2rem;
+}
+
+.pd-row {
+  display: grid;
+  grid-template-columns: 110px 18px 1fr;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.pd-label {
+  color: var(--primary);
+  font-weight: 900;
+  letter-spacing: 0.6px;
+}
+
+.pd-sep {
+  font-weight: 900;
+  color: #222;
+}
+
+.pd-val {
+  font-weight: 900;
+  color: #222;
+}
+
+/* size pills */
+.size-pill {
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 900;
+  font-size: 0.72rem;
+  border-radius: 6px;
+  padding: 0.32rem 0.55rem;
+  margin-right: 8px;
+}
+
+.size-pill.active {
+  box-shadow: 0 10px 18px rgba(139, 30, 30, .18);
+}
+
+/* actions row */
+.pd-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.qty {
+  display: inline-flex;
+  align-items: center;
+  background: var(--primary);
+  border-radius: 8px;
+  overflow: hidden;
+  height: 34px;
+}
+
+.qty-btn {
+  width: 34px;
+  height: 34px;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qty-num {
+  width: 50px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: var(--primary);
+  font-weight: 900;
+}
+
+.pd-btn {
+  padding: 0.45rem 0.95rem;
+  border-radius: 8px;
+  font-size: 0.72rem;
+  min-width: 118px;
+  text-align: center;
+}
+
+/* =========================
+   PRODUCT DETAIL
+   ========================= */
+.pd-detail {
+  margin: 0;
+}
+
+.product-detail-page .pd-detail {
+  padding-left: 0;
+  margin-top: 30px;
+  /* padding-left: calc(74px + 34px); */
+  /* padding-right: calc(74px + 34px); */
+}
+
+.product-detail-page .pd-detail-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, .06);
+  border-radius: 18px;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, .06);
+  overflow: hidden;
+}
+
+.product-detail-page .pd-detail-head {
+  padding: 15px;
+  background: rgba(139, 30, 30, .04);
+  border-bottom: 1px solid rgba(139, 30, 30, .10);
+}
+
+.product-detail-page .pd-detail-body {
+  padding: 15px;
+  color: #222;
+  font-weight: 600;
+  line-height: 1.55;
+  font-size: 0.92rem;
+  text-align: justify;
+}
+
+/* =========================
+   PD INFO -> CARD (product detail)
+   ========================= */
+.product-detail-page .pd-info {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, .06);
+  border-radius: 18px;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, .06);
+  padding: 18px 18px 16px;
+}
+
+/* header feel: biar title+desc rapih */
+.product-detail-page .pd-title {
+  margin: 0 0 10px;
+  line-height: 1.08;
+}
+
+.product-detail-page .pd-desc {
+  margin: 0 0 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(139, 30, 30, .10);
+}
+
+/* spec rows: jadi mini-card rows */
+.product-detail-page .pd-spec {
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.product-detail-page .pd-row {
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(139, 30, 30, .04);
+  border: 1px solid rgba(139, 30, 30, .10);
+}
+
+/* SIZE: biar pill-nya rapi */
+.product-detail-page .pd-row.is-size .pd-val {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.product-detail-page .size-pill {
+  border-radius: 10px;
+  padding: .42rem .72rem;
+  margin-right: 0;
+  /* biar gap yang ngatur */
+}
+
+.product-detail-page .pd-actions {
+  margin-top: 8px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(139, 30, 30, .10);
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.product-detail-page .qty {
+  height: 40px;
+  border-radius: 12px;
+}
+
+.product-detail-page .qty-btn {
+  width: 40px;
+  height: 40px;
+}
+
+.product-detail-page .qty-num {
+  width: 64px;
+  height: 40px;
+}
+
+.product-detail-page .pd-btn {
+  height: 40px;
+  border-radius: 12px;
+  min-width: 140px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================================================
+   BEST SELLER (ambil gaya index)
+   - margin-top best-head DIHAPUS, spacing via class section-space
+   ========================================================= */
+.best-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0;
+  margin-top: var(--section-space);
+}
+
+.best-head .section-title {
+  margin: 0 0 1.0rem;
+}
+
+.product-grid-gap {
+  margin-top: 25px;
+}
+
+.best-head .explore-right {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.best-wrap {
+  padding: 0.6rem 0 0.2rem;
+}
+
+.best-grid {
+  display: grid;
+  grid-template-columns: var(--arrowSize) minmax(0, 1fr) var(--arrowSize);
+  align-items: center;
+  column-gap: var(--arrowGap);
+}
+
+.arrow-btn2 {
+  width: var(--arrowSize);
+  height: var(--arrowSize);
+  border-radius: 999px;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, .12);
+}
+
+.best-scroll {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-inline: var(--arrowGap);
+  scroll-padding-inline: var(--arrowGap);
+}
+
+.best-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.best-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, .15);
+  border-radius: 999px;
+}
+
+.best-card {
+  min-width: 190px;
+  scroll-snap-align: center;
+  text-align: center;
+}
+
+.best-card .img {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 0.6rem;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  border: 2px solid rgba(139, 30, 30, .22);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, .10);
+}
+
+.best-card .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.best-card .n {
+  font-weight: 900;
+  font-size: 0.85rem;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.best-card .c {
+  font-size: 0.72rem;
+  color: #444;
+  margin: 0.15rem 0 0.35rem;
+}
+
+.best-card .p {
+  font-weight: 900;
+  color: var(--primary);
+  font-size: 0.8rem;
+  margin: 0 0 0.35rem;
+}
+
+.best-card .btn {
+  padding: 0.3rem 0.75rem;
+  font-size: 0.72rem;
+  border-radius: 8px;
+}
+
+
+/* =========================================================
+   GLOBAL BOX-SIZING (optional, aman)
+   ========================================================= */
+.product-detail-page,
+.product-detail-page * {
+  box-sizing: border-box;
+}
+
+@media (max-width: 991px) {
+  .best-head {
+    margin-top: var(--section-space-sm);
+  }
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 575px) {
+
+  .product-detail-page {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .pd-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  /* thumb jadi horizontal */
+  .pd-thumbs {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px;
+    overflow: hidden;
+  }
+
+  .thumb-nav {
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .thumb-list {
+    flex: 1 1 0;
+    min-width: 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 6px 10px;
+    scroll-padding-inline: 10px;
+  }
+
+  .thumb {
+    flex: 0 0 auto;
+    width: 44px;
+    height: 44px;
+    overflow: visible;
+  }
+
+  .pd-imagebox {
+    height: 300px;
+    padding: 16px;
+  }
+
+  .explore-right {
+    display: none;
+  }
+
+  /* actions jadi grid */
+  .pd-actions {
+    display: grid;
+    grid-template-columns: auto 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .pd-actions .pd-btn {
+    width: 100%;
+    min-width: 0;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .qty,
+  .qty-btn,
+  .qty-num {
+    height: 40px;
+  }
+
+  /* baris size: value turun */
+  .pd-row.is-size {
+    align-items: start;
+  }
+
+  .pd-row.is-size .pd-val {
+    grid-column: 1 / -1;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+  }
+
+  .pd-row.is-size .size-pill {
+    margin-right: 0;
+  }
+
+  .product-detail-page {
+    padding-left: 0;
+  }
+}

@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>THE OTTOMAN</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- FontAwesome v5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Viga&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/product-detail.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg ott-navbar py-2">
+    <div class="container ott-container">
+
+      <!-- <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <img src="image/logo/1.png" alt="Logo" style="width:40px;height:40px;border-radius:8px;">
+      </a> -->
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#ottNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="ottNav">
+        <ul class="navbar-nav mx-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link ott-navlink" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link ott-navlink" href="about.html">About</a></li>
+
+          <li class="nav-item d-none d-lg-block">
+            <a class="nav-link p-0" href="index.html" aria-label="Home">
+              <img src="image/logo/1.png" alt="Logo" style="width:40px;height:40px;border-radius:8px;">
+            </a>
+          </li>
+
+          <li class="nav-item"><a class="nav-link ott-navlink" href="product.html">Product</a></li>
+          <li class="nav-item"><a class="nav-link ott-navlink" href="blog.html">Blog</a></li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-3 justify-content-lg-end">
+          <a class="icon-btn" href="cart.html" aria-label="Cart"><i class="fas fa-shopping-cart"></i></a>
+          <a class="icon-btn" href="profile.html" aria-label="User"><i class="fas fa-user"></i></a>
+          <a class="icon-btn" href="login.html" aria-label="Logout"><i class="fas fa-sign-out-alt"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container ott-container py-4 product-detail-page">
+
+    <!-- Title -->
+    <section class="section-space-first">
+      <h2 class="section-title">PRODUCT DETAIL</h2>
+    </section>
+
+    <!-- Product Picture -->
+    <section class="pd-top section-space-first product-grid-gap">
+      <div class="pd-grid">
+
+        <!-- Left : Thumbnail -->
+        <aside class="pd-thumbs">
+          <button class="thumb-nav" id="thumbUp" type="button" aria-label="Scroll up">
+            <i class="fas fa-arrow-up"></i>
+          </button>
+
+          <div class="thumb-list">
+            <button class="thumb active" type="button">
+              <img src="image/product/1.jpg" alt="Thumb 1">
+            </button>
+            <button class="thumb" type="button">
+              <img src="image/hero/1.jpg" alt="Thumb 2">
+            </button>
+            <button class="thumb" type="button">
+              <img src="image/product/2.jpg" alt="Thumb 3">
+            </button>
+            <button class="thumb" type="button">
+              <img src="image/product/4.jpg" alt="Thumb 4">
+            </button>
+            <button class="thumb" type="button">
+              <img src="image/product/5.jpg" alt="Thumb 5">
+            </button>
+            <button class="thumb" type="button">
+              <img src="image/product/2.jpg" alt="Thumb 6">
+            </button>
+            <button class="thumb" type="button">
+              <img src="image/product/1.jpg" alt="Thumb 7">
+            </button>
+          </div>
+
+          <button class="thumb-nav" id="thumbDown" type="button" aria-label="Scroll down">
+            <i class="fas fa-arrow-down"></i>
+          </button>
+        </aside>
+
+        <!-- Center : Image Previes -->
+        <div class="pd-imagebox">
+          <img class="pd-main-img" src="image/product/1.jpg" alt="Traditional Carpet Turkey">
+        </div>
+
+        <!-- Right : Detail -->
+        <div class="pd-info">
+          <h1 class="pd-title">Traditional Carpet Turkey</h1>
+
+          <p class="pd-desc">
+            Handwoven in Turkey using time-honored techniques, this traditional Turkish carpet reflects the richness of
+            Anatolian heritage. Each pattern carries.
+          </p>
+
+          <div class="pd-spec">
+            <div class="pd-row">
+              <div class="pd-label">CATEGORY</div>
+              <div class="pd-sep">:</div>
+              <div class="pd-val"><strong>Carpet &amp; Rugs</strong></div>
+            </div>
+            <div class="pd-row is-size">
+              <div class="pd-label">SIZE</div>
+              <div class="pd-sep">:</div>
+              <div class="pd-val">
+                <button class="size-pill active" type="button">3 X 4</button>
+                <button class="size-pill" type="button">3 X 4</button>
+                <button class="size-pill" type="button">3 X 4</button>
+                <button class="size-pill" type="button">3 X 4</button>
+                <button class="size-pill" type="button">3 X 4</button>
+              </div>
+            </div>
+
+            <div class="pd-row">
+              <div class="pd-label">STOCK</div>
+              <div class="pd-sep">:</div>
+              <div class="pd-val"><strong id="pdStock">10</strong></div>
+            </div>
+
+            <div class="pd-row">
+              <div class="pd-label">PRICE UNIT</div>
+              <div class="pd-sep">:</div>
+              <div class="pd-val">
+                <strong id="pdUnitPrice" data-unit="790000">IDR 790.000,00</strong>
+              </div>
+            </div>
+
+            <div class="pd-row">
+              <div class="pd-label">PRICE TOTAL</div>
+              <div class="pd-sep">:</div>
+              <div class="pd-val"><strong id="pdTotalPrice">IDR 2.370.000,00</strong></div>
+            </div>
+          </div>
+
+          <div class="pd-actions">
+            <div class="qty" data-min="1">
+              <button class="qty-btn" id="qtyMinus" type="button" aria-label="Decrease">−</button>
+              <div class="qty-num" id="qtyValue">1</div>
+              <button class="qty-btn" id="qtyPlus" type="button" aria-label="Increase">+</button>
+            </div>
+            <a href="cart.html" class="btn btn-ott btn-sm pd-btn">ADD CART</a>
+            <a href="checkout.html" class="btn btn-ott btn-sm pd-btn">BUY NOW</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Product Detail -->
+    <section class="pd-detail section-space">
+      <div class="pd-detail-card">
+        <div class="pd-detail-head">
+          <div class="pd-label">PRODUCT DETAIL</div>
+        </div>
+
+        <div class="pd-detail-body">
+          Handwoven in Turkey using time-honored techniques.
+          Each pattern carries cultural meaning, crafted with precision
+          to bring warmth, character, and timeless beauty into your living space.
+          <div>Origin: Turkey</div>
+          <div>Craftsmanship: Handmade</div>
+          <div>Material: Wool / Cotton blend</div>
+          <div>Size: Varies</div>
+          <div>Technique: Traditional hand-weaving</div>
+          <div>Pattern: Anatolian / Ottoman-inspired motifs</div>
+          <div>Color Palette: Earth tones with classic Turkish red accents</div>
+          <div>Finish: Soft texture, durable weave</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Another Product (Komponen Best Seller) -->
+    <div class="best-head section-space">
+      <h2 class="section-title">ANOTHER FAVORITE PRODUCT</h2>
+      <div class="explore-right">
+        <a href="#" class="btn btn-ott-outline btn-sm">EXPLORE</a>
+      </div>
+    </div>
+
+    <!-- Another Product (Komponen Best Seller) -->
+    <section class="best-wrap section-space-bottom">
+      <div class="best-grid">
+        <button class="arrow-btn2" type="button" onclick="scrollBest(-1)" aria-label="Prev">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <div id="bestScroll" class="best-scroll">
+          <div class="best-card">
+            <div class="img"><img src="image/product/1.jpg" alt=""></div>
+            <p class="n">Traditional Carpet Tu..</p>
+            <p class="c">Carpet & Rugs</p>
+            <p class="p">IDR 790.000</p>
+            <a class="btn btn-ott btn-sm" href="#">VIEW</a>
+          </div>
+
+          <div class="best-card">
+            <div class="img"><img src="image/product/2.jpg" alt=""></div>
+            <p class="n">Premium Turkish Tea</p>
+            <p class="c">Gourmet</p>
+            <p class="p">IDR 790.000</p>
+            <a class="btn btn-ott btn-sm" href="#">VIEW</a>
+          </div>
+
+          <div class="best-card">
+            <div class="img"><img src="image/product/3.jpg" alt=""></div>
+            <p class="n">Mosaic Table Lamp</p>
+            <p class="c">Mosaic Lamps</p>
+            <p class="p">IDR 790.000</p>
+            <a class="btn btn-ott btn-sm" href="#">VIEW</a>
+          </div>
+
+          <div class="best-card">
+            <div class="img"><img src="image/product/4.jpg" alt=""></div>
+            <p class="n">Copper Serving Tray</p>
+            <p class="c">Home & Living</p>
+            <p class="p">IDR 790.000</p>
+            <a class="btn btn-ott btn-sm" href="#">VIEW</a>
+          </div>
+
+          <div class="best-card">
+            <div class="img"><img src="image/product/5.jpg" alt=""></div>
+            <p class="n">Turkish Cotton T-Shirt</p>
+            <p class="c">Fashion & Textiles</p>
+            <p class="p">IDR 790.000</p>
+            <a class="btn btn-ott btn-sm" href="#">VIEW</a>
+          </div>
+        </div>
+
+        <button class="arrow-btn2" type="button" onclick="scrollBest(1)" aria-label="Next">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="ott-footer">
+    <div class="footer-top">
+      <div class="container ott-container">
+        <div class="row g-4 align-items-start">
+          <div class="col-lg-4">
+            <div class="footer-title">THE OTTOMAN</div>
+            <p class="footer-p mt-3">
+              Inspired by the rich heritage of Turkey, The Ottoman curates timeless pieces that tell stories of
+              culture, craftsmanship, and beauty.
+            </p>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <div class="footer-head">Product</div>
+            <ul class="footer-list">
+              <li><a class="footer-link" href="#">Home & Living</a></li>
+              <li><a class="footer-link" href="#">Carpets & Rugs</a></li>
+              <li><a class="footer-link" href="#">Mosaic Lamps</a></li>
+              <li><a class="footer-link" href="#">Fashion & Textiles</a></li>
+              <li><a class="footer-link" href="#">Gourmet</a></li>
+              <li><a class="footer-link" href="#">Souvenirs & Gifts</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <div class="footer-head">Customer Care</div>
+            <ul class="footer-list">
+              <li><a class="footer-link" href="#">Contact Us</a></li>
+              <li><a class="footer-link" href="#">Shipping & Delivery</a></li>
+              <li><a class="footer-link" href="#">Returns & Exchanges</a></li>
+              <li><a class="footer-link" href="#">FAQ</a></li>
+              <li><a class="footer-link" href="#">Privacy Policy</a></li>
+              <li><a class="footer-link" href="#">Terms & Conditions</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <div class="footer-head">About</div>
+            <ul class="footer-list">
+              <li><a class="footer-link" href="#">Our Story</a></li>
+              <li><a class="footer-link" href="#">Authenticity Promise</a></li>
+              <li><a class="footer-link" href="#">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <div class="footer-head">Visit & Contact</div>
+            <div class="footer-contact">
+              <div>info@theottoman.com</div>
+              <div>BSD - Ruko Pasar Modern Timur 2</div>
+              <div>Lotte Mall Jakarta - 2F HomeLiving</div>
+            </div>
+
+            <div class="footer-icons mt-3">
+              <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+              <a href="#" aria-label="Email"><i class="far fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="container ott-container">
+        © 2026 The Ottoman. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Logic Transaksi -->
+  <script>
+    // Scroll Another Product
+    function scrollBest(dir) {
+      const el = document.getElementById("bestScroll");
+      if (!el) return;
+
+      const amount = 260 * dir;
+      el.scrollBy({
+        left: amount,
+        behavior: "smooth"
+      });
+    }
+
+    /**
+    Product Detail Interaksi
+    * Thumbnail Klik : Ganti Gambar + Active State
+    * Tombol Up Down : Pindah Gambar
+    * Qty + Total Price
+    */
+    (function () {
+      // Thumbnail Image
+      const mainImg = document.querySelector(".pd-main-img");
+      const thumbList = document.querySelector(".thumb-list");
+      const thumbs = Array.from(document.querySelectorAll(".thumb-list .thumb"));
+
+      const btnUp = document.getElementById("thumbUp");
+      const btnDown = document.getElementById("thumbDown");
+
+      if (!mainImg || !thumbList || !thumbs.length) return;
+
+      /**
+       * getActiveIndex()
+       * Ambil Index Yang Sedang Aktif
+       */
+      function getActiveIndex() {
+        const idx = thumbs.findIndex(t => t.classList.contains("active"));
+        return idx >= 0 ? idx : 0;
+      }
+
+      /**
+       * setActiveThumb(index)
+       * - Set Class Active Ke Thumbnail Sesuai Index
+       * - Scroll Thumbnail Aktif 
+       */
+      function setActiveThumb(index) {
+        thumbs.forEach(t => t.classList.remove("active"));
+        const btn = thumbs[index];
+        btn.classList.add("active");
+
+        // Thumbnail Aktif
+        btn.scrollIntoView({
+          block: "nearest",
+          behavior: "smooth"
+        });
+        return btn;
+      }
+
+      /**
+       * swapMainImageByIndex(index)
+       * Ganti Gambar Utama Berdasarkan Thumbnail Ke Index
+       */
+      function swapMainImageByIndex(index) {
+        const btn = setActiveThumb(index);
+        const img = btn.querySelector("img");
+        if (!img) return;
+
+        mainImg.src = img.getAttribute("src");
+        mainImg.alt = img.getAttribute("alt") || "Product image";
+      }
+
+      /**
+       * moveThumb(step)
+       * - Step = -1 (Tombol Panah Atas)
+       * - Step = +1 (Tombol Panah Bawah)
+       * Pindah Thumbnail + Update Gambar Utama Box
+       */
+      function moveThumb(step) {
+        const current = getActiveIndex();
+        let next = current + step;
+
+        // Clamp Limit
+        next = Math.max(0, next);
+        next = Math.min(thumbs.length - 1, next);
+
+        if (next === current) return;
+
+        swapMainImageByIndex(next);
+      }
+
+      // Click Thumbnail -> Update Gambar Utama
+      thumbs.forEach((btn, index) => {
+        btn.addEventListener("click", () => {
+          swapMainImageByIndex(index);
+        });
+      });
+
+      // Tombol Panah Atas Bawah -> Pindah Thumbnail + Gambar Utama Berubah
+      if (btnUp) btnUp.addEventListener("click", () => moveThumb(-1));
+      if (btnDown) btnDown.addEventListener("click", () => moveThumb(1));
+
+      // Inisialisasi : Gambar Utama Sesuai Thumbnail Aktif
+      swapMainImageByIndex(getActiveIndex());
+
+      // Hitung QTY + Price Total
+      const qtyEl = document.getElementById("qtyValue");
+      const minusBtn = document.getElementById("qtyMinus");
+      const plusBtn = document.getElementById("qtyPlus");
+
+      const stockEl = document.getElementById("pdStock");
+      const unitEl = document.getElementById("pdUnitPrice");
+      const totalEl = document.getElementById("pdTotalPrice");
+
+      if (!qtyEl || !minusBtn || !plusBtn || !stockEl || !unitEl || !totalEl) return;
+
+      const minQty = parseInt(document.querySelector(".qty")?.dataset.min || "1", 10);
+      const maxQty = parseInt(stockEl.textContent.trim() || "0", 10);
+      const unit = parseInt(unitEl.dataset.unit || "0", 10);
+
+      /**
+       * formatIDR(num)
+       * Format Angka -> IDR 1.234.567,00
+       */
+      function formatIDR(num) {
+        const s = Math.round(num).toString();
+        const withDots = s.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        return `IDR ${withDots},00`;
+      }
+
+      /**
+       * setQty(next)
+       * - Validasi Qty (Min & Max = Stock)
+       * - Update Qty UI
+       * - Update Total Price
+       */
+      function setQty(next) {
+        let q = parseInt(next, 10);
+        if (isNaN(q)) q = minQty;
+
+        q = Math.max(minQty, q);
+        q = Math.min(maxQty, q);
+
+        qtyEl.textContent = q;
+        minusBtn.disabled = (q <= minQty);
+        plusBtn.disabled = (q >= maxQty);
+
+        totalEl.textContent = formatIDR(unit * q);
+      }
+
+      minusBtn.addEventListener("click", () => {
+        setQty(parseInt(qtyEl.textContent, 10) - 1);
+      });
+
+      plusBtn.addEventListener("click", () => {
+        setQty(parseInt(qtyEl.textContent, 10) + 1);
+      });
+
+      setQty(qtyEl.textContent);
+    })();
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

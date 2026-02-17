@@ -1,0 +1,532 @@
+<!-- header.html -->
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>THE OTTOMAN</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- FontAwesome v5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Viga&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/checkout.css">
+</head>
+
+<body class="page-about">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg ott-navbar py-2">
+    <div class="container ott-container">
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#ottNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="ottNav">
+        <ul class="navbar-nav mx-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link ott-navlink" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link ott-navlink" href="about.html">About</a></li>
+
+          <li class="nav-item d-none d-lg-block">
+            <a class="nav-link p-0" href="index.html" aria-label="Home">
+              <img src="image/logo/1.png" alt="Logo" style="width:40px;height:40px;border-radius:8px;">
+            </a>
+          </li>
+
+          <li class="nav-item"><a class="nav-link ott-navlink" href="product.html">Product</a></li>
+          <li class="nav-item"><a class="nav-link ott-navlink" href="blog.html">Blog</a></li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-3 justify-content-lg-end">
+          <a class="icon-btn" href="cart.html" aria-label="Cart"><i class="fas fa-shopping-cart"></i></a>
+          <a class="icon-btn" href="profile.html" aria-label="User"><i class="fas fa-user"></i></a>
+          <a class="icon-btn" href="login.html" aria-label="Logout"><i class="fas fa-sign-out-alt"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container ott-container py-4 checkout-page">
+    <h1 class="co-title">CHECKOUT</h1>
+
+    <section class="co-grid">
+      <div class="co-left">
+        <h2 class="co-section-head">Package Recipient Information</h2>
+
+        <label class="co-checkline">
+          <input id="shipOther" class="co-check" type="checkbox">
+          <span>Send to another address</span>
+        </label>
+
+        <div class="co-form">
+          <div class="row g-3">
+            <div class="col-12 col-md-6">
+              <label class="co-label" for="fullName">Full Name (Recipient)</label>
+              <input id="fullName" class="form-control co-input" type="text" value="Aditya Pratama Febriono">
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label class="co-label" for="email">Email</label>
+              <input id="email" class="form-control co-input" type="email" value="aditya.febriono@test.com">
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label class="co-label" for="phone">Mobile Phone Number</label>
+              <input id="phone" class="form-control co-input" type="tel" value="081213671213">
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label class="co-label" for="postal">Postal Code</label>
+              <input id="postal" class="form-control co-input" type="text" value="15157" inputmode="numeric">
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label class="co-label" for="province">Province</label>
+              <select id="province" class="form-select co-select">
+                <option selected>Banten</option>
+                <option>DKI Jakarta</option>
+                <option>Jawa Barat</option>
+              </select>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label class="co-label" for="city">City / Regency</label>
+              <select id="city" class="form-select co-select">
+                <option selected>Tangerang</option>
+                <option>Tangerang Selatan</option>
+                <option>Kab Tangerang</option>
+              </select>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label class="co-label" for="district">District</label>
+              <select id="district" class="form-select co-select">
+                <option selected>Ciledug</option>
+                <option>Karawaci</option>
+                <option>Pondok Aren</option>
+              </select>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label class="co-label" for="subdistrict">Sub District</label>
+              <select id="subdistrict" class="form-select co-select">
+                <option selected>Sudimara Barat</option>
+                <option>Sudimara Jaya</option>
+                <option>Sudimara Selatan</option>
+              </select>
+            </div>
+
+            <div class="col-12">
+              <label class="co-label" for="address">Address</label>
+              <textarea id="address" class="form-control co-textarea"
+                rows="3">Jl. Ciledug Raya, No. 17, Sudimara Barat, Ciledug Tangerang, Banten 15157</textarea>
+            </div>
+
+            <div class="col-12">
+              <label class="co-label" for="note">Shipping Note</label>
+              <textarea id="note" class="form-control co-textarea"
+                rows="2">make packing be good & check for quality our product.</textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =========================
+         RIGHT: PRODUCT + PAYMENT
+    ========================== -->
+      <div class="co-right">
+
+        <h2 class="co-section-head">Product Information</h2>
+
+        <div class="co-products">
+
+          <!-- item 1 -->
+          <div class="co-item">
+            <div class="co-no">1</div>
+
+            <div class="co-thumb">
+              <img src="image/product/1.jpg" alt="">
+            </div>
+
+            <div class="co-name">
+              <div class="co-prod-title">Traditional Carpet Turkey</div>
+            </div>
+
+            <div class="co-unit">IDR 790.000</div>
+            <div class="co-qty">3</div>
+            <div class="co-total">IDR 2.730.000</div>
+          </div>
+
+          <!-- divider -->
+          <div class="co-line"></div>
+
+          <!-- item 2 -->
+          <div class="co-item">
+            <div class="co-no">2</div>
+
+            <div class="co-thumb">
+              <img src="image/product/4.jpg" alt="">
+            </div>
+
+            <div class="co-name">
+              <div class="co-prod-title">Copper Serving Tray</div>
+            </div>
+
+            <div class="co-unit">IDR 790.000</div>
+            <div class="co-qty">3</div>
+            <div class="co-total">IDR 2.730.000</div>
+          </div>
+
+          <div class="co-line"></div>
+
+          <!-- item 3 -->
+          <div class="co-item">
+            <div class="co-no">3</div>
+
+            <div class="co-thumb">
+              <img src="image/product/2.jpg" alt="">
+            </div>
+
+            <div class="co-name">
+              <div class="co-prod-title">Mosaic Table Lamp</div>
+            </div>
+
+            <div class="co-unit">IDR 790.000</div>
+            <div class="co-qty">3</div>
+            <div class="co-total">IDR 2.730.000</div>
+          </div>
+
+          <div class="co-line"></div>
+
+          <!-- item 4 -->
+          <div class="co-item">
+            <div class="co-no">4</div>
+
+            <div class="co-thumb">
+              <img src="image/blog/1.jpg" alt="">
+            </div>
+
+            <div class="co-name">
+              <div class="co-prod-title">Mosaic Table Lamp</div>
+            </div>
+
+            <div class="co-unit">IDR 790.000</div>
+            <div class="co-qty">3</div>
+            <div class="co-total">IDR 2.730.000</div>
+          </div>
+
+          <div class="co-line"></div>
+        </div>
+
+        <h2 class="co-section-head mt-4">Shopping Summary</h2>
+
+
+        <div class="co-summary">
+          <div class="co-grand">
+            <span class="co-grand-label">Grand Total</span>
+            <span class="co-grand-sep">:</span>
+            <span class="co-grand-val">IDR 7.110.000</span>
+          </div>
+        </div>
+
+        <h2 class="co-section-head mt-4">Payment Information</h2>
+
+        <div class="co-paygrid">
+          <div>
+            <div class="co-subhead">Payment Method</div>
+            <select id="payMethod" class="form-select co-select">
+              <option value="mandiri" selected>Bank Transfer Mandiri</option>
+              <option value="bca">Bank Transfer BCA</option>
+              <option value="bri">Bank Transfer BRI</option>
+            </select>
+          </div>
+
+          <div class="co-bank" id="bankInfo">
+            <div id="bankLine1">Bank Mandiri 3780875692</div>
+            <div id="bankLine2">PT Ottoman Indonesia</div>
+          </div>
+        </div>
+
+        <div class="co-subhead mt-3">Upload Payment Evidence</div>
+
+        <div class="co-upload">
+          <label class="co-file">
+            <span class="co-file-tag">Browse</span>
+            <span id="fileName" class="co-file-name">Upload File</span>
+            <input id="payProof" type="file" hidden accept="image/*">
+          </label>
+
+          <p class="co-note">
+            Your personal data will be used to process your order, support your experience throughout this website,
+            and for other purposes described in our privacy policy.
+          </p>
+
+          <label class="co-checkline mt-2">
+            <input id="termsAgree" class="co-check" type="checkbox">
+            <span>I have read and agree to the site terms and conditions</span>
+          </label>
+          <br>
+          <!-- <a href="payment-success.html" class="btn btn-ott co-paybtn" type="button">PAY NOW</a> -->
+
+          <button id="payNowBtn" class="btn btn-ott co-paybtn" type="button" disabled>
+            PAY NOW
+          </button>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function initShipOther() {
+      const shipOther = document.getElementById("shipOther");
+      if (!shipOther) return;
+
+      const ids = ["fullName", "email", "phone", "address", "province", "city", "district", "subdistrict", "postal",
+        "note"
+      ];
+
+      const defaults = {};
+      ids.forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+
+        if (el.tagName === "SELECT") {
+          defaults[id] = el.value;
+        } else {
+          defaults[id] = el.value;
+        }
+      });
+
+      function clearForm() {
+        ids.forEach(id => {
+          const el = document.getElementById(id);
+          if (!el) return;
+
+          if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+            el.value = "";
+            return;
+          }
+
+          if (el.tagName === "SELECT") {
+            el.value = "";
+            el.dispatchEvent(new Event("change"));
+          }
+        });
+      }
+
+      function restoreForm() {
+        ids.forEach(id => {
+          const el = document.getElementById(id);
+          if (!el) return;
+
+          const def = defaults[id];
+
+          if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+            el.value = def ?? "";
+            return;
+          }
+
+          if (el.tagName === "SELECT") {
+            el.value = def ?? "";
+            el.dispatchEvent(new Event("change"));
+          }
+        });
+      }
+
+      shipOther.checked = false;
+
+      shipOther.addEventListener("change", () => {
+        if (shipOther.checked) {
+          clearForm();
+        } else {
+          restoreForm();
+        }
+      });
+    })();
+  </script>
+
+  <!-- Cheklist Pay Now -->
+  <script>
+    function updatePayNowState() {
+      const terms = document.getElementById("termsAgree");
+      const payBtn = document.getElementById("payNowBtn");
+      if (!terms || !payBtn) return;
+
+      payBtn.disabled = !terms.checked;
+    }
+
+    (function initTermsGate() {
+      const terms = document.getElementById("termsAgree");
+      const payBtn = document.getElementById("payNowBtn");
+      if (!terms || !payBtn) return;
+
+      terms.checked = false;
+
+      updatePayNowState();
+
+      terms.addEventListener("change", updatePayNowState);
+
+      payBtn.addEventListener("click", () => {
+        if (payBtn.disabled) return;
+        window.location.href = "payment-success.html";
+      });
+    })();
+  </script>
+
+  <!-- ===== Data Bank Pembayaran ===== -->
+  <script>
+    const bankMap = {
+      mandiri: {
+        line1: "Bank Mandiri 3780875692",
+        line2: "PT Ottoman Indonesia"
+      },
+      bca: {
+        line1: "Bank BCA 1234567890",
+        line2: "PT Ottoman Indonesia"
+      },
+      bri: {
+        line1: "Bank BRI 9876543210",
+        line2: "PT Ottoman Indonesia"
+      },
+    };
+
+    // Update UI
+    function updateBankInfo(key) {
+      const data = bankMap[key];
+      if (!data) return;
+
+      const l1 = document.getElementById("bankLine1");
+      const l2 = document.getElementById("bankLine2");
+      if (l1) l1.textContent = data.line1;
+      if (l2) l2.textContent = data.line2;
+    }
+
+    // ===== INIT =====
+    (function () {
+      // Change
+      const pay = document.getElementById("payMethod");
+      if (pay) {
+        updateBankInfo(pay.value);
+        pay.addEventListener("change", () => updateBankInfo(pay.value));
+      }
+
+      // Send To Another Address Checkbox
+      const shipOther = document.getElementById("shipOther");
+      if (shipOther) {
+        // Default Uncheck
+        shipOther.checked = false;
+
+        shipOther.addEventListener("change", () => {
+          if (shipOther.checked) {
+            clearRecipientForm();
+          } else {
+            // Kalau Balik Ke Default Value, Aktifkan Restore
+            restoreRecipientForm();
+          }
+        });
+      }
+    })();
+  </script>
+
+  <!-- Upload File -->
+  <script>
+    (function initFileName() {
+      const input = document.getElementById("payProof");
+      const nameEl = document.getElementById("fileName");
+      if (!input || !nameEl) return;
+
+      input.addEventListener("change", () => {
+        const file = input.files && input.files[0];
+        nameEl.textContent = file ? file.name : "Upload File";
+      });
+    })();
+  </script>
+
+  <!-- Footer -->
+  <footer class="ott-footer">
+    <div class="footer-top">
+      <div class="container ott-container">
+        <div class="row g-4 align-items-start">
+          <div class="col-lg-4">
+            <div class="footer-title">THE OTTOMAN</div>
+            <p class="footer-p mt-3">
+              Inspired by the rich heritage of Turkey, The Ottoman curates timeless pieces that tell stories of
+              culture, craftsmanship, and beauty.
+            </p>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <div class="footer-head">Product</div>
+            <ul class="footer-list">
+              <li><a class="footer-link" href="#">Home & Living</a></li>
+              <li><a class="footer-link" href="#">Carpets & Rugs</a></li>
+              <li><a class="footer-link" href="#">Mosaic Lamps</a></li>
+              <li><a class="footer-link" href="#">Fashion & Textiles</a></li>
+              <li><a class="footer-link" href="#">Gourmet</a></li>
+              <li><a class="footer-link" href="#">Souvenirs & Gifts</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <div class="footer-head">Customer Care</div>
+            <ul class="footer-list">
+              <li><a class="footer-link" href="#">Contact Us</a></li>
+              <li><a class="footer-link" href="#">Shipping & Delivery</a></li>
+              <li><a class="footer-link" href="#">Returns & Exchanges</a></li>
+              <li><a class="footer-link" href="#">FAQ</a></li>
+              <li><a class="footer-link" href="#">Privacy Policy</a></li>
+              <li><a class="footer-link" href="#">Terms & Conditions</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <div class="footer-head">About</div>
+            <ul class="footer-list">
+              <li><a class="footer-link" href="#">Our Story</a></li>
+              <li><a class="footer-link" href="#">Authenticity Promise</a></li>
+              <li><a class="footer-link" href="#">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <div class="footer-head">Visit & Contact</div>
+            <div class="footer-contact">
+              <div>info@theottoman.com</div>
+              <div>BSD - Ruko Pasar Modern Timur 2</div>
+              <div>Lotte Mall Jakarta - 2F HomeLiving</div>
+            </div>
+
+            <div class="footer-icons mt-3">
+              <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+              <a href="#" aria-label="Email"><i class="far fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="container ott-container">
+        © 2026 The Ottoman. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

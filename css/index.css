@@ -1,0 +1,761 @@
+/* =========================================================
+   index.css
+   SEMUA SECTION di index.html
+   ========================================================= */
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero {
+  position: relative;
+  border-radius: 0 0 26px 26px;
+  overflow: hidden;
+  min-height: 550px;
+  box-shadow: var(--shadow);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(0deg, rgba(0, 0, 0, .35), rgba(0, 0, 0, .18)),
+    url("../image/hero/1.jpg");
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.01);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  padding: 0 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 2.1rem;
+  line-height: 1.2;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+  margin-bottom: 0.5rem;
+}
+
+.hero-sub {
+  font-size: 1.15rem;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+  margin-bottom: 1.25rem;
+}
+
+.hero-actions .btn {
+  margin: 0 0.3rem;
+}
+
+/* =========================================================
+   VALUE BAR
+   ========================================================= */
+.valuebar {
+  margin-top: -50px;
+  position: relative;
+  z-index: 3;
+}
+
+.value-wrap {
+  background: var(--primary);
+  border-radius: 16px;
+  color: #fff;
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.value-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.value-item .t {
+  font-family: "Calistoga", serif;
+  font-size: 1.50rem;
+  margin: 0;
+}
+
+.value-item .d {
+  margin: 0;
+  font-size: 0.82rem;
+  opacity: 0.9;
+  line-height: 1.35;
+}
+
+.value-icon {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  flex: 0 0 auto;
+  margin-top: 2px;
+}
+
+/* MOBILE VALUE BAR */
+@media (max-width: 576px) {
+  .value-item .d {
+    display: none;
+  }
+
+  .value-item {
+    gap: .65rem;
+  }
+
+  .value-item .t {
+    font-size: 1.05rem;
+    line-height: 1.2;
+  }
+
+  .value-icon {
+    width: 42px;
+    height: 42px;
+    margin-top: 0;
+  }
+
+  .value-wrap {
+    margin-left: 16px;
+    margin-right: 16px;
+    padding: .9rem;
+  }
+}
+
+/* =========================================================
+   FEATURED CATEGORIES
+   ========================================================= */
+.cat {
+  text-align: center;
+}
+
+.cat-thumb {
+  width: 125px;
+  height: 125px;
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 0 auto 0.65rem;
+  border: 2px solid rgba(139, 30, 30, .22);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, .08);
+  background: #f4f4f4;
+}
+
+.cat-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cat-label {
+  font-weight: 900;
+  color: var(--primary);
+  font-size: 0.95rem;
+}
+
+/* =========================================================
+   NEW ARRIVALS
+   ========================================================= */
+.newarrivals-left h3 {
+  color: var(--primary);
+  text-transform: uppercase;
+  font-size: 1.50rem;
+  letter-spacing: 0.8px;
+  margin-bottom: 0.25rem;
+}
+
+.newarrivals-left p {
+  color: var(--muted);
+  margin-bottom: 0.65rem;
+  font-size: 0.95rem;
+}
+
+.product-mini {
+  border-radius: 16px;
+  border: 2px solid rgba(139, 30, 30, .20);
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .07);
+}
+
+.product-mini .img {
+  height: 150px;
+  background: #eee;
+}
+
+.product-mini .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-mini .info {
+  padding: 0.55rem 0.6rem 0.6rem;
+  min-width: 0;
+}
+
+.product-mini .name {
+  font-size: 0.78rem;
+  font-weight: 900;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  width: 160px;
+}
+
+.product-mini .price {
+  font-size: 0.74rem;
+  margin: 0;
+  color: var(--primary);
+  font-weight: 900;
+}
+
+.product-link {
+  display: block !important;
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.product-link:hover {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.product-link .name,
+.product-link .price {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+/* =========================================================
+   BRING THE SOUL + STATS
+   ========================================================= */
+.soul-title {
+  color: var(--primary);
+  font-family: "Calistoga", serif;
+  text-transform: uppercase;
+  font-size: 1.50rem;
+  line-height: 1.15;
+  letter-spacing: 1px;
+  margin-bottom: 0.8rem;
+}
+
+.soul-text {
+  color: var(--primary);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  max-width: 320px;
+}
+
+/* cards */
+.stat-big,
+.stat-small,
+.stat-tall {
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, .10);
+  border: 1px solid rgba(0, 0, 0, .04);
+  background: #111;
+  color: #fff;
+}
+
+.stat-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.02);
+  filter: saturate(1.05);
+}
+
+.stat-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, .55), rgba(0, 0, 0, .22));
+}
+
+.stat-content {
+  position: relative;
+  height: 100%;
+  z-index: 2;
+  padding: 1rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 100%;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, .45);
+}
+
+.stat-content .big {
+  font-family: "Calistoga", serif;
+  font-size: 1.6rem;
+  line-height: 1;
+  letter-spacing: 0.5px;
+}
+
+.stat-content .label {
+  font-weight: 900;
+  font-size: 0.9rem;
+  opacity: 0.95;
+}
+
+.stat-icon {
+  font-size: 2.2rem;
+  opacity: 0.95;
+}
+
+/* grid layout */
+.soul-grid {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1.35fr;
+  grid-template-rows: 200px 300px;
+  gap: 16px;
+}
+
+.sg-banner {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
+
+.sg-tall {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+}
+
+.sg-left {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.sg-mid {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.sg-banner .stat-big,
+.sg-left .stat-small,
+.sg-mid .stat-small,
+.sg-tall .stat-tall {
+  height: 100%;
+}
+
+.stat-big {
+  height: 200px;
+}
+
+.stat-small {
+  height: 300px;
+}
+
+.stat-tall {
+  height: calc(200px + 300px + 16px);
+}
+
+.sg-banner .stat-content {
+  display: flex;
+  align-items: flex-end;
+}
+
+.sg-banner .stat-icon {
+  margin-left: auto;
+  align-self: flex-end;
+}
+
+/* =========================================================
+   BEST SELLER
+   ========================================================= */
+.best-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.best-head .explore-right {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.best-wrap {
+  padding: 0.6rem 0;
+}
+
+.best-grid {
+  display: grid;
+  grid-template-columns: var(--arrowSize) minmax(0, 1fr) var(--arrowSize);
+  align-items: center;
+  column-gap: var(--arrowGap);
+}
+
+.arrow-btn2 {
+  width: var(--arrowSize);
+  height: var(--arrowSize);
+  border-radius: 999px;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, .12);
+}
+
+.best-scroll {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  gap: 28px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-inline: var(--arrowGap);
+  scroll-padding-inline: var(--arrowGap);
+  justify-content: flex-start;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.best-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.best-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.best-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, .15);
+  border-radius: 999px;
+}
+
+.best-card {
+  min-width: 190px;
+  scroll-snap-align: start;
+  text-align: center;
+}
+
+.best-card .img {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 0.6rem;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  border: 2px solid rgba(139, 30, 30, .22);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, .10);
+}
+
+.best-card .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.best-card .n {
+  font-weight: 900;
+  font-size: 0.85rem;
+  display: block;
+  max-width: 150px;
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.best-card .c {
+  font-size: 0.72rem;
+  color: #444;
+  margin: 0.15rem 0 0.35rem;
+}
+
+.best-card .p {
+  font-weight: 900;
+  color: var(--primary);
+  font-size: 0.8rem;
+  margin: 0 0 0.35rem;
+}
+
+.best-card .btn {
+  padding: 0.3rem 0.75rem;
+  font-size: 0.72rem;
+  border-radius: 8px;
+}
+
+/* =========================================================
+   VIDEO
+   ========================================================= */
+.video-banner {
+  height: 360px;
+  border-radius: 0;
+  position: relative;
+  overflow: hidden;
+  background: #111;
+}
+
+.video-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../image/video/ottoman.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: contrast(1.05);
+  transform: scale(1.02);
+}
+
+.video-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(139, 30, 30, .72);
+}
+
+.play-btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, .20);
+  z-index: 3;
+  font-size: 1.35rem;
+}
+
+/* =========================================================
+   BLOG
+   ========================================================= */
+.blog-head {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blog-head .more-right {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.blog-card {
+  border: var(--border);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, .08);
+  height: 100%;
+  background: #fff;
+}
+
+.blog-card img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+}
+
+.blog-card .b {
+  padding: 0.85rem 0.95rem 1rem;
+}
+
+.blog-card .t {
+  color: var(--primary);
+  font-weight: 900;
+  margin: 0 0 0.3rem;
+  font-size: 0.95rem;
+}
+
+.blog-card .d {
+  color: #222;
+  font-size: 0.88rem;
+  margin: 0;
+  line-height: 1.35;
+}
+
+/* =========================================================
+   OUR HAPPY CUSTOMERS (TESTIMONIALS) - LIKE BEST SELLER
+   ========================================================= */
+
+.testi-wrap {
+  padding: .6rem 0;
+}
+
+.testi-grid {
+  display: grid;
+  grid-template-columns: var(--arrowSize) minmax(0, 1fr) var(--arrowSize);
+  align-items: center;
+  column-gap: var(--arrowGap);
+}
+
+/* scroll area */
+.testi-scroll {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  gap: 22px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-inline: var(--arrowGap);
+  scroll-padding-inline: var(--arrowGap);
+  padding-top: 8px;
+  padding-bottom: 14px;
+  justify-content: center;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  justify-content: flex-start !important;
+  scroll-padding-left: var(--arrowGap);
+  scroll-padding-right: var(--arrowGap);
+}
+
+.testi-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.testi-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.testi-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, .12);
+  border-radius: 999px;
+}
+
+/* card: shadow tipis seperti BLOG card */
+.testi-card {
+  min-width: 330px;
+  max-width: 380px;
+  scroll-snap-align: center;
+
+  border: var(--border);
+  border-radius: 15px;
+  background: #fff;
+  /* box-shadow: 0 12px 26px rgba(0,0,0,.08); */
+  box-shadow: none;
+  scroll-snap-align: start !important;
+  padding: 18px 18px 16px;
+}
+
+/* content */
+.testi-stars {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+  color: #f5b301;
+}
+
+.testi-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 900;
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.testi-verify {
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: #20b15a;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .7rem;
+}
+
+.testi-quote {
+  margin: 0;
+  color: #6b6b6b;
+  font-size: .92rem;
+  line-height: 1.55;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 991px) {
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .best-head,
+  .blog-head {
+    justify-content: space-between;
+    padding: 0 0.25rem;
+  }
+
+  .best-head .explore-right,
+  .blog-head .more-right {
+    position: static;
+    transform: none;
+    margin-left: auto;
+  }
+
+  .soul-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .sg-banner,
+  .sg-left,
+  .sg-mid,
+  .sg-tall {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .stat-small {
+    height: 180px;
+  }
+
+  .stat-big {
+    height: 260px;
+  }
+
+  .stat-tall {
+    height: 220px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --arrowSize: 38px;
+    --arrowGap: 10px;
+  }
+
+  .best-scroll {
+    gap: 18px;
+    padding-inline: var(--arrowGap);
+    scroll-padding-inline: var(--arrowGap);
+  }
+
+  .testi-scroll {
+    gap: 18px;
+  }
+
+  .testi-card {
+    min-width: 260px;
+  }
+}

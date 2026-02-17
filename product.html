@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>THE OTTOMAN</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- FontAwesome v5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Viga&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/product.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg ott-navbar py-2">
+    <div class="container ott-container">
+      <!-- <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <img src="image/logo/1.png" alt="Logo" style="width:40px;height:40px;border-radius:8px;">
+      </a> -->
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#ottNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="ottNav">
+        <ul class="navbar-nav mx-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link ott-navlink" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link ott-navlink" href="about.html">About</a></li>
+
+          <li class="nav-item d-none d-lg-block">
+            <a class="nav-link p-0" href="index.html" aria-label="Home">
+              <img src="image/logo/1.png" alt="Logo" style="width:40px;height:40px;border-radius:8px;">
+            </a>
+          </li>
+
+          <li class="nav-item"><a class="nav-link ott-navlink" href="product.html">Product</a></li>
+          <li class="nav-item"><a class="nav-link ott-navlink" href="blog.html">Blog</a></li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-3 justify-content-lg-end">
+          <a class="icon-btn" href="cart.html" aria-label="Cart"><i class="fas fa-shopping-cart"></i></a>
+          <a class="icon-btn" href="profile.html" aria-label="User"><i class="fas fa-user"></i></a>
+          <a class="icon-btn" href="login.html" aria-label="Logout"><i class="fas fa-sign-out-alt"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="product-page">
+    <!-- Banner -->
+    <section class="product-hero" aria-label="Product banner">
+    </section>
+
+    <!-- Title -->
+    <section class="section-space-first">
+      <h2 class="section-title">PRODUCT CATALOG</h2>
+    </section>
+
+    <!-- Toolbar -->
+    <section class="product-toolbar-wrap section-space product-grid-gap">
+      <div class="product-toolbar">
+
+        <!-- Category -->
+        <div class="toolbar-left">
+          <div class="dropdown">
+            <button id="catBtn" class="btn btn-ott dropdown-toggle product-cat-btn" type="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Category
+            </button>
+            <ul class="dropdown-menu" id="catMenu">
+              <li><a class="dropdown-item" href="#" data-cat="all">All Category</a></li>
+              <li><a class="dropdown-item" href="#" data-cat="rugs & carpet">Rugs & Carpet</a></li>
+              <li><a class="dropdown-item" href="#" data-cat="mosaic lamps">Mosaic Lamps</a></li>
+              <li><a class="dropdown-item" href="#" data-cat="home & living">Home & Living</a></li>
+              <li><a class="dropdown-item" href="#" data-cat="gourmet">Gourmet</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Search -->
+        <div class="toolbar-right">
+          <form class="product-search" role="search">
+            <input type="text" class="form-control product-search-input" placeholder="Search"
+              aria-label="Search Product">
+            <button class="product-search-btn" type="submit" aria-label="Search">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Product -->
+    <section class="product-grid-wrap section-space product-grid-gap">
+      <div class="product-grid">
+
+        <!-- Card -->
+        <article class="p-card">
+          <div class="p-img">
+            <img src="image/blog/1.jpg" alt="Traditional Carpet Turkey">
+          </div>
+          <div class="p-body">
+            <div class="p-name">Traditional Carpet Turkey The Best of Origin Craftman Turkish</div>
+            <div class="p-cat">Rugs & Carpet</div>
+
+            <div class="p-bottom">
+              <div class="p-price">IDR 7.190.000</div>
+              <a href="product-detail.html" class="p-view">VIEW</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="p-card">
+          <div class="p-img">
+            <img src="image/product/3.jpg" alt="Mosaic Table Lamp">
+          </div>
+          <div class="p-body">
+            <div class="p-name">Mosaic Table Lamp</div>
+            <div class="p-cat">Mosaic Lamps</div>
+
+            <div class="p-bottom">
+              <div class="p-price">IDR 7.190.000</div>
+              <a href="product-detail.html" class="p-view">VIEW</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="p-card">
+          <div class="p-img">
+            <img src="image/product/4.jpg" alt="Cooper Serving Tray">
+          </div>
+          <div class="p-body">
+            <div class="p-name">Cooper Serving Tray</div>
+            <div class="p-cat">Home & Living</div>
+
+            <div class="p-bottom">
+              <div class="p-price">IDR 7.190.000</div>
+              <a href="product-detail.html" class="p-view">VIEW</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="p-card">
+          <div class="p-img">
+            <img src="image/product/2.jpg" alt="Premium Turkish Tea">
+          </div>
+          <div class="p-body">
+            <div class="p-name">Premium Turkish Tea</div>
+            <div class="p-cat">Gourmet</div>
+
+            <div class="p-bottom">
+              <div class="p-price">IDR 7.190.000</div>
+              <a href="product-detail.html" class="p-view">VIEW</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="p-card">
+          <div class="p-img">
+            <img src="image/product/1.jpg" alt="Traditional Carpet Turkey">
+          </div>
+          <div class="p-body">
+            <div class="p-name">Traditional Carpet Turkey</div>
+            <div class="p-cat">Rugs & Carpet</div>
+
+            <div class="p-bottom">
+              <div class="p-price">IDR 7.190.000</div>
+              <a href="product-detail.html" class="p-view">VIEW</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="p-card">
+          <div class="p-img">
+            <img src="image/product/3.jpg" alt="Mosaic Table Lamp">
+          </div>
+          <div class="p-body">
+            <div class="p-name">Mosaic Table Lamp</div>
+            <div class="p-cat">Mosaic Lamps</div>
+
+            <div class="p-bottom">
+              <div class="p-price">IDR 7.190.000</div>
+              <a href="product-detail.html" class="p-view">VIEW</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="p-card">
+          <div class="p-img">
+            <img src="image/product/4.jpg" alt="Cooper Serving Tray">
+          </div>
+          <div class="p-body">
+            <div class="p-name">Cooper Serving Tray</div>
+            <div class="p-cat">Home & Living</div>
+
+            <div class="p-bottom">
+              <div class="p-price">IDR 7.190.000</div>
+              <a href="product-detail.html" class="p-view">VIEW</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="p-card">
+          <div class="p-img">
+            <img src="image/product/2.jpg" alt="Premium Turkish Tea">
+          </div>
+          <div class="p-body">
+            <div class="p-name">Premium Turkish Tea</div>
+            <div class="p-cat">Gourmet</div>
+
+            <div class="p-bottom">
+              <div class="p-price">IDR 7.190.000</div>
+              <a href="product-detail.html" class="p-view">VIEW</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="p-card">
+          <div class="p-img">
+            <img src="image/product/1.jpg" alt="Traditional Carpet Turkey">
+          </div>
+          <div class="p-body">
+            <div class="p-name">Traditional Carpet Turkey</div>
+            <div class="p-cat">Rugs & Carpet</div>
+
+            <div class="p-bottom">
+              <div class="p-price">IDR 7.190.000</div>
+              <a href="product-detail.html" class="p-view">VIEW</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="p-card">
+          <div class="p-img">
+            <img src="image/product/3.jpg" alt="Mosaic Table Lamp">
+          </div>
+          <div class="p-body">
+            <div class="p-name">Mosaic Table Lamp</div>
+            <div class="p-cat">Mosaic Lamps</div>
+
+            <div class="p-bottom">
+              <div class="p-price">IDR 7.190.000</div>
+              <a href="product-detail.html" class="p-view">VIEW</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="p-card">
+          <div class="p-img">
+            <img src="image/product/4.jpg" alt="Cooper Serving Tray">
+          </div>
+          <div class="p-body">
+            <div class="p-name">Cooper Serving Tray</div>
+            <div class="p-cat">Home & Living</div>
+
+            <div class="p-bottom">
+              <div class="p-price">IDR 7.190.000</div>
+              <a href="product-detail.html" class="p-view">VIEW</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="p-card">
+          <div class="p-img">
+            <img src="image/product/2.jpg" alt="Premium Turkish Tea">
+          </div>
+          <div class="p-body">
+            <div class="p-name">Premium Turkish Tea</div>
+            <div class="p-cat">Gourmet</div>
+
+            <div class="p-bottom">
+              <div class="p-price">IDR 7.190.000</div>
+              <a href="product-detail.html" class="p-view">VIEW</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="p-card">
+          <div class="p-img">
+            <img src="image/product/2.jpg" alt="Premium Turkish Tea">
+          </div>
+          <div class="p-body">
+            <div class="p-name">Premium Turkish Tea</div>
+            <div class="p-cat">Gourmet</div>
+
+            <div class="p-bottom">
+              <div class="p-price">IDR 7.190.000</div>
+              <a href="product-detail.html" class="p-view">VIEW</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="p-card">
+          <div class="p-img">
+            <img src="image/product/2.jpg" alt="Premium Turkish Tea">
+          </div>
+          <div class="p-body">
+            <div class="p-name">Premium Turkish Tea</div>
+            <div class="p-cat">Gourmet</div>
+
+            <div class="p-bottom">
+              <div class="p-price">IDR 7.190.000</div>
+              <a href="product-detail.html" class="p-view">VIEW</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="p-card">
+          <div class="p-img">
+            <img src="image/product/2.jpg" alt="Premium Turkish Tea">
+          </div>
+          <div class="p-body">
+            <div class="p-name">Premium Turkish Tea</div>
+            <div class="p-cat">Gourmet</div>
+
+            <div class="p-bottom">
+              <div class="p-price">IDR 7.190.000</div>
+              <a href="product-detail.html" class="p-view">VIEW</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="p-card">
+          <div class="p-img">
+            <img src="image/product/2.jpg" alt="Premium Turkish Tea">
+          </div>
+          <div class="p-body">
+            <div class="p-name">Premium Turkish Tea</div>
+            <div class="p-cat">Gourmet</div>
+
+            <div class="p-bottom">
+              <div class="p-price">IDR 7.190.000</div>
+              <a href="product-detail.html" class="p-view">VIEW</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="p-card">
+          <div class="p-img">
+            <img src="image/product/2.jpg" alt="Premium Turkish Tea">
+          </div>
+          <div class="p-body">
+            <div class="p-name">Premium Turkish Tea</div>
+            <div class="p-cat">Gourmet</div>
+
+            <div class="p-bottom">
+              <div class="p-price">IDR 7.190.000</div>
+              <a href="product-detail.html" class="p-view">VIEW</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Pagination -->
+    <section class="pagination-title section-space section-space-bottom">
+      <div class="pagination-range" id="productRange">View 1-15 From 0 Products</div>
+      <nav class="pager" id="productPager" aria-label="Product pagination"></nav>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="ott-footer">
+    <div class="footer-top">
+      <div class="container ott-container">
+        <div class="row g-4 align-items-start">
+          <div class="col-lg-4">
+            <div class="footer-title">THE OTTOMAN</div>
+            <p class="footer-p mt-3">
+              Inspired by the rich heritage of Turkey, The Ottoman curates timeless pieces that tell stories of
+              culture, craftsmanship, and beauty.
+            </p>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <div class="footer-head">Product</div>
+            <ul class="footer-list">
+              <li><a class="footer-link" href="#">Home & Living</a></li>
+              <li><a class="footer-link" href="#">Carpets & Rugs</a></li>
+              <li><a class="footer-link" href="#">Mosaic Lamps</a></li>
+              <li><a class="footer-link" href="#">Fashion & Textiles</a></li>
+              <li><a class="footer-link" href="#">Gourmet</a></li>
+              <li><a class="footer-link" href="#">Souvenirs & Gifts</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <div class="footer-head">Customer Care</div>
+            <ul class="footer-list">
+              <li><a class="footer-link" href="#">Contact Us</a></li>
+              <li><a class="footer-link" href="#">Shipping & Delivery</a></li>
+              <li><a class="footer-link" href="#">Returns & Exchanges</a></li>
+              <li><a class="footer-link" href="#">FAQ</a></li>
+              <li><a class="footer-link" href="#">Privacy Policy</a></li>
+              <li><a class="footer-link" href="#">Terms & Conditions</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <div class="footer-head">About</div>
+            <ul class="footer-list">
+              <li><a class="footer-link" href="#">Our Story</a></li>
+              <li><a class="footer-link" href="#">Authenticity Promise</a></li>
+              <li><a class="footer-link" href="#">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <div class="footer-head">Visit & Contact</div>
+            <div class="footer-contact">
+              <div>info@theottoman.com</div>
+              <div>BSD - Ruko Pasar Modern Timur 2</div>
+              <div>Lotte Mall Jakarta - 2F HomeLiving</div>
+            </div>
+
+            <div class="footer-icons mt-3">
+              <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+              <a href="#" aria-label="Email"><i class="far fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="container ott-container">
+        © 2026 The Ottoman. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Pagination -->
+  <script>
+  (() => {
+    const cardsAll = Array.from(document.querySelectorAll('.product-grid .p-card'));
+    const pager = document.getElementById('productPager');
+    const rangeEl = document.getElementById('productRange');
+
+    // Setting Pagination
+    const perPage = 15;
+    let currentPage = 1;
+
+    // State Filter
+    let activeCards = cardsAll.slice();
+    let currentQuery = '';
+    let currentCat = 'all';
+
+    const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
+
+    function totalPages() {
+      return Math.max(1, Math.ceil(activeCards.length / perPage));
+    }
+
+    function setRangeText() {
+      const total = activeCards.length;
+      if (total === 0) {
+        rangeEl.textContent = 'View 0-0 From 0 Products';
+        return;
+      }
+      const start = (currentPage - 1) * perPage + 1;
+      const end = Math.min(currentPage * perPage, total);
+      rangeEl.textContent = `View ${start} - ${end} From ${total} Products`;
+    }
+
+    function showPage(page) {
+      const pages = totalPages();
+      currentPage = clamp(page, 1, pages);
+
+      // Hide All
+      cardsAll.forEach(c => (c.style.display = 'none'));
+
+      // Show Sesuai Halaman
+      const startIdx = (currentPage - 1) * perPage;
+      const endIdx = startIdx + perPage;
+      activeCards.slice(startIdx, endIdx).forEach(c => (c.style.display = ''));
+
+      setRangeText();
+      renderPager();
+    }
+
+    function makeLink(label, opts = {}) {
+      const a = document.createElement('a');
+      a.href = '#';
+      a.className = 'pg' + (opts.active ? ' active' : '');
+      if (opts.ariaLabel) a.setAttribute('aria-label', opts.ariaLabel);
+      a.textContent = label;
+
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (opts.disabled) return;
+        opts.onClick?.();
+      });
+
+      return a;
+    }
+
+    function renderPager() {
+      pager.innerHTML = '';
+      const pages = totalPages();
+
+      pager.appendChild(makeLink('←', {
+        ariaLabel: 'Prev',
+        disabled: currentPage === 1,
+        onClick: () => showPage(currentPage - 1),
+      }));
+
+      for (let i = 1; i <= pages; i++) {
+        pager.appendChild(makeLink(String(i), {
+          active: i === currentPage,
+          onClick: () => showPage(i),
+        }));
+      }
+
+      pager.appendChild(makeLink('→', {
+        ariaLabel: 'Next',
+        disabled: currentPage === pages,
+        onClick: () => showPage(currentPage + 1),
+      }));
+    }
+
+    // Filter Logic (Search + Category) 
+    function applyFilters() {
+      const q = currentQuery.trim().toLowerCase();
+      const cat = (currentCat || 'all').toLowerCase();
+
+      activeCards = cardsAll.filter(card => {
+        const name = card.querySelector('.p-name')?.textContent?.toLowerCase() || '';
+        const ccat = card.querySelector('.p-cat')?.textContent?.toLowerCase() || '';
+
+        const matchSearch = (q === '') ? true : (name.includes(q) || ccat.includes(q));
+        const matchCat = (cat === 'all') ? true : (ccat === cat);
+
+        return matchSearch && matchCat;
+      });
+
+      showPage(1);
+    }
+
+    // Search Logic
+    const searchForm = document.querySelector('.product-search');
+    const searchInput = document.querySelector('.product-search-input');
+
+    if (searchForm && searchInput) {
+      searchForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        currentQuery = searchInput.value || '';
+        applyFilters();
+      });
+
+      // Realtime Search
+      searchInput.addEventListener('input', () => {
+        currentQuery = searchInput.value || '';
+        applyFilters();
+      });
+    }
+
+    // Category Dropdown 
+    const catMenu = document.getElementById('catMenu');
+    const catBtn = document.getElementById('catBtn');
+
+    if (catMenu) {
+      catMenu.addEventListener('click', (e) => {
+        const item = e.target.closest('[data-cat]');
+        if (!item) return;
+
+        e.preventDefault();
+        currentCat = item.dataset.cat || 'all';
+
+        // Text Tombol
+        // if (catBtn) {
+        //   catBtn.textContent = (currentCat === 'all') ? 'Category' : item.textContent.trim().toUpperCase();
+        // }
+        if (catBtn) {
+          catBtn.textContent = (currentCat === 'all')
+            ? 'Category'
+            : item.textContent.trim();
+        }
+
+        applyFilters();
+      });
+    }
+
+    // Initial
+    applyFilters();
+  })();
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
