@@ -1,143 +1,82 @@
-/* =========================================================
-   footer.css
-   Dipakai untuk: FOOTER (footer.html)
-   ========================================================= */
-
+/* Footer Wrapper*/
 .ott-footer {
-  background: var(--primary);
-  color: #fff;
   position: relative;
+  color: #fff;
   overflow: hidden;
 }
 
+/* Footer Background*/
+.footer-top {
+  background: var(--primary);
+  padding: 3.2rem 0 1.5rem;
+}
+
+/* Footer Overlay Texture*/
 .ott-footer::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, .10), rgba(0, 0, 0, .10)), url("https://images.unsplash.com/photo-1541414771459-08f80135b807?auto=format&fit=crop&w=2200&q=80");
+  background:
+    linear-gradient(0deg, rgba(0, 0, 0, .12), rgba(0, 0, 0, .12)),
+    url("https://images.unsplash.com/photo-1541414771459-08f80135b807?auto=format&fit=crop&w=2200&q=80");
   background-size: cover;
   background-position: center;
-  opacity: 0.16;
+  opacity: 0.10;
+  pointer-events: none;
 }
 
-.ott-footer .inner {
+/* Footer Content Layer*/
+.footer-top .ott-container {
   position: relative;
   z-index: 2;
 }
 
-.footer-title {
-  font-family: "Calistoga", serif;
-  font-size: 1.50rem;
-  letter-spacing: 0.8px;
-  margin-bottom: 0.6rem;
-}
-
-.footer-p {
-  font-size: 0.9rem;
-  opacity: 0.92;
-  line-height: 1.45;
-  margin: 0;
-  max-width: 340px;
-}
-
-.footer-head {
-  font-family: "Calistoga", serif;
-  margin-bottom: 0.55rem;
-  font-size: 1.05rem;
-}
-
-.footer-link {
-  display: block;
-  color: #fff;
-  opacity: 0.92;
-  text-decoration: none;
-  margin: 0.25rem 0;
-  font-size: 0.88rem;
-}
-
-.footer-link:hover {
-  opacity: 1;
-  text-decoration: underline;
-}
-
-.footer-icons a {
-  color: #fff;
-  font-size: 1.25rem;
-  margin-right: 0.75rem;
-  opacity: 0.95;
-}
-
-.footer-icons a:hover {
-  opacity: 1;
-}
-
-.footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, .18);
-  padding: 1rem 0;
-  margin-top: 1rem;
-  font-size: 0.85rem;
-  opacity: 0.95;
-  text-align: center;
-}
-
-/* ===== FOOTER WRAPPER ===== */
-.ott-footer {
-  color: #fff;
-}
-
-/* ===== TOP FOOTER AREA ===== */
-.footer-top {
-  background: var(--primary);
-  /* #8B1E1E */
-  padding: 3.5rem 0 3rem;
-  /* atas & bawah mirip screenshot */
-}
-
-/* matiin overlay background image kalau mau clean kayak screenshot */
-.ott-footer::before {
-  display: none !important;
-}
-
-/* Title / text */
+/* Footer Brand*/
 .footer-title {
   font-family: "Calistoga", serif;
   font-size: 2rem;
-  letter-spacing: .5px;
+  letter-spacing: .6px;
+  line-height: 1.1;
 }
 
 .footer-p {
+  margin: 0;
+  margin-top: .9rem;
   font-size: 1rem;
   line-height: 1.8;
-  max-width: 480px;
-  margin: 0;
   font-weight: 600;
   opacity: .95;
+  max-width: 420px;
+  text-align: left;
 }
 
-/* Column headings */
+
+/* Footer Head*/
 .footer-head {
   font-family: "Calistoga", serif;
   font-size: 1.35rem;
-  margin-bottom: .8rem;
+  margin-bottom: .85rem;
+  letter-spacing: .2px;
 }
 
-/* Bullet list */
+/* Footer List*/
 .footer-list {
-  padding-left: 1.1rem;
-  /* supaya bullet keliatan */
   margin: 0;
+  padding-left: 1.1rem; 
 }
 
 .footer-list li {
-  margin: .35rem 0;
+  margin: .38rem 0;
 }
 
-/* Links */
+/* Footer Link*/
 .footer-link {
   color: #fff;
   text-decoration: none;
-  opacity: .95;
+  font-size: .95rem;
   font-weight: 600;
+  opacity: .95;
+  transition: opacity .2s ease, transform .2s ease;
 }
 
 .footer-link:hover {
@@ -145,34 +84,90 @@
   text-decoration: underline;
 }
 
-/* Contact block */
+/* Footer Contact*/
 .footer-contact {
+  font-size: .95rem;
   font-weight: 600;
+  line-height: 1.85;
   opacity: .95;
-  line-height: 1.8;
-  font-size: 0.88rem;
 }
 
-/* Social icons kanan */
+/* Media Social Icon*/
+.footer-icons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
 .footer-icons a {
   color: #fff;
-  font-size: 1.6rem;
-  margin-right: .85rem;
+  font-size: 1.55rem;
   opacity: .95;
+  transition: transform .2s ease, opacity .2s ease;
 }
 
 .footer-icons a:hover {
   opacity: 1;
+  transform: translateY(-2px);
 }
 
-/* ===== BOTTOM STRIP ===== */
+/* Footer Bottom Bar*/
 .footer-bottom-bar {
+  position: relative;
+  z-index: 2;
   background: #7A1A1A;
-  /* sedikit lebih gelap */
-  font-family: "Calistoga", serif;
-  padding: 1.4rem 0;
-  /* tinggi strip bawah */
   text-align: center;
-  font-weight: 700;
+  padding: .90rem 0; 
+  font-family: "Calistoga", serif;
   font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Responsive*/
+@media (max-width: 991px) {
+  .footer-top {
+    padding: 2.4rem 0 2.1rem;
+  }
+
+  .footer-title {
+    font-size: 1.7rem;
+  }
+
+  .footer-head {
+    font-size: 1.15rem;
+  }
+
+  .footer-p {
+    font-size: .95rem;
+    max-width: 100%;
+  }
+
+  .footer-link,
+  .footer-contact {
+    font-size: .92rem;
+  }
+
+  .footer-icons a {
+    font-size: 1.35rem;
+  }
+
+  .footer-bottom-bar {
+    font-size: .95rem;
+    padding: 1rem 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .footer-title {
+    font-size: 1.55rem;
+  }
+
+  .footer-p {
+    line-height: 1.7;
+    text-align: justify;
+  }
+
+  .footer-icons {
+    gap: 12px;
+  }
 }
