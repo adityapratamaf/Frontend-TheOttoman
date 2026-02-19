@@ -1,42 +1,38 @@
-/* =========================================================
-   login.css
-   Dipakai untuk: login.html (MAIN ONLY)
-   Mengandalkan global.css untuk warna/btn (btn-ott, dll)
-   ========================================================= */
-
+/* Root Variables*/
 :root {
   --panelPad: 64px;
   --radius: 18px;
+}
+
+/* Base Structure*/
+html,
+body {
+  height: 100%;
 }
 
 body {
   font-family: "Viga", sans-serif;
 }
 
-html,
-body {
-  height: 100%;
-}
-
 .page-login {
   overflow: hidden;
-  /* stop scroll di body */
 }
 
-/* Shell */
+/* Login Page Wrapper*/
 .login-page {
   min-height: 100vh;
   background: #fff;
   overflow: hidden;
 }
 
+/* Login Shell*/
 .login-shell {
   height: 100%;
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
 }
 
-/* LEFT PATTERN */
+/* Panel Gambar*/
 .login-pattern {
   height: 100%;
   overflow: hidden;
@@ -45,22 +41,18 @@ body {
 .pattern-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  /* cover biar full, gak nyisa putih */
+  object-fit: cover; /* Cover biar full */
   display: block;
 }
 
-/* RIGHT PANEL */
+/* Panel Form*/
 .login-panel {
   height: 100%;
   min-height: 0;
   display: flex;
-  align-items: flex-start;
-  /* ✅ naik ke atas */
-  justify-content: center;
-  /* ✅ tetap center horizontal */
-  padding: 48px 15px 15px;
-  /* ✅ jarak dari atas (atur 32-80px sesuai selera) */
+  align-items: flex-start; /* Naik ke atas */
+  justify-content: center; /* Center horizontal */
+  padding: 48px 15px 15px; /* Jarak dari atas */
 }
 
 .login-inner {
@@ -69,10 +61,9 @@ body {
   max-height: 100%;
   overflow-y: auto;
   margin-top: 0px;
-  /* atur kalau mau lebih naik/turun */
 }
 
-/* Logo area */
+/* Logo Area*/
 .login-logo {
   display: flex;
   align-items: center;
@@ -99,7 +90,7 @@ body {
   font-size: .72rem;
 }
 
-/* Title */
+/* Title*/
 .login-title {
   font-family: "Calistoga", serif;
   color: var(--primary);
@@ -107,18 +98,16 @@ body {
   letter-spacing: 1px;
   text-transform: uppercase;
   margin: 1rem 0 1rem;
-  /* margin: 22px 0 18px; */
-  /* margin: 16px 0 12px; */
 }
 
-/* Label */
+/* Form Label*/
 .ott-label {
   color: var(--primary);
   font-weight: 900;
   margin-bottom: 8px;
 }
 
-/* Input with right icon */
+/* Input With Right Icon*/
 .ott-input {
   position: relative;
 }
@@ -134,6 +123,7 @@ body {
   box-shadow: 0 0 0 .12rem rgba(139, 30, 30, .12);
 }
 
+/* Input Icon (Email)*/
 .ott-input .icon {
   position: absolute;
   right: 12px;
@@ -144,6 +134,7 @@ body {
   pointer-events: none;
 }
 
+/* Toggle Password Button*/
 .ott-input .icon-btn {
   position: absolute;
   right: 8px;
@@ -157,6 +148,7 @@ body {
   border-radius: 10px;
 }
 
+/* Error Text*/
 .err-text {
   display: none;
   color: #b3261e;
@@ -164,7 +156,7 @@ body {
   margin-top: 6px;
 }
 
-/* Remember me */
+/* Remember Me*/
 .remember {
   font-weight: 900;
   color: #222;
@@ -177,10 +169,9 @@ body {
   accent-color: var(--primary);
 }
 
-/* Buttons */
+/* Action Buttons*/
 .btn-forgot {
   border-radius: 10px;
-  /* padding: .45rem .85rem; */
   font-weight: 900;
   letter-spacing: .6px;
 }
@@ -189,29 +180,26 @@ body {
   min-width: 120px;
 }
 
-/* Disabled style (biar kelihatan) */
+/* Disabled Login Button*/
 #btnLogin:disabled {
   opacity: .45;
   cursor: not-allowed;
   box-shadow: none;
 }
 
-/* Divider */
+/* Divider*/
 .login-divider {
   height: 1px;
   background: rgba(139, 30, 30, .18);
-  margin: 22px 0 18px;
   margin: 16px 0 14px;
-
 }
 
-/* Social buttons */
+/* Social Buttons*/
 .btn-social,
 .btn-register {
   border-radius: 999px;
   font-weight: 900;
   letter-spacing: .4px;
-  /* padding: .65rem 1rem; */
 }
 
 .btn-social {
@@ -221,6 +209,7 @@ body {
   gap: 10px;
 }
 
+/* Social Button Icon*/
 .gmark {
   width: 28px;
   height: 28px;
@@ -233,24 +222,22 @@ body {
   border: 2px solid rgba(139, 30, 30, .35);
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* Modal Responsive*/
+/* .modal-dialog {
+} */
+
+/* Tablet Responsive */
 @media (max-width: 991px) {
   .login-shell {
-    grid-template-columns: 1fr;
-  }
-
-  .login-pattern {
-    height: 320px;
+    grid-template-columns: 1.05fr 0.95fr;
   }
 
   .login-panel {
-    padding: 28px 16px;
+    padding: 40px 15px 15px;
   }
 
   .login-inner {
-    max-width: 620px;
+    max-width: 520px;
   }
 
   .modal-dialog {
@@ -262,9 +249,24 @@ body {
   }
 }
 
+/* Mobile Responsive*/
 @media (max-width: 575px) {
+  .login-shell {
+    grid-template-columns: 1fr;
+  }
+
   .login-pattern {
-    height: 260px;
+    display: none; 
+  }
+
+  .login-panel {
+    padding: 28px 16px;
+    align-items: flex-start;
+  }
+
+  .login-inner {
+    max-width: 520px;
+    overflow-y: visible; 
   }
 
   .login-title {
@@ -277,5 +279,38 @@ body {
 
   .ott-modal-btn {
     min-width: 180px;
+  }
+
+    /* Penyesuaian Tombol */
+  .login-page .d-flex.align-items-center.justify-content-between.mt-3 {
+    flex-direction: column;
+    align-items: stretch !important;
+    gap: 12px;
+  }
+
+  /* Remember Me Tetap Kiri */
+  .login-page .remember {
+    justify-content: flex-start;
+  }
+
+  /* Forgot & Login Jadi 1 Baris */
+  .login-action-row {
+    margin-top: 0 !important;    
+    display: flex;
+    gap: 10px;
+    width: 100%;
+  }
+
+  /* 2 Tombol Jadi 1 Baris */
+  .login-action-row .btn-forgot,
+  .login-action-row .btn-login {
+    flex: 1;
+    width: 100%;
+    white-space: nowrap;
+  }
+
+  .login-action-row .btn {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }

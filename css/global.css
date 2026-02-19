@@ -194,3 +194,20 @@
   background: var(--primary);
   color: #fff;
 }
+
+/* Mobile Responsive Global*/
+@media (max-width: 575px) {
+  /* Modal Mobile*/
+  .modal.show {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 16px !important;
+  }
+
+  .modal-dialog {
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 520px;
+  }
+}
