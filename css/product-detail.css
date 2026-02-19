@@ -358,24 +358,13 @@
 }
 
 /* =========================================================
-   BEST SELLER (ambil gaya index)
-   - margin-top best-head DIHAPUS, spacing via class section-space
+   BEST SELLER
    ========================================================= */
 .best-head {
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  margin: 0;
-  margin-top: var(--section-space);
-}
-
-.best-head .section-title {
-  margin: 0 0 1.0rem;
-}
-
-.product-grid-gap {
-  margin-top: 25px;
 }
 
 .best-head .explore-right {
@@ -386,7 +375,7 @@
 }
 
 .best-wrap {
-  padding: 0.6rem 0 0.2rem;
+  padding: 0.6rem 0;
 }
 
 .best-grid {
@@ -414,11 +403,17 @@
   min-width: 0;
   display: flex;
   gap: 28px;
-  justify-content: center;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   padding-inline: var(--arrowGap);
   scroll-padding-inline: var(--arrowGap);
+  justify-content: flex-start;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.best-scroll::-webkit-scrollbar {
+  display: none;
 }
 
 .best-scroll::-webkit-scrollbar {
@@ -432,7 +427,7 @@
 
 .best-card {
   min-width: 190px;
-  scroll-snap-align: center;
+  scroll-snap-align: start;
   text-align: center;
 }
 
@@ -456,7 +451,9 @@
 .best-card .n {
   font-weight: 900;
   font-size: 0.85rem;
-  margin: 0;
+  display: block;
+  max-width: 150px;
+  margin: 0 auto;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -480,7 +477,6 @@
   font-size: 0.72rem;
   border-radius: 8px;
 }
-
 
 /* =========================================================
    GLOBAL BOX-SIZING (optional, aman)

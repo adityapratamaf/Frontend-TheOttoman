@@ -338,7 +338,7 @@
 
     <!-- Pagination -->
     <section class="pagination-title section-space section-space-bottom">
-      <div class="pagination-range" id="blogRange">View 1-6 From 0 Blogs</div>
+      <div class="pagination-range" id="blogRange">View 1 - 6 From 0 Blogs</div>
       <nav class="pager" id="blogPager" aria-label="Blog pagination"></nav>
     </section>
 
@@ -444,12 +444,12 @@
       if(!rangeEl) return;
 
       if(total === 0){
-        rangeEl.textContent = 'View 0-0 From 0 Blogs';
+        rangeEl.textContent = 'View 0 - 0 From 0 Blogs';
         return;
       }
       const start = (currentPage - 1) * perPage + 1;
       const end = Math.min(currentPage * perPage, total);
-      rangeEl.textContent = `View ${start}-${end} From ${total} Blogs`;
+      rangeEl.textContent = `View ${start} - ${end} From ${total} Blogs`;
     }
 
     function showPage(page){

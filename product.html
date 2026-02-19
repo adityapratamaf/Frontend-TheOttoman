@@ -369,7 +369,7 @@
 
     <!-- Pagination -->
     <section class="pagination-title section-space section-space-bottom">
-      <div class="pagination-range" id="productRange">View 1-15 From 0 Products</div>
+      <div class="pagination-range" id="productRange">View 1 - 15 From 0 Products</div>
       <nav class="pager" id="productPager" aria-label="Product pagination"></nav>
     </section>
   </main>
@@ -471,7 +471,7 @@
     function setRangeText() {
       const total = activeCards.length;
       if (total === 0) {
-        rangeEl.textContent = 'View 0-0 From 0 Products';
+        rangeEl.textContent = 'View 0 - 0 From 0 Products';
         return;
       }
       const start = (currentPage - 1) * perPage + 1;

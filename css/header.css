@@ -3,7 +3,7 @@
    Dipakai untuk: GLOBAL TOKEN, TYPOGRAPHY, BUTTON, NAVBAR
    ========================================================= */
 
-/* === Global Theme Tokens (dipakai semua halaman) === */
+/* === Global Theme Tokens === */
 :root {
     --primary: #8B1E1E;
     /* warna utama */
@@ -21,7 +21,7 @@
     --arrowGap: 14px;
 }
 
-/* === Base Typography (global) === */
+/* === Base Typography === */
 body {
     background: var(--cream);
     color: var(--text);
@@ -39,7 +39,7 @@ h6 {
     letter-spacing: 0.3px;
 }
 
-/* === Layout Container (dipakai semua halaman) === */
+/* === Layout === */
 .ott-container {
     max-width: 1440px;
     padding-left: 50px !important;
@@ -59,7 +59,7 @@ h6 {
     border-color: rgba(139, 30, 30, .35) !important;
 }
 
-/* === Buttons (dipakai semua halaman) === */
+/* === Buttons === */
 .btn-ott {
     background: var(--primary);
     border: 1px solid var(--primary);
@@ -96,7 +96,7 @@ h6 {
     color: #fff;
 }
 
-/* === NAVBAR (header.html / navbar section) === */
+/* === Navbar === */
 .ott-navbar {
     background: #fff;
     border-bottom: 1px solid rgba(0, 0, 0, .05);
@@ -104,7 +104,7 @@ h6 {
 
 .ott-navlink {
     color: var(--primary) !important;
-    font-weight: 800;
+    font-weight: 1000;
     text-transform: capitalize;
 }
 
@@ -124,7 +124,7 @@ h6 {
     font-size: 1.1rem;
 }
 
-/* === Responsive global tweaks (mobile/tablet) === */
+/* === Responsive === */
 @media (max-width: 991px) {
     .brand-center {
         font-size: 1.35rem;
