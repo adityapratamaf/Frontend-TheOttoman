@@ -1,364 +1,310 @@
-// =======================================
-// E-COMMERCE DB (DBML for dbdiagram.io)
-// Includes: product, category, invoice, social_media, blog, testimoni, cart, order, user
-// Features:
-// - 1 product -> many images
-// - Order can use another shipping address (snapshot)
-// - Default address comes from user_addresses.is_default
-// - Metadata fields included
-// =======================================
-
-Table users {
-  id bigint [pk, increment]
-  full_name varchar(150) [not null]
-  email varchar(150) [not null, unique]
-  phone varchar(30)
-  password_hash varchar(255) [not null]
-  is_active boolean [not null, default: true]
-  last_login_at datetime
-  created_at datetime [not null]
-  updated_at datetime [not null]
-  deleted_at datetime
+// =========================
+// ENUMS
+// =========================
+Enum category_type {
+  normal
+  makanan
 }
 
-Table user_addresses {
-  id bigint [pk, increment]
-  user_id bigint [not null]
-  label varchar(50)
-  recipient_name varchar(150)
-  recipient_email varchar(150)
-  recipient_phone varchar(30)
-  province varchar(100) [not null]
-  city varchar(100) [not null]
-  district varchar(100) [not null]
-  sub_district varchar(100) [not null]
-  postal_code varchar(20) [not null]
-  address_line text [not null]
-  is_default boolean [not null, default: false]
-  created_at datetime [not null]
-  updated_at datetime [not null]
-  deleted_at datetime
-
-  Indexes {
-    (user_id)
-    (user_id, is_default)
-  }
+Enum order_status {
+  pending
+  paid
+  shipped
+  completed
+  cancelled
 }
 
+Enum invoice_status {
+  unpaid
+  paid
+  expired
+}
+
+Enum payment_type {
+  Mandiri
+  BNI
+  BCA
+}
+
+// =========================
+// CORE CATALOG
+// =========================
 Table categories {
   id bigint [pk, increment]
-  parent_id bigint
-  name varchar(120) [not null]
-  slug varchar(150) [not null, unique]
+  name varchar
+  slug varchar [unique]
   description text
-  is_active boolean [not null, default: true]
-  created_at datetime [not null]
-  updated_at datetime [not null]
-  deleted_at datetime
-  Indexes {
-    (parent_id)
-  }
+  type category_type [default: 'normal']
+  created_at datetime
+  updated_at datetime
 }
 
 Table products {
   id bigint [pk, increment]
   category_id bigint [not null]
-  sku varchar(80) [not null, unique]
-  name varchar(200) [not null]
-  slug varchar(220) [not null, unique]
+  name varchar
+  slug varchar [unique]
   description text
-  price decimal(18,2) [not null]
-  cost_price decimal(18,2)
-  stock_qty int [not null, default: 0]
-  weight_gram int
-  status varchar(20) [not null, default: 'active', note: 'draft|active|inactive']
-  created_at datetime [not null]
-  updated_at datetime [not null]
-  deleted_at datetime
+  base_price decimal(12,2)
+  is_active boolean [default: true]
+  created_at datetime
+  updated_at datetime
+
   Indexes {
-    (category_id)
-    (slug)
+    category_id
   }
 }
 
 Table product_images {
   id bigint [pk, increment]
   product_id bigint [not null]
-
-  image_url text [not null]
-  alt_text varchar(200)
-  is_primary boolean [not null, default: false]
-  sort_order int [not null, default: 0]
-
-  created_at datetime [not null]
-  updated_at datetime [not null]
-  deleted_at datetime
+  image_url varchar
+  is_primary boolean [default: false]
 
   Indexes {
-    (product_id)
-    (product_id, is_primary)
+    product_id
   }
 }
 
-Table carts {
+Table product_motifs {
   id bigint [pk, increment]
-  user_id bigint [not null]
-
-  status varchar(20) [not null, default: 'active', note: 'active|checked_out|abandoned']
-
-  created_at datetime [not null]
-  updated_at datetime [not null]
+  product_id bigint [not null]
+  name varchar
+  additional_price decimal(12,2) [default: 0]
 
   Indexes {
-    (user_id)
-    (status)
+    product_id
   }
+}
+
+Table product_motif_images {
+  id bigint [pk, increment]
+  product_motif_id bigint [not null]
+  image_url varchar
+  is_primary boolean [default: false]
+
+  Indexes {
+    product_motif_id
+  }
+}
+
+Table product_sizes {
+  id bigint [pk, increment]
+  product_id bigint [not null]
+  name varchar 
+  additional_price decimal(12,2) [default: 0]
+  stock int [default: 0]
+
+  Indexes {
+    product_id
+  }
+}
+
+// =========================
+// USERS & ADDRESS
+// =========================
+Table users {
+  id bigint [pk, increment]
+  name varchar
+  email varchar [unique]
+  password varchar
+  phone varchar
+  created_at datetime
+  updated_at datetime
+}
+
+Table addresses {
+  id bigint [pk, increment]
+  user_id bigint [not null]
+  recipient_name varchar
+  phone varchar
+  address_detail text
+  city varchar
+  province varchar
+  postal_code varchar
+  is_primary boolean [default: true]
+  created_at datetime
+  updated_at datetime
+
+  Indexes {
+    user_id
+    (user_id, is_primary)
+  }
+
+  Note: 'Pastikan hanya 1 address primary per user. Implement via partial unique index (user_id) WHERE is_primary=true (di PostgreSQL) atau logic di app/trigger.'
+}
+
+// =========================
+// CART
+// =========================
+Table carts {
+  id bigint [pk, increment]
+  user_id bigint [not null, unique] // 1 user 1 cart aktif
+  created_at datetime
+  updated_at datetime
 }
 
 Table cart_items {
   id bigint [pk, increment]
   cart_id bigint [not null]
   product_id bigint [not null]
-
-  qty int [not null, default: 1]
-  price_snapshot decimal(18,2) [note: 'optional snapshot price when added to cart']
-
-  created_at datetime [not null]
-  updated_at datetime [not null]
+  motif_id bigint
+  size_id bigint
+  quantity int [not null, default: 1]
+  unit_price decimal(12,2) [not null]
+  subtotal decimal(12,2) [not null]
 
   Indexes {
-    (cart_id)
-    (product_id)
-    (cart_id, product_id)
+    cart_id
+    product_id
+    motif_id
+    size_id
   }
 }
 
+// =========================
+// PAYMENT METHOD
+// =========================
+Table payment_methods {
+  id bigint [pk, increment]
+  name varchar
+  type payment_type
+  account_number varchar
+  account_name varchar
+  is_active boolean [default: true]
+  created_at datetime
+  updated_at datetime
+}
+
+// =========================
+// ORDER & INVOICE
+// =========================
 Table orders {
   id bigint [pk, increment]
   user_id bigint [not null]
+  payment_method_id bigint
 
-  order_no varchar(50) [not null, unique]
-  order_date datetime [not null]
+  order_number varchar [unique]
 
-  status varchar(20) [not null, default: 'pending', note: 'pending|paid|packed|shipped|delivered|cancelled|refunded']
-  payment_method varchar(80)
-  currency char(3) [not null, default: 'IDR']
+  // shipping snapshot (bisa alamat lain)
+  shipping_name varchar
+  shipping_phone varchar
+  shipping_address text
+  shipping_city varchar
+  shipping_province varchar
+  shipping_postal_code varchar
 
-  subtotal decimal(18,2) [not null, default: 0]
-  discount_total decimal(18,2) [not null, default: 0]
-  shipping_cost decimal(18,2) [not null, default: 0]
-  tax_total decimal(18,2) [not null, default: 0]
-  grand_total decimal(18,2) [not null, default: 0]
+  total_amount decimal(12,2) [not null, default: 0]
+  shipping_cost decimal(12,2) [not null, default: 0]
+  status order_status [default: 'pending']
 
-  note_shipping text
-
-  // reference to the chosen default address at checkout (optional)
-  default_address_id bigint [note: 'FK to user_addresses; default taken from user_addresses.is_default']
-
-  created_at datetime [not null]
-  updated_at datetime [not null]
-  deleted_at datetime
+  created_at datetime
+  updated_at datetime
 
   Indexes {
-    (user_id)
-    (order_no)
-    (status)
-    (default_address_id)
+    user_id
+    payment_method_id
   }
-}
-
-Table order_addresses {
-  id bigint [pk, increment]
-  order_id bigint [not null, unique, note: '1 order = 1 shipping address snapshot']
-
-  recipient_name varchar(150) [not null]
-  recipient_email varchar(150)
-  recipient_phone varchar(30)
-
-  province varchar(100) [not null]
-  city varchar(100) [not null]
-  district varchar(100) [not null]
-  sub_district varchar(100) [not null]
-  postal_code varchar(20) [not null]
-  address_line text [not null]
-
-  created_at datetime [not null]
-  updated_at datetime [not null]
 }
 
 Table order_items {
   id bigint [pk, increment]
   order_id bigint [not null]
   product_id bigint [not null]
+  motif_id bigint
+  size_id bigint
 
-  product_name_snapshot varchar(200) [not null]
-  product_detail_snapshot varchar(200) [note: 'e.g., Turkey, variant, note']
+  // qty vs gram:
+  quantity int [default: 1] // untuk non makanan
+  weight_in_gram int // untuk makanan (nullable)
 
-  qty int [not null, default: 1]
-  price_unit decimal(18,2) [not null, default: 0]
-  price_total decimal(18,2) [not null, default: 0]
-
-  created_at datetime [not null]
-  updated_at datetime [not null]
+  unit_price decimal(12,2) [not null]
+  subtotal decimal(12,2) [not null]
 
   Indexes {
-    (order_id)
-    (product_id)
-    (order_id, product_id)
+    order_id
+    product_id
+    motif_id
+    size_id
   }
+
+  Note: 'Jika category.type=makanan, gunakan weight_in_gram untuk hitung subtotal (mis: price_per_gram * weight_in_gram).'
 }
 
 Table invoices {
   id bigint [pk, increment]
-  order_id bigint [not null, unique]
-
-  invoice_no varchar(50) [not null, unique]
-  transaction_id varchar(60) [not null, unique]
-
-  issued_at datetime [not null]
-  status varchar(20) [not null, default: 'unpaid', note: 'unpaid|paid|void']
-  paid_at datetime
-
-  total_amount decimal(18,2) [not null, default: 0]
-
-  created_at datetime [not null]
-  updated_at datetime [not null]
-
-  Indexes {
-    (order_id)
-    (transaction_id)
-  }
+  order_id bigint [not null, unique] // 1 order 1 invoice
+  invoice_number varchar [unique]
+  invoice_date datetime
+  due_date datetime
+  total_amount decimal(12,2) [not null]
+  status invoice_status [default: 'unpaid']
+  created_at datetime
+  updated_at datetime
 }
 
-// BLOG
-Table blog_categories {
+// =========================
+// CMS: GALLERY, BLOG, ABOUT
+// =========================
+Table galleries {
   id bigint [pk, increment]
-  name varchar(120) [not null]
-  slug varchar(150) [not null, unique]
-
-  created_at datetime [not null]
-  updated_at datetime [not null]
-  deleted_at datetime
+  title varchar
+  image_url varchar
+  description text
+  created_at datetime
+  updated_at datetime
 }
 
-Table blog_posts {
+Table blogs {
   id bigint [pk, increment]
-  author_user_id bigint [not null]
-
-  title varchar(200) [not null]
-  slug varchar(220) [not null, unique]
-  content text [not null]
-  cover_image_url text
-
-  status varchar(20) [not null, default: 'draft', note: 'draft|published|archived']
-  published_at datetime
-
-  created_at datetime [not null]
-  updated_at datetime [not null]
-  deleted_at datetime
-
-  Indexes {
-    (author_user_id)
-    (slug)
-    (status)
-  }
+  title varchar
+  slug varchar [unique]
+  thumbnail varchar
+  content text
+  author varchar
+  is_published boolean [default: false]
+  created_at datetime
+  updated_at datetime
 }
 
-// Many-to-many blog_posts <-> blog_categories
-Table blog_post_categories {
-  post_id bigint [not null]
-  category_id bigint [not null]
-
-  created_at datetime [not null]
-
-  Indexes {
-    (post_id, category_id) [unique]
-    (category_id)
-  }
-}
-
-// SOCIAL MEDIA
-Table social_media_accounts {
+Table about {
   id bigint [pk, increment]
-  platform varchar(50) [not null] // Instagram, TikTok, YouTube, etc
-  base_url varchar(200)
-  icon_url text
+  title varchar
+  content text
+  vision text
+  mission text
+  updated_at datetime
 
-  created_at datetime [not null]
-  updated_at datetime [not null]
-  deleted_at datetime
+  Note: 'Biasanya hanya 1 row.'
 }
 
-Table social_media_links {
-  id bigint [pk, increment]
-  account_id bigint [not null]
-
-  display_name varchar(120) [not null]
-  url text [not null]
-  is_active boolean [not null, default: true]
-  sort_order int [not null, default: 0]
-
-  created_at datetime [not null]
-  updated_at datetime [not null]
-  deleted_at datetime
-
-  Indexes {
-    (account_id)
-    (is_active)
-  }
-}
-
-// TESTIMONIAL
-Table testimonials {
-  id bigint [pk, increment]
-  user_id bigint
-  product_id bigint
-
-  rating int [not null, note: '1-5']
-  title varchar(150)
-  content text [not null]
-  is_approved boolean [not null, default: false]
-
-  created_at datetime [not null]
-  updated_at datetime [not null]
-  deleted_at datetime
-
-  Indexes {
-    (product_id)
-    (user_id)
-    (is_approved)
-  }
-}
-
-
-// =====================
-// RELATIONSHIPS (FK)
-// =====================
-
-Ref: user_addresses.user_id > users.id
-Ref: categories.parent_id > categories.id
-
+// =========================
+// RELATIONSHIPS (Refs)
+// =========================
 Ref: products.category_id > categories.id
+
 Ref: product_images.product_id > products.id
+
+Ref: product_motifs.product_id > products.id
+Ref: product_motif_images.product_motif_id > product_motifs.id
+
+Ref: product_sizes.product_id > products.id
+
+Ref: addresses.user_id > users.id
 
 Ref: carts.user_id > users.id
 Ref: cart_items.cart_id > carts.id
 Ref: cart_items.product_id > products.id
+Ref: cart_items.motif_id > product_motifs.id
+Ref: cart_items.size_id > product_sizes.id
 
 Ref: orders.user_id > users.id
-Ref: orders.default_address_id > user_addresses.id
+Ref: orders.payment_method_id > payment_methods.id
 
-Ref: order_addresses.order_id > orders.id
 Ref: order_items.order_id > orders.id
 Ref: order_items.product_id > products.id
+Ref: order_items.motif_id > product_motifs.id
+Ref: order_items.size_id > product_sizes.id
 
 Ref: invoices.order_id > orders.id
-
-Ref: blog_posts.author_user_id > users.id
-Ref: blog_post_categories.post_id > blog_posts.id
-Ref: blog_post_categories.category_id > blog_categories.id
-
-Ref: social_media_links.account_id > social_media_accounts.id
-
-Ref: testimonials.user_id > users.id
-Ref: testimonials.product_id > products.id
+ 

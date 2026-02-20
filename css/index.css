@@ -463,9 +463,6 @@
 
 .best-scroll::-webkit-scrollbar {
   display: none;
-}
-
-.best-scroll::-webkit-scrollbar {
   height: 8px;
 }
 

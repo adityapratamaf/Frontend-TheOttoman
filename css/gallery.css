@@ -1,0 +1,249 @@
+/* =========================================================
+   gallery.css
+   Dipakai untuk: gallery.html (MAIN ONLY)
+   Style konsisten: Calistoga (judul) + Viga (isi)
+   ========================================================= */
+
+.gallery-page{
+  font-family: "Viga", sans-serif;
+}
+
+/* Title */
+.gallery-title{
+  font-family: "Calistoga", serif;
+  color: var(--primary);
+  text-align: center;
+  letter-spacing: 1px;
+  margin: 1rem 0 1.2rem;
+  font-size: 2.05rem;
+  text-transform: uppercase;
+}
+
+/* Bar */
+.gallery-bar{
+  border: 1.8px solid rgba(139, 30, 30, .22);
+  border-radius: 12px;
+  padding: 14px 16px;
+  background: #fff;
+}
+
+.gallery-note{
+  color: #222;
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
+/* Grid wrap */
+.gallery-grid-wrap{
+  /* spacing pakai global: .section-space */
+}
+
+/* GRID 4 kolom desktop */
+.gallery-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+/* Card */
+.gcard{
+  border: 0;
+  padding: 0;
+  background: transparent;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  transform: translateY(10px);
+  opacity: 0;
+  transition: transform .35s ease, opacity .35s ease, box-shadow .25s ease;
+  transition-delay: var(--d, 0ms);
+  cursor: pointer;
+}
+
+.gcard.is-in{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.gthumb{
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f6f6f6;
+  border: 2px solid rgba(139, 30, 30, .22);
+  box-shadow: 0 12px 26px rgba(0,0,0,.08);
+  /* FIX ukuran card */
+  width: 100%;
+  aspect-ratio: 1 / 1;     /* ✅ kotak fix (1:1). Kalau mau 4:3 ubah ke 4/3 */
+}
+
+/* tinggi konsisten (simple, premium) */
+.gthumb img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;       /* ✅ kecil jadi ke-cover full */
+  object-position: center; /* ✅ fokus tengah */
+  transform: scale(1.01);
+  transition: transform .35s ease, filter .35s ease;
+}
+
+/* sedikit variasi (tetap simple) */
+/* .gcard.is-tall .gthumb img{ height: 260px; }
+.gcard.is-wide .gthumb img{ height: 210px; } */
+
+.gcard.is-tall .gthumb img,
+.gcard.is-wide .gthumb img{
+  height: 100%;
+}
+
+/* hover */
+.gcard:hover .gthumb img{
+  transform: scale(1.06);
+  filter: saturate(1.05);
+}
+.gcard:hover{
+  box-shadow: 0 18px 36px rgba(0,0,0,.12);
+}
+
+/* shine overlay tipis */
+.gshine{
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(400px 180px at 15% 10%, rgba(255,255,255,.25), rgba(255,255,255,0) 55%);
+  opacity: 0;
+  transition: opacity .25s ease;
+  pointer-events: none;
+}
+.gcard:hover .gshine{ opacity: 1; }
+
+/* =========================================================
+   FULLSCREEN MODAL (Custom)
+   ========================================================= */
+
+.no-scroll{ overflow: hidden; }
+
+.gmodal{
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+}
+
+.gmodal.is-open{
+  display: block;
+}
+
+.gmodal-backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.72);
+  animation: gfade .22s ease both;
+}
+
+.gmodal-dialog{
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 70px 1fr 70px;
+  align-items: center;
+  padding: 24px;
+}
+
+.gmodal-figure{
+  margin: 0;
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  animation: gpop .24s ease both;
+}
+
+.gmodal-img{
+  max-width: min(1200px, 92vw);
+  max-height: 78vh;
+  width: auto;
+  height: auto;
+  border-radius: 14px;
+  border: 2px solid rgba(255,255,255,.14);
+  box-shadow: 0 20px 60px rgba(0,0,0,.35);
+  background: #111;
+  animation: imgIn .25s ease both;
+}
+
+.gmodal-caption{
+  color: rgba(255,255,255,.9);
+  font-weight: 800;
+  letter-spacing: .4px;
+  text-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+.gmodal-close{
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(20,20,20,.45);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(6px);
+}
+
+.gmodal-close:hover{
+  background: rgba(20,20,20,.65);
+}
+
+.gmodal-nav{
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(20,20,20,.45);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(6px);
+}
+
+.gmodal-nav:hover{
+  background: rgba(20,20,20,.65);
+}
+
+/* Responsive */
+@media (max-width: 991px){
+  .gallery-grid{ grid-template-columns: repeat(2, 1fr); }
+  .gthumb img{ height: 220px; }
+}
+
+@media (max-width: 575px){
+  .gallery-title{ font-size: 1.7rem; }
+  .gallery-grid{ grid-template-columns: 1fr; }
+  .gthumb img{ height: 260px; }
+
+  .gmodal-dialog{
+    grid-template-columns: 52px 1fr 52px;
+    padding: 16px;
+  }
+  .gmodal-img{
+    max-width: 92vw;
+    max-height: 72vh;
+  }
+}
+
+/* Animations */
+@keyframes gfade{
+  from{ opacity: 0; }
+  to{ opacity: 1; }
+}
+@keyframes gpop{
+  from{ transform: translateY(10px); opacity: 0; }
+  to{ transform: translateY(0); opacity: 1; }
+}
+@keyframes imgIn{
+  from{ transform: scale(.98); opacity: .0; }
+  to{ transform: scale(1); opacity: 1; }
+}

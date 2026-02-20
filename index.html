@@ -21,72 +21,51 @@
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/index.css">
 </head>
+
 <body>
-
-  <!-- Navbar -->
-  <!-- <nav class="navbar navbar-expand-lg ott-navbar py-2">
-    <div class="container ott-container">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-        <img src="image/logo/1.png" alt="Logo" style="width:40px;height:40px;border-radius:8px;">
-      </a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#ottNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="ottNav">
-        <ul class="navbar-nav mx-auto align-items-lg-center gap-lg-3">
-          <li class="nav-item"><a class="nav-link ott-navlink" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link ott-navlink" href="about.html">About</a></li>
-          <li class="nav-item d-none d-lg-block">
-            <span class="brand-center">THE OTTOMAN</span>
-          </li>
-          <li class="nav-item"><a class="nav-link ott-navlink" href="product.html">Product</a></li>
-          <li class="nav-item"><a class="nav-link ott-navlink" href="blog.html">Blog</a></li>
-        </ul>
-
-        <div class="d-flex align-items-center gap-3 justify-content-lg-end">
-          <a class="icon-btn" href="cart.html" aria-label="Cart"><i class="fas fa-shopping-cart"></i></a>
-          <a class="icon-btn" href="profile.html" aria-label="User"><i class="fas fa-user"></i></a>
-          <a class="icon-btn" href="login.html" aria-label="Logout"><i class="fas fa-sign-out-alt"></i></a>
-        </div>
-      </div>
-    </div>
-  </nav> -->
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg ott-navbar py-2">
     <div class="container ott-container">
 
-      <!-- <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-        <img src="image/logo/1.png" alt="Logo" style="width:40px;height:40px;border-radius:8px;">
-      </a> -->
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#ottNav">
+      <!-- Mobile : Menu (Kiri) -->
+      <button class="navbar-toggler ott-toggler me-2 d-lg-none" type="button" data-bs-toggle="collapse"
+        data-bs-target="#ottNav" aria-controls="ottNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="ottNav">
-        <ul class="navbar-nav mx-auto align-items-lg-center gap-lg-3">
+      <!-- Mobile : Logo (After Menu) -->
+      <a class="navbar-brand ott-brand d-flex align-items-center d-lg-none" href="index.html" aria-label="Home">
+        <img src="image/logo/1.png" alt="Logo" class="ott-logo">
+      </a>
+
+      <!-- Desktop + Mobile : Icons (Kanan) -->
+      <div class="ott-icons d-flex align-items-center gap-4 ms-auto ms-lg-0 order-lg-3">
+        <a class="icon-btn" href="cart.html" aria-label="Cart"><i class="fas fa-shopping-cart"></i></a>
+        <a class="icon-btn" href="profile.html" aria-label="User"><i class="fas fa-user"></i></a>
+        <a class="icon-btn" href="login.html" aria-label="Logout"><i class="fas fa-sign-out-alt"></i></a>
+      </div>
+
+      <!-- Menu : Desktop View Normal, Mobile Collapse -->
+      <div class="collapse navbar-collapse order-lg-2" id="ottNav">
+        <ul class="navbar-nav mx-auto align-items-lg-center gap-lg-5 ott-menu">
+
           <li class="nav-item"><a class="nav-link ott-navlink" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link ott-navlink" href="about.html">About</a></li>
 
+          <!-- Desktop : Logo Center -->
           <li class="nav-item d-none d-lg-block">
             <a class="nav-link p-0" href="index.html" aria-label="Home">
-              <img src="image/logo/1.png" alt="Logo" style="width:50px;height:auto;">
+              <img src="image/logo/1.png" alt="Logo" style="width:auto;height:50px;">
             </a>
           </li>
 
           <li class="nav-item"><a class="nav-link ott-navlink" href="product.html">Product</a></li>
           <li class="nav-item"><a class="nav-link ott-navlink" href="blog.html">Blog</a></li>
-        </ul>
 
-        <div class="d-flex align-items-center gap-3 justify-content-lg-end">
-          <a class="icon-btn" href="cart.html" aria-label="Cart"><i class="fas fa-shopping-cart"></i></a>
-          <a class="icon-btn" href="profile.html" aria-label="User"><i class="fas fa-user"></i></a>
-          <a class="icon-btn" href="login.html" aria-label="Logout"><i class="fas fa-sign-out-alt"></i></a>
-        </div>
+        </ul>
       </div>
+
     </div>
   </nav>
 
@@ -96,8 +75,9 @@
       <h1 class="hero-title">Authentic Turkish Living, Timelessly Crafted</h1>
       <p class="hero-sub">Original home living pieces sourced directly from Turkey</p>
       <div class="hero-actions">
-        <a href="#" class="btn btn-ott-white-outline btn-sm">CONTACT US</a>
-        <a href="#" class="btn btn-ott btn-sm">SHOP NOW</a>
+        <a href="https://wa.me/6281234567890" target="_blank" rel="noopener"
+          class="btn btn-ott-white-outline btn-sm">CONTACT US</a>
+        <a href="product.html" class="btn btn-ott btn-sm">SHOP NOW</a>
       </div>
     </div>
 
@@ -652,90 +632,90 @@
 
   <!-- Hero Corousel -->
   <script>
-  (function () {
-    const hero = document.querySelector("[data-hero]");
-    if (!hero) return;
+    (function () {
+      const hero = document.querySelector("[data-hero]");
+      if (!hero) return;
 
-    const dotsWrap = hero.querySelector(".hero-dots");
-    if (!dotsWrap) return;
+      const dotsWrap = hero.querySelector(".hero-dots");
+      if (!dotsWrap) return;
 
-    const images = [
-      "../image/hero/1.jpg",
-      "../image/hero/2.jpg",
-      "../image/hero/3.jpg",
-      "../image/hero/4.jpg",
-      "../image/hero/5.jpg",
-      "../image/hero/6.jpg",
-      "../image/hero/7.jpg",
-      "../image/hero/8.jpg"
-    ];
+      const images = [
+        "../image/hero/1.jpg",
+        "../image/hero/2.jpg",
+        "../image/hero/3.jpg",
+        "../image/hero/4.jpg",
+        "../image/hero/5.jpg",
+        "../image/hero/6.jpg",
+        "../image/hero/7.jpg",
+        "../image/hero/8.jpg"
+      ];
 
-    let index = 0;
-    let timer = null;
+      let index = 0;
+      let timer = null;
 
-    function setHeroBackground(src) {
-      // bikin 2 layer biar bener-bener fade tanpa ganggu layout
-      // hero.style.setProperty("--hero-bg", `url('${src}')`);
-      hero.style.setProperty("--hero-image", `url('${images[index]}')`);
-    }
+      function setHeroBackground(src) {
+        // bikin 2 layer biar bener-bener fade tanpa ganggu layout
+        // hero.style.setProperty("--hero-bg", `url('${src}')`);
+        hero.style.setProperty("--hero-image", `url('${images[index]}')`);
+      }
 
-    function renderDots() {
-      dotsWrap.innerHTML = images.map((_, i) => `
+      function renderDots() {
+        dotsWrap.innerHTML = images.map((_, i) => `
         <button class="hero-dot ${i === 0 ? "is-active" : ""}" type="button"
           aria-label="Go to slide ${i + 1}" data-idx="${i}"></button>
       `).join("");
-    }
+      }
 
-    function setActiveDot(i) {
-      dotsWrap.querySelectorAll(".hero-dot").forEach((d, k) => {
-        d.classList.toggle("is-active", k === i);
+      function setActiveDot(i) {
+        dotsWrap.querySelectorAll(".hero-dot").forEach((d, k) => {
+          d.classList.toggle("is-active", k === i);
+        });
+      }
+
+      function goTo(i) {
+        index = (i + images.length) % images.length;
+
+        hero.classList.add("is-fading");
+        hero.style.setProperty("--hero-image", `url('${images[index]}')`);
+        setActiveDot(index);
+
+        clearTimeout(hero._fadeTO);
+        hero._fadeTO = setTimeout(() => hero.classList.remove("is-fading"), 480);
+      }
+
+      function startAuto() {
+        stopAuto();
+        timer = window.setInterval(() => {
+          goTo(index + 1);
+        }, 10000); // Waktu Ganti 10 Detik
+      }
+
+      function stopAuto() {
+        if (timer) window.clearInterval(timer);
+        timer = null;
+      }
+
+      renderDots();
+      goTo(0);
+      startAuto();
+
+      // Click Dots
+      dotsWrap.addEventListener("click", (e) => {
+        const btn = e.target.closest(".hero-dot");
+        if (!btn) return;
+        const i = Number(btn.dataset.idx);
+        goTo(i);
+        startAuto(); // Reset Timer
       });
-    }
 
-    function goTo(i) {
-      index = (i + images.length) % images.length;
-
-      hero.classList.add("is-fading");
-      hero.style.setProperty("--hero-image", `url('${images[index]}')`);
-      setActiveDot(index);
-
-      clearTimeout(hero._fadeTO);
-      hero._fadeTO = setTimeout(() => hero.classList.remove("is-fading"), 480);
-    }
-
-    function startAuto() {
-      stopAuto();
-      timer = window.setInterval(() => {
-        goTo(index + 1);
-      }, 10000); // Waktu Ganti 10 Detik
-    }
-
-    function stopAuto() {
-      if (timer) window.clearInterval(timer);
-      timer = null;
-    }
-
-    renderDots();
-    goTo(0);
-    startAuto();
-
-    // Click Dots
-    dotsWrap.addEventListener("click", (e) => {
-      const btn = e.target.closest(".hero-dot");
-      if (!btn) return;
-      const i = Number(btn.dataset.idx);
-      goTo(i);
-      startAuto(); // Reset Timer
-    });
-
-    // Pause Auto Saat User Hover (Desktop)
-    hero.addEventListener("mouseenter", stopAuto);
-    hero.addEventListener("mouseleave", startAuto);
-    document.addEventListener("visibilitychange", () => {
-      if (document.hidden) stopAuto();
-      else startAuto();
-    });
-  })();
+      // Pause Auto Saat User Hover (Desktop)
+      hero.addEventListener("mouseenter", stopAuto);
+      hero.addEventListener("mouseleave", startAuto);
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) stopAuto();
+        else startAuto();
+      });
+    })();
   </script>
 
   <!-- Scroll Best Product -->
@@ -761,8 +741,6 @@
       });
     }
   </script>
-
-
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
