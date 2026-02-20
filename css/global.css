@@ -1,8 +1,9 @@
 /* =========================================================
    global.css
-   Dipakai untuk: SEMUA HALAMAN
+   Dipakai untuk halaman: semua
    ========================================================= */
 
+   
 /* === Section Title === */
 .section-title {
   text-align: center;
@@ -25,7 +26,6 @@
   text-transform: uppercase;
   letter-spacing: .6px;
   box-shadow: none;
-  /* box-shadow:0 8px 18px rgba(139,30,30,.18); */
 }
 
 .btn-ott:hover {
@@ -55,7 +55,6 @@
 /* =========================================================
    OVERRIDE + SPACING SYSTEM 
    ========================================================= */
-
 /* Spacing System */
 :root {
   --section-space: 90px;
@@ -91,14 +90,10 @@
   }
 }
 
-/* Title jangan ngatur jarak antar section.
-   Jarak antar section diatur oleh .section-space */
 .section-title {
   margin: 0 0 1.3rem;
-  /* tetap ada jarak bawah sesuai design */
 }
 
-/* Anti margin-collapsing biar spacing konsisten */
 .section-space,
 .section-space-first {
   padding-top: 1px;

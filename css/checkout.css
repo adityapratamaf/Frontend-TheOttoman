@@ -1,15 +1,17 @@
 /* =========================================================
    checkout.css
-   Dipakai untuk: checkout.html (MAIN ONLY)
-   Note: boleh pakai global.css untuk warna & button
+   Dipakai untuk halaman: checkout.html
    ========================================================= */
 
+
+/* =========================================================
+   1) PAGE WRAPPER + TITLE
+   ========================================================= */
 .checkout-page {
   font-family: "Viga", sans-serif;
   color: #222;
 }
 
-/* title */
 .co-title {
   text-align: center;
   font-family: "Calistoga", serif;
@@ -20,7 +22,10 @@
   text-transform: uppercase;
 }
 
-/* 2 columns like mockup */
+
+/* =========================================================
+   2) MAIN GRID (2 COLUMNS)
+   ========================================================= */
 .co-grid {
   display: grid;
   grid-template-columns: 1.05fr 1fr;
@@ -28,7 +33,10 @@
   align-items: start;
 }
 
-/* section heads */
+
+/* =========================================================
+   3) SECTION HEADERS
+   ========================================================= */
 .co-section-head {
   font-family: "Viga", sans-serif;
   color: var(--primary);
@@ -37,7 +45,14 @@
   margin: 0 0 0.7rem;
 }
 
-/* label & fields */
+
+/* =========================================================
+   4) FORM (LABELS + FIELDS)
+   ========================================================= */
+.co-field {
+  margin-bottom: 0.95rem;
+}
+
 .co-label {
   display: block;
   color: var(--primary);
@@ -45,10 +60,7 @@
   margin: 0 0 0.35rem;
 }
 
-.co-field {
-  margin-bottom: 0.95rem;
-}
-
+/* ===== Input / Select / Textarea (BASE) ===== */
 .co-input,
 .co-select,
 .co-textarea {
@@ -60,12 +72,14 @@
   background: #fff;
 }
 
+/* Disabled Shadow Bootstrap */
 .form-control.co-input,
 .form-control.co-textarea,
 .form-select.co-select {
   box-shadow: none !important;
 }
 
+/* ===== Focus State Function ===== */
 .form-control.co-input:focus,
 .form-control.co-textarea:focus,
 .form-select.co-select:focus {
@@ -73,10 +87,12 @@
   box-shadow: 0 0 0 .15rem rgba(139, 30, 30, .12) !important;
 }
 
+/* Textarea */
 .co-textarea {
   resize: none;
 }
 
+/* Select */
 .co-select {
   appearance: auto;
   background: #fff;
@@ -86,7 +102,11 @@
   max-width: 320px;
 }
 
-/* checkbox line */
+
+/* =========================================================
+   5) CHECKBOX LINE (SHIP TO OTHER + TERMS)
+   ========================================================= */
+/* ===== Checkbox Function ===== */
 .co-checkline {
   display: inline-flex;
   align-items: center;
@@ -102,34 +122,29 @@
   accent-color: var(--primary);
 }
 
-/* =========================
-   SELECT CHEVRON (match profile)
-   ========================= */
+
+/* =========================================================
+   6) SELECT CHEVRON (match profile)
+   ========================================================= */
 .form-select.co-select {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-
-  /* kasih ruang buat icon */
   padding-right: 44px;
-
-  /* icon chevron custom */
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%238b1e1e' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 16px center;
   background-size: 18px 18px;
 }
 
-/* optional: kalau ada IE lama (boleh skip) */
 .form-select.co-select::-ms-expand {
   display: none;
 }
 
 
-/* =========================
-   RIGHT: product list
-========================= */
-
+/* =========================================================
+   7) RIGHT: PRODUCT LIST
+   ========================================================= */
 .co-products {
   margin-top: 0.3rem;
 }
@@ -142,11 +157,13 @@
   padding: 10px 0;
 }
 
+/* No */
 .co-no {
   color: var(--primary);
   font-weight: 900;
 }
 
+/* Thumbnail */
 .co-thumb {
   width: 72px;
   height: 72px;
@@ -166,12 +183,14 @@
   display: block;
 }
 
+/* Name */
 .co-prod-title {
   color: var(--primary);
   font-weight: 900;
   line-height: 1.15;
 }
 
+/* Unit/Qty/Total */
 .co-unit,
 .co-total {
   color: var(--primary);
@@ -186,15 +205,16 @@
   text-align: center;
 }
 
+/* Divider */
 .co-line {
   border-bottom: 1.6px solid rgba(139, 30, 30, .55);
   margin: 6px 0;
 }
 
-/* =========================
-   Payment
-========================= */
 
+/* =========================================================
+   8) PAYMENT
+   ========================================================= */
 .co-paygrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -213,10 +233,12 @@
   font-weight: 800;
   line-height: 1.5;
   padding-top: 24px;
-  /* align like mockup */
 }
 
-/* summary */
+
+/* =========================================================
+   9) SUMMARY (GRAND TOTAL)
+   ========================================================= */
 .co-summary {
   margin-top: 6px;
 }
@@ -228,14 +250,10 @@
   font-weight: 900;
 }
 
-.co-grand-label {
-  color: #222;
-  font-weight: 900;
-}
-
+.co-grand-label,
 .co-grand-sep {
-  font-weight: 900;
   color: #222;
+  font-weight: 900;
 }
 
 .co-grand-val {
@@ -251,11 +269,15 @@
   font-weight: 700;
 }
 
-/* upload */
+
+/* =========================================================
+   10) UPLOAD PAYMENT EVIDENCE
+   ========================================================= */
 .co-upload {
   margin-top: 8px;
 }
 
+/* ===== Upload Function ===== */
 .co-file {
   width: 100%;
   max-width: 360px;
@@ -285,6 +307,7 @@
   text-overflow: ellipsis;
 }
 
+/* ===== Button Function: Pay Now ===== */
 .co-paybtn {
   display: inline-block;
   margin-top: 10px;
@@ -293,17 +316,20 @@
   font-weight: 900;
 }
 
-/* =========================
-   Responsive
-========================= */
 
-/* @media (max-width: 991px){
-  .co-grid{
+/* =========================================================
+   11) RESPONSIVE
+   ========================================================= */
+
+/* ===== Tablet & bawah (<= 991px) ===== */
+@media (max-width: 991px) {
+  .co-grid {
     grid-template-columns: 1fr;
     gap: 28px;
   }
 
-  .co-item{
+  /* Product List */
+  .co-item {
     grid-template-columns: 18px 72px 1fr;
     grid-template-areas:
       "no thumb name"
@@ -311,60 +337,49 @@
     align-items: start;
   }
 
-  .co-name{ grid-column: 3; }
+  .co-name {
+    grid-column: 3;
+  }
 
-  .co-unit, .co-qty, .co-total{
+  .co-unit,
+  .co-qty,
+  .co-total {
     grid-column: 3;
     margin-top: 6px;
   }
-  .co-unit{ display: inline-block; margin-right: 14px; }
-  .co-qty{ display: inline-block; margin-right: 14px; }
+
+  .co-unit { display: inline-block; margin-right: 14px; }
+  .co-qty  { display: inline-block; margin-right: 14px; }
   .co-total{ display: inline-block; }
 
-  .co-paygrid{
+  /* Payment Grid */
+  .co-paygrid {
     grid-template-columns: 1fr;
   }
 
-  .co-bank{
+  .co-bank {
     padding-top: 0;
   }
-} */
+}
 
-/* @media (max-width: 575px){
-  .co-title{
-    font-size: 1.7rem;
-  }
-
-  .co-select-small{
-    max-width: 100%;
-  }
-
-  .co-file{
-    max-width: 100%;
-  }
-
-  .co-paybtn{
-    width: 180px;
-  }
-} */
-
+/* ===== Mobile (<= 575px) ===== */
 @media (max-width: 575px) {
-
-  /* grid utama jadi 1 kolom */
-  .co-grid {
-    grid-template-columns: 1fr;
-    gap: 22px;
-  }
-
   .co-title {
     font-size: 1.6rem;
     margin: 1rem 0 1.4rem;
   }
 
-  /* ======================
-     PRODUCT LIST (MOBILE)
-     ====================== */
+  .co-select-small {
+    max-width: 100%;
+  }
 
+  .co-file {
+    max-width: 100%;
+  }
+
+  /* =======================================================
+     PRODUCT LIST (MOBILE GRID AREAS)
+     ======================================================= */
   .co-item {
     display: grid;
     grid-template-columns: 22px 74px 1fr;
@@ -377,7 +392,6 @@
     row-gap: 6px;
     padding: 12px 0;
     align-items: start;
-    /* biarin start untuk teks */
   }
 
   .co-thumb {
@@ -385,9 +399,7 @@
     width: 74px;
     height: 74px;
     align-self: center;
-    /* center vertikal */
     justify-self: center;
-    /* center horizontal di kolom thumb */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -399,28 +411,11 @@
     object-fit: contain;
   }
 
-
-
-  .co-no {
-    grid-area: no;
-  }
-
-  .co-name {
-    grid-area: name;
-  }
-
-  .co-unit {
-    grid-area: unit;
-  }
-
-  .co-qty {
-    grid-area: qty;
-  }
-
-  .co-total {
-    grid-area: total;
-  }
-
+  .co-no   { grid-area: no; }
+  .co-name { grid-area: name; }
+  .co-unit { grid-area: unit; }
+  .co-qty  { grid-area: qty; }
+  .co-total{ grid-area: total; }
 
   .co-prod-title {
     font-size: 1rem;
@@ -428,22 +423,18 @@
     margin: 0;
   }
 
+  /* No */
   .co-no {
-    grid-area: no;
     display: flex;
     align-items: center;
-    /* center vertikal */
     justify-content: center;
-    /* center horizontal */
     height: 100%;
-    /* biar ngisi area grid */
     font-size: 1.1rem;
     font-weight: 900;
     color: var(--primary);
   }
 
-
-  /* rata kiri semua meta */
+  /* Rata Kiri Meta */
   .co-unit,
   .co-qty,
   .co-total {
@@ -460,21 +451,7 @@
     margin: 6px 0;
   }
 
-  /* form kecil lain */
-  .co-select-small {
-    max-width: 100%;
-  }
-
-  .co-file {
-    max-width: 100%;
-  }
-
-  .co-upload {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    gap: 10px;
-  }
-
+  /* Payment */
   .co-paygrid {
     grid-template-columns: 1fr !important;
     gap: 10px;
@@ -487,7 +464,14 @@
     width: 100%;
   }
 
+  /* Upload Spacing */
+  .co-upload {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    gap: 10px;
+  }
 
+  /* Button Full Lebar */
   .co-paybtn {
     margin: 0 !important;
     margin-top: 6px !important;
@@ -495,17 +479,14 @@
     width: 100%;
   }
 
-  /* kalau section checkout terakhir masih punya padding bawah besar */
+  .co-summary {
+    margin-bottom: 8px;
+  }
+
   .checkout-page,
   .checkout-page main,
   .co-grid {
     padding-bottom: 0 !important;
     margin-bottom: 0 !important;
   }
-
-  /* rapetin section terakhir sebelum footer */
-  .co-summary {
-    margin-bottom: 8px;
-  }
-
 }

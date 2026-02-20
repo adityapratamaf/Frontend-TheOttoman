@@ -1,14 +1,16 @@
 /* =========================================================
    invoice.css
-   Dipakai untuk: invoice.html (MAIN ONLY)
-   Mengandalkan global.css untuk var(--primary) + font import
+   Dipakai untuk halaman: invoice.html
    ========================================================= */
 
+   
+/* =========================================================
+   1) PAGE WRAPPER + TITLE
+   ========================================================= */
 .invoice-page {
   font-family: "Viga", sans-serif;
 }
 
-/* Title */
 .inv-title {
   text-align: center;
   font-family: "Calistoga", serif;
@@ -19,6 +21,11 @@
   text-transform: uppercase;
 }
 
+
+/* =========================================================
+   2) PAGER (UI CONTROL - kalau dipakai: .pg)
+   ========================================================= */
+/* ===== Button Function: Page Link ===== */
 .pg {
   text-decoration: none;
   font-family: "Viga", sans-serif;
@@ -40,21 +47,24 @@
 }
 
 
-/* Wrap */
+/* =========================================================
+   3) TABLE WRAPPER (SCROLL)
+   ========================================================= */
 .inv-table-wrap {
   margin-top: 0.3rem;
 }
 
-/* Mobile: keep layout SAME by enabling horizontal scroll */
 .inv-table-scroll {
   width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   padding-bottom: 4px;
-  /* biar scrollbar ga nempel */
 }
 
-/* Table base */
+
+/* =========================================================
+   4) TABLE BASE
+   ========================================================= */
 .inv-table {
   width: 100%;
   min-width: 980px;
@@ -63,7 +73,10 @@
   table-layout: fixed;
 }
 
-/* Header */
+
+/* =========================================================
+   5) TABLE HEADER
+   ========================================================= */
 .inv-table thead th {
   background: var(--primary);
   color: #fff;
@@ -73,7 +86,6 @@
   text-align: center;
   white-space: nowrap;
   border-bottom: 2px solid rgba(255, 255, 255, .18);
-  /* biar tegas */
 }
 
 .inv-table thead th:first-child {
@@ -85,17 +97,9 @@
 }
 
 
-/* Body cells */
-.inv-table tbody td {
-  padding: 18px 16px;
-  text-align: center;
-  vertical-align: middle;
-  font-size: 1.15rem;
-  color: #111;
-  border-bottom: none;
-}
-
-/* Row separators: red line full table width (match mockup) */
+/* =========================================================
+   6) TABLE BODY (CELLS + ROW HOVER)
+   ========================================================= */
 .inv-table tbody td {
   padding: 18px 16px;
   text-align: center;
@@ -106,8 +110,7 @@
   background: transparent;
 }
 
-
-
+/* ===== Hover Function: Row Highlight ===== */
 .inv-table tbody tr:hover td {
   background: rgba(139, 30, 30, .10);
 }
@@ -116,7 +119,10 @@
   transform: translateY(-1px);
 }
 
-/* Column sizing to match spacing */
+
+/* =========================================================
+   7) COLUMN SIZING & ALIGNMENT
+   ========================================================= */
 .col-no {
   width: 90px;
 }
@@ -147,7 +153,11 @@
   width: 120px;
 }
 
-/* Eye button */
+
+/* =========================================================
+   8) ACTION BUTTON (EYE)
+   ========================================================= */
+/* ===== Button Function: View Invoice ===== */
 .eye-btn {
   width: 42px;
   height: 42px;
@@ -165,19 +175,23 @@
   font-size: 1.05rem;
 }
 
+/* ===== Hover Function ===== */
 .eye-btn:hover {
   color: #fff;
   background: var(--primary-dark);
 }
 
 
-/* Pager (match mockup: arrow - 1 - arrow) */
+/* =========================================================
+   9) PAGER (ALT STYLE)
+   ========================================================= */
 .inv-pager {
   display: inline-flex;
   align-items: center;
   gap: 14px;
 }
 
+/* ===== Button Function: Arrow ===== */
 .pg-arrow {
   border: none;
   background: transparent;
@@ -186,6 +200,7 @@
   padding: 6px 8px;
 }
 
+/* ===== Badge/Number Function ===== */
 .pg-num {
   width: 28px;
   height: 28px;
@@ -199,16 +214,23 @@
   font-size: 0.95rem;
 }
 
-/* =========================
-   Responsive
-========================= */
+
+/* =========================================================
+   10) RESPONSIVE
+   ========================================================= */
+/* ===== Tablet & bawah (<= 991px) ===== */
+@media (max-width: 991px) {
+  /* keep same look: table tetap scroll via .inv-table-scroll
+     Tidak perlu ubah kolom agar layout tetap sama. */
+}
+
+/* ===== Mobile (<= 575px) ===== */
 @media (max-width: 575px) {
   .inv-title {
     font-size: 1.7rem;
     margin-bottom: 1.4rem;
   }
 
-  /* keep same look: just scroll */
   .pagination-range {
     font-size: 0.95rem;
   }

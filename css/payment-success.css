@@ -1,14 +1,20 @@
 /* =========================================================
    payment-success.css
-   Dipakai untuk: payment-success.html (MAIN ONLY)
-   Note: Mengandalkan global.css untuk variable warna (var--primary)
+   Dipakai untuk halaman: payment-success.html
    ========================================================= */
 
+
+/* =========================================================
+   1) PAGE WRAPPER
+   ========================================================= */
 .pay-success-page {
   font-family: "Viga", sans-serif;
 }
 
-/* Layout wrapper */
+
+/* =========================================================
+   2) LAYOUT WRAPPER
+   ========================================================= */
 .ps-wrap {
   min-height: calc(100vh - 3rem);
   display: grid;
@@ -18,7 +24,10 @@
   padding: 1.2rem 0;
 }
 
-/* Left image */
+
+/* =========================================================
+   3) LEFT: ILLUSTRATION
+   ========================================================= */
 .ps-ill {
   display: flex;
   justify-content: center;
@@ -32,7 +41,10 @@
   object-fit: cover;
 }
 
-/* Right text */
+
+/* =========================================================
+   4) RIGHT: CONTENT (TEXT)
+   ========================================================= */
 .ps-content {
   display: flex;
   flex-direction: column;
@@ -59,7 +71,10 @@
   letter-spacing: 0.4px;
 }
 
-/* Buttons row */
+
+/* =========================================================
+   5) ACTIONS (BUTTONS ROW)
+   ========================================================= */
 .ps-actions {
   display: flex;
   gap: 18px;
@@ -68,7 +83,7 @@
   flex-wrap: wrap;
 }
 
-/* Button style dibuat mirip mockup */
+/* ===== Button Base ===== */
 .ps-btn {
   display: inline-flex;
   align-items: center;
@@ -84,7 +99,7 @@
   font-size: 0.9rem;
 }
 
-/* Outline HOME */
+/* ===== Button Function: Outline (HOME) ===== */
 .ps-btn-outline {
   color: var(--primary);
   border: 2px solid rgba(139, 30, 30, .55);
@@ -96,7 +111,7 @@
   color: var(--primary);
 }
 
-/* Solid INVOICE */
+/* ===== Button Function: Solid (INVOICE / WHATSAPP) ===== */
 .ps-btn-solid {
   color: #fff;
   background: var(--primary);
@@ -110,9 +125,12 @@
   color: #fff;
 }
 
-/* =========================
-   Responsive
-========================= */
+
+/* =========================================================
+   6) RESPONSIVE
+   ========================================================= */
+
+/* ===== Tablet (<= 991px) ===== */
 @media (max-width: 991px) {
   .ps-wrap {
     grid-template-columns: 1fr;
@@ -134,6 +152,7 @@
   }
 }
 
+/* ===== Mobile (<= 575px) ===== */
 @media (max-width: 575px) {
   .ps-ill img {
     width: 100%;

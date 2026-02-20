@@ -1,23 +1,28 @@
 /* =========================================================
    about.css
-   Dipakai untuk: about.html
+   Dipakai untuk halaman: about.html
    ========================================================= */
 
+
+/* =========================================================
+   1) PAGE WRAPPER
+   ========================================================= */
 .about-page {
   padding-top: 1.2rem;
   padding-bottom: 0;
 }
 
-
 /* =========================================================
-   TOP COLLAGE + ORNAMENT
+   2) TOP COLLAGE + ORNAMENT
    ========================================================= */
+
+/* ===== Top Section Wrapper ===== */
 .about-top {
   position: relative;
   padding: 2.2rem 0 1.2rem;
 }
 
-/* Ornament kiri/kanan */
+/* ===== Ornament Left / Right  ===== */
 .about-orn {
   position: absolute;
   top: 30px;
@@ -39,13 +44,7 @@
   transform: scaleX(-1);
 }
 
-@media (max-width: 991px) {
-  .about-orn {
-    display: none;
-  }
-}
-
-/* Collage container */
+/* ===== Collage Container ===== */
 .about-collage {
   position: relative;
   z-index: 2;
@@ -55,7 +54,7 @@
   margin: 0 auto;
 }
 
-/* Semua gambar collage */
+/* ===== Semua Gambar Collage ===== */
 .col-img {
   position: absolute;
   border-radius: 14px;
@@ -63,7 +62,7 @@
   box-shadow: var(--shadow);
 }
 
-/* Posisi center (X & Y) untuk semua foto */
+/* ===== Posisi Center (X & Y) Untuk Semua Gambar ===== */
 .col-1,
 .col-2,
 .col-3,
@@ -73,7 +72,7 @@
   transform: translate(-50%, -50%);
 }
 
-/* Tengah */
+/* ===== Tengah ===== */
 .col-3 {
   width: 336px;
   height: 493px;
@@ -81,7 +80,7 @@
   z-index: 2;
 }
 
-/* Inner kiri/kanan */
+/* ===== Inner Left / Right ===== */
 .col-2 {
   width: 202px;
   height: 382px;
@@ -96,7 +95,7 @@
   z-index: 1;
 }
 
-/* Outer kiri/kanan */
+/* ===== Outer Left / Right ===== */
 .col-1 {
   width: 135px;
   height: 252px;
@@ -111,36 +110,9 @@
   z-index: 0;
 }
 
-/* Mobile collage */
-@media (max-width: 575px) {
-  .about-collage {
-    max-width: 360px;
-    height: 300px;
-    overflow: hidden;
-  }
-
-  .col-3 {
-    width: 165px;
-    height: 250px;
-    left: 50%;
-  }
-
-  .col-2 {
-    width: 110px;
-    height: 200px;
-    left: calc(50% - 115px);
-  }
-
-  .col-4 {
-    width: 110px;
-    height: 200px;
-    left: calc(50% + 115px);
-  }
-}
-
 
 /* =========================================================
-   WHY THE OTTOMAN
+   3) WHY THE OTTOMAN
    ========================================================= */
 .about-why {
   padding: 0;
@@ -179,24 +151,19 @@
 
 
 /* =========================================================
-   VALUE ICONS
-   Catatan:
-   - Spacing antar section pakai global (.section-space)
+   4) VALUE ICONS
    ========================================================= */
 .about-values {
   margin: 0;
-  /* HAPUS margin manual supaya konsisten */
   margin-top: var(--section-space);
 }
 
+
 /* =========================================================
-   STORIES / IG
-   Catatan:
-   - Spacing antar section pakai global (.section-space)
+   5) STORIES / IG
    ========================================================= */
 .about-stories {
   margin: 0;
-  /* HAPUS margin manual supaya konsisten */
   margin-top: var(--section-space);
 }
 
@@ -214,6 +181,7 @@
   display: block;
 }
 
+/* ===== Play Button ===== */
 .story-play {
   position: absolute;
   top: 50%;
@@ -233,19 +201,16 @@
   transition: .2s ease;
 }
 
+/* ===== Hover State ===== */
 .story-card:hover .story-play {
   background: var(--primary);
   color: #fff;
   transform: translate(-50%, -50%) scale(1.08);
 }
 
-/* NOTE: .story-col gak dipakai karena kamu pakai Bootstrap row-cols-* */
-
 
 /* =========================================================
-   STORE PRESENCE
-   Catatan:
-   - Padding section gak perlu, spacing pakai global (.section-space)
+   6) STORE PRESENCE
    ========================================================= */
 .store-presence {
   padding: 0;
@@ -290,9 +255,8 @@
 }
 
 
-
 /* =========================================================
-   GALLERY MOSAIC
+   7) GALLERY MOSAIC
    ========================================================= */
 .about-gallery {
   padding: 0 0 3px;
@@ -316,39 +280,65 @@
   display: block;
 }
 
-.gallery-grid .g1 {
-  grid-area: g1;
+.gallery-grid .g1 { grid-area: g1; }
+.gallery-grid .g2 { grid-area: g2; }
+.gallery-grid .g3 { grid-area: g3; }
+.gallery-grid .g4 { grid-area: g4; }
+.gallery-grid .g5 { grid-area: g5; }
+.gallery-grid .g6 { grid-area: g6; }
+.gallery-grid .g7 { grid-area: g7; }
+
+
+/* =========================================================
+   8) RESPONSIVE
+   ========================================================= */
+
+/* ===== Tablet & Device Bawah (<= 991px) ===== */
+@media (max-width: 991px) {
+  /* ===== Ornament Hide ===== */
+  .about-orn {
+    display: none;
+  }
 }
 
-.gallery-grid .g2 {
-  grid-area: g2;
-}
+/* ===== Mobile (<= 575px) ===== */
+@media (max-width: 575px) {
+  /* ===== Collage Mobile ===== */
+  .about-collage {
+    max-width: 360px;
+    height: 300px;
+    overflow: hidden;
+  }
 
-.gallery-grid .g3 {
-  grid-area: g3;
-}
+  .col-3 {
+    width: 165px;
+    height: 250px;
+    left: 50%;
+  }
 
-.gallery-grid .g4 {
-  grid-area: g4;
-}
+  .col-2 {
+    width: 110px;
+    height: 200px;
+    left: calc(50% - 115px);
+  }
 
-.gallery-grid .g5 {
-  grid-area: g5;
-}
+  .col-4 {
+    width: 110px;
+    height: 200px;
+    left: calc(50% + 115px);
+  }
 
-.gallery-grid .g6 {
-  grid-area: g6;
-}
-
-.gallery-grid .g7 {
-  grid-area: g7;
-}
-
-@media (max-width: 576px) {
+  /* ===== Gallery Mobile ===== */
   .gallery-grid {
     grid-template-columns: 1fr;
     grid-template-areas:
-      "g1""g2""g3""g4""g5""g6""g7";
+      "g1"
+      "g2"
+      "g3"
+      "g4"
+      "g5"
+      "g6"
+      "g7";
   }
 
   .gallery-grid img {

@@ -1,11 +1,9 @@
 /* =========================================================
    invoice-detail.css
-   Dipakai untuk: invoice-detail.html (MAIN ONLY)
-   - Font: Viga (isi), Calistoga (judul)
-   - Table header merah sama kayak mockup
-   - Mobile: table scroll biar layout tetap sama
+   Dipakai untuk halaman: invoice-detail.html
    ========================================================= */
 
+   
 .invd-page {
   font-family: "Viga", sans-serif;
 }
@@ -20,6 +18,7 @@
   margin: 1.2rem 0 2.2rem;
   text-transform: uppercase;
 }
+
 
 /* =========================
    KEY-VALUE BLOCKS
@@ -79,11 +78,11 @@
   line-height: 1.35;
 }
 
-/* Right side align like mockup */
 .invd-kv-right {
   justify-self: end;
   text-align: left;
 }
+
 
 /* =========================
    TABLE
@@ -114,12 +113,12 @@
   border-bottom: 2px solid rgba(139, 30, 30, .35);
 }
 
-/* background hover */
+/* Background Hover */
 .invd-table tbody tr:hover {
   background-color: rgba(139, 30, 30, 0.06);
 }
 
-/* garis bawah merah */
+/* Garis Merah Bawah */
 .invd-table tbody tr::after {
   position: absolute;
   left: 0;
@@ -131,12 +130,10 @@
   transition: opacity .2s ease;
 }
 
-
 .invd-table {
   width: 100%;
   border-collapse: collapse;
   min-width: 980px;
-  /* menjaga proporsi kolom seperti mockup */
 }
 
 .invd-table thead th {
@@ -156,7 +153,6 @@
   vertical-align: top;
 }
 
-/* Column widths mirip mockup */
 .col-no {
   width: 90px;
 }
@@ -181,10 +177,10 @@
   width: 220px;
 }
 
-/* spacing table vs blocks */
 .invd-table tbody tr+tr td {
   padding-top: 22px;
 }
+
 
 /* =========================
    RESPONSIVE

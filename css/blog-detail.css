@@ -1,17 +1,25 @@
 /* =========================================================
    blog-detail.css
-   Dipakai untuk: blog-detail.html (MAIN ONLY)
-   Konsisten: Calistoga (judul) + Viga (isi)
+   Dipakai untuk halaman: blog-detail.html 
    ========================================================= */
 
+
+/* =========================================================
+   1) PAGE WRAPPER
+   ========================================================= */
 .blogd-page {
   font-family: "Viga", sans-serif;
 }
 
+
+/* =========================================================
+   2) TOPBAR / BACK LINK
+   ========================================================= */
 .blogd-topbar {
   margin-bottom: 12px;
 }
 
+/* ===== Button Function: Back ===== */
 .blogd-back {
   text-decoration: none;
   font-weight: 900;
@@ -22,7 +30,10 @@
   margin-right: 6px;
 }
 
-/* Hero */
+
+/* =========================================================
+   3) HERO
+   ========================================================= */
 .blogd-hero {
   border: 2px solid rgba(139, 30, 30, .28);
   border-radius: 12px;
@@ -30,6 +41,7 @@
   background: #fff;
 }
 
+/* ===== Hero Image ===== */
 .blogd-hero-img {
   height: 280px;
   background: #f6f6f6;
@@ -42,10 +54,12 @@
   display: block;
 }
 
+/* ===== Hero Body ===== */
 .blogd-hero-body {
   padding: 16px 18px 18px;
 }
 
+/* ===== Meta Info ===== */
 .meta {
   display: flex;
   flex-wrap: wrap;
@@ -77,6 +91,7 @@
   font-size: 0.9rem;
 }
 
+/* ===== Title + Subtitle ===== */
 .blogd-title {
   font-family: "Calistoga", serif;
   color: #111;
@@ -92,11 +107,18 @@
   line-height: 1.55;
 }
 
-/* Article */
+
+/* =========================================================
+   4) CONTENT WRAPPER
+   ========================================================= */
 .blogd-content {
   margin-top: 18px;
 }
 
+
+/* =========================================================
+   5) ARTICLE
+   ========================================================= */
 .blogd-article {
   border: 2px solid rgba(139, 30, 30, .18);
   border-radius: 12px;
@@ -119,6 +141,7 @@
   font-size: 0.95rem;
 }
 
+/* ===== Quote Block ===== */
 .blogd-quote {
   border-left: 5px solid var(--primary);
   background: rgba(139, 30, 30, .06);
@@ -133,7 +156,10 @@
   line-height: 1.5;
 }
 
-/* Actions */
+
+/* =========================================================
+   6) ACTIONS
+   ========================================================= */
 .blogd-actions {
   margin-top: 14px;
   display: flex;
@@ -141,7 +167,10 @@
   flex-wrap: wrap;
 }
 
-/* Sidebar */
+
+/* =========================================================
+   7) SIDEBAR / RELATED POSTS
+   ========================================================= */
 .blogd-side .side-box {
   border: 2px solid rgba(139, 30, 30, .18);
   border-radius: 12px;
@@ -156,6 +185,7 @@
   margin-bottom: 10px;
 }
 
+/* ===== Related Item Card ===== */
 .side-item {
   display: grid;
   grid-template-columns: 70px 1fr;
@@ -166,10 +196,12 @@
   border-radius: 10px;
 }
 
+/* ===== Hover Function ===== */
 .side-item:hover {
   background: rgba(139, 30, 30, .05);
 }
 
+/* ===== Thumbnail ===== */
 .si-img {
   width: 70px;
   height: 56px;
@@ -186,6 +218,7 @@
   display: block;
 }
 
+/* ===== Text ===== */
 .si-meta {
   font-weight: 800;
   color: rgba(0, 0, 0, .6);
@@ -200,12 +233,27 @@
   font-size: 0.95rem;
 }
 
-/* Responsive */
+
+/* =========================================================
+   8) RESPONSIVE
+   ========================================================= */
+
+/* ===== Tablet & bawah (<= 991px) ===== */
+@media (max-width: 991px) {
+  /* NOTE:
+     Layout utama sudah di-handle Bootstrap (col-lg-8 / col-lg-4).
+     Jadi di sini sengaja minim override agar tidak mengubah layout.
+  */
+}
+
+/* ===== Mobile (<= 575px) ===== */
 @media (max-width: 575px) {
+  /* ===== Hero Image ===== */
   .blogd-hero-img {
     height: 210px;
   }
 
+  /* ===== Title ===== */
   .blogd-title {
     font-size: 1.55rem;
   }

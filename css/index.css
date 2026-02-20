@@ -3,6 +3,7 @@
    SEMUA SECTION di index.html
    ========================================================= */
 
+   
 /* =========================================================
    HERO
    ========================================================= */
@@ -622,7 +623,7 @@
 }
 
 /* =========================================================
-   OUR HAPPY CUSTOMERS (TESTIMONIALS) - LIKE BEST SELLER
+   CUSTOMERS TESTIMONIAL
    ========================================================= */
 
 .testi-wrap {
@@ -670,22 +671,19 @@
   border-radius: 999px;
 }
 
-/* card: shadow tipis seperti BLOG card */
 .testi-card {
   min-width: 330px;
   max-width: 380px;
   scroll-snap-align: center;
-
   border: var(--border);
   border-radius: 15px;
   background: #fff;
-  /* box-shadow: 0 12px 26px rgba(0,0,0,.08); */
   box-shadow: none;
   scroll-snap-align: start !important;
   padding: 18px 18px 16px;
 }
 
-/* content */
+/* Content */
 .testi-stars {
   display: flex;
   gap: 6px;

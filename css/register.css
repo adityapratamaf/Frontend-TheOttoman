@@ -1,10 +1,21 @@
-/* Root Variables*/
+/* =========================================================
+   register.css (atau login-register.css)
+   Dipakai untuk halaman: register.html | new-password.html | forgot-password.html
+   ========================================================= */
+
+
+/* =========================================================
+   1) ROOT VARIABLES
+   ========================================================= */
 :root {
   --panelPad: 64px;
   --radius: 18px;
 }
 
-/* Base Structure*/
+
+/* =========================================================
+   2) BASE STRUCTURE
+   ========================================================= */
 html,
 body {
   height: 100%;
@@ -15,24 +26,29 @@ body {
 }
 
 .page-login {
-  overflow: hidden; 
+  overflow: hidden;
 }
 
-/* Login Page Wrapper*/
 .login-page {
   min-height: 100vh;
   background: #fff;
   overflow: hidden;
 }
 
-/* Login Shell*/
+
+/* =========================================================
+   3) LAYOUT SHELL (2 PANEL)
+   ========================================================= */
 .login-shell {
   height: 100%;
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
 }
 
-/* Panel Gambar*/
+
+/* =========================================================
+   4) LEFT PANEL (IMAGE)
+   ========================================================= */
 .login-pattern {
   height: 100%;
   overflow: hidden;
@@ -45,13 +61,16 @@ body {
   display: block;
 }
 
-/* Panel Form*/
+
+/* =========================================================
+   5) RIGHT PANEL (FORM)
+   ========================================================= */
 .login-panel {
   height: 100%;
   min-height: 0;
   display: flex;
-  align-items: flex-start; 
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: center; 
   padding: 48px 15px 15px;
 }
 
@@ -60,10 +79,13 @@ body {
   max-width: 520px;
   max-height: 100%;
   overflow-y: auto;
-  margin-top: 0px;
+  margin-top: 0;
 }
 
-/* Logo Area*/
+
+/* =========================================================
+   6) BRAND / LOGO
+   ========================================================= */
 .login-logo {
   display: flex;
   align-items: center;
@@ -78,7 +100,7 @@ body {
 }
 
 .brand-sub {
-  font-size: 1.50rem;
+  font-size: 1.5rem;
   letter-spacing: .9px;
   color: var(--primary);
   line-height: 1.15;
@@ -90,24 +112,29 @@ body {
   font-size: .72rem;
 }
 
-/* Title*/
+
+/* =========================================================
+   7) TITLE
+   ========================================================= */
 .login-title {
   font-family: "Calistoga", serif;
   color: var(--primary);
-  font-size: 1.50rem;
+  font-size: 1.5rem;
   letter-spacing: 1px;
   text-transform: uppercase;
-  margin: 1rem 0 1rem;
+  margin: 1rem 0;
 }
 
-/* Form Label*/
+
+/* =========================================================
+   8) FORM ELEMENTS
+   ========================================================= */
 .ott-label {
   color: var(--primary);
   font-weight: 900;
   margin-bottom: 8px;
 }
 
-/* Input With Right Icon*/
 .ott-input {
   position: relative;
 }
@@ -123,7 +150,7 @@ body {
   box-shadow: 0 0 0 .12rem rgba(139, 30, 30, .12);
 }
 
-/* Input Icon*/
+/* ===== Icon Function: Right Icon (Email/User/Phone) ===== */
 .ott-input .icon {
   position: absolute;
   right: 12px;
@@ -134,7 +161,7 @@ body {
   pointer-events: none;
 }
 
-/* Toggle Password Button*/
+/* ===== Button Function: Toggle Password ===== */
 .ott-input .icon-btn {
   position: absolute;
   right: 8px;
@@ -148,7 +175,6 @@ body {
   border-radius: 10px;
 }
 
-/* Error Text*/
 .err-text {
   display: none;
   color: #b3261e;
@@ -156,7 +182,10 @@ body {
   margin-top: 6px;
 }
 
-/* Remember Me*/
+
+/* =========================================================
+   9) CHECKLINE (CONFIRM)
+   ========================================================= */
 .remember {
   font-weight: 900;
   color: #222;
@@ -169,13 +198,30 @@ body {
   accent-color: var(--primary);
 }
 
-/* Action Buttons*/
+
+/* =========================================================
+   10) BUTTONS
+   ========================================================= */
 .btn-login {
   min-width: 120px;
 }
 
 
-/* Mobile Responsive */
+/* =========================================================
+   11) RESPONSIVE
+   ========================================================= */
+/* ===== Tablet (<= 991px) ===== */
+@media (max-width: 991px) {
+  .login-panel {
+    padding: 40px 15px 15px;
+  }
+
+  .login-inner {
+    max-width: 520px;
+  }
+}
+
+/* ===== Mobile (<= 575px) ===== */
 @media (max-width: 575px) {
   .login-shell {
     grid-template-columns: 1fr;

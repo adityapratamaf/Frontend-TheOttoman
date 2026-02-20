@@ -1,9 +1,12 @@
 /* =========================================================
    cart.css
-   Dipakai untuk: cart.html (MAIN ONLY)
-   Mengandalkan global.css untuk .btn-ott, variable warna, dll.
+   Dipakai untuk halaman: cart.html (MAIN ONLY)
    ========================================================= */
 
+
+/* =========================================================
+   1) PAGE WRAPPER + TITLE
+   ========================================================= */
 .cart-page {
   padding-top: .8rem;
 }
@@ -18,11 +21,18 @@
   text-transform: uppercase;
 }
 
-/* ===== TABLE LAYOUT ===== */
+
+/* =========================================================
+   2) TABLE WRAPPER
+   ========================================================= */
 .cart-table {
   margin-bottom: 1.2rem;
 }
 
+
+/* =========================================================
+   3) TABLE HEADER (CHECK ALL + COLUMN LABELS + TOTAL CART)
+   ========================================================= */
 .cart-head-row {
   display: grid;
   grid-template-columns: 1fr 240px;
@@ -33,6 +43,7 @@
   margin-bottom: .9rem;
 }
 
+/* ===== Header: Left Columns ===== */
 .cart-head-left {
   display: grid;
   grid-template-columns: 36px 130px 1.2fr 0.95fr 1fr 0.9fr 70px;
@@ -42,12 +53,14 @@
   justify-items: center;
 }
 
+/* ===== Header: Right (Total Cart) ===== */
 .cart-head-right {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* ===== Header Text Style ===== */
 .c-h {
   font-family: "Viga", serif;
   color: var(--primary);
@@ -58,37 +71,29 @@
   justify-self: center;
 }
 
+/* ===== Column Alignments ===== */
 .c-name {
   justify-self: start;
-  /* kolomnya pas, teks tetap rapi */
   text-align: left;
 }
 
-.c-unit {
-  text-align: center;
-}
-
-.c-total {
-  text-align: center;
-}
-
-.c-trash {
-  text-align: center;
-}
-
-.c-totalcart {
-  text-align: center;
-}
-
+.c-unit,
+.c-total,
+.c-trash,
+.c-totalcart,
 .c-qty {
   text-align: center;
 }
 
+/* ===== Header: Product Label Placement ===== */
 .h-product {
   grid-column: 3;
-  /* pas di area nama produk */
 }
 
+
+/* =========================================================
+   4) CHECK ALL (HEADER)
+   ========================================================= */
 .c-checkall {
   grid-column: 1 / 3;
   display: flex;
@@ -98,6 +103,7 @@
   width: 100%;
 }
 
+/* ===== Button/Toggle Function : Check All ===== */
 .checkall {
   display: flex;
   align-items: center;
@@ -112,7 +118,10 @@
   accent-color: var(--primary);
 }
 
-/* left list + right summary */
+
+/* =========================================================
+   5) BODY GRID (LEFT LIST + RIGHT SUMMARY)
+   ========================================================= */
 .cart-body-grid {
   display: grid;
   grid-template-columns: 1fr 240px;
@@ -120,11 +129,18 @@
   align-items: start;
 }
 
-/* ===== ROW ITEM ===== */
+
+/* =========================================================
+   6) CART LIST (ROWS WRAPPER)
+   ========================================================= */
 .cart-list {
   border-top: 1px solid rgba(139, 30, 30, .40);
 }
 
+
+/* =========================================================
+   7) CART ROW ITEM
+   ========================================================= */
 .cart-row {
   display: grid;
   grid-template-columns: 36px 130px 1.2fr 0.95fr 1fr 0.9fr 70px;
@@ -134,12 +150,14 @@
   border-bottom: 1px solid rgba(139, 30, 30, .40);
 }
 
+/* ===== Checkbox Function: Per Row ===== */
 .c-check input {
   width: 18px;
   height: 18px;
   accent-color: var(--primary);
 }
 
+/* ===== Product Image ===== */
 .cart-imgbox {
   width: 120px;
   height: 120px;
@@ -159,6 +177,7 @@
   object-fit: cover;
 }
 
+/* ===== Product Name ===== */
 .cart-name {
   color: var(--primary);
   font-weight: 900;
@@ -167,13 +186,17 @@
   max-width: 100%;
 }
 
+/* ===== Price Text (Unit & Total) ===== */
 .cart-price {
   color: var(--primary);
   font-weight: 900;
   font-size: 1.05rem;
 }
 
-/* ===== QTY (same concept as product detail) ===== */
+
+/* =========================================================
+   8) QTY CONTROL
+   ========================================================= */
 .qty {
   display: inline-flex;
   align-items: center;
@@ -183,6 +206,7 @@
   height: 34px;
 }
 
+/* ===== Button Function: Minus / Plus ===== */
 .qty-btn {
   width: 34px;
   height: 34px;
@@ -196,6 +220,7 @@
   justify-content: center;
 }
 
+/* ===== Value Display ===== */
 .qty-num {
   width: 38px;
   height: 34px;
@@ -207,7 +232,12 @@
   font-weight: 900;
 }
 
-/* trash */
+
+/* =========================================================
+   9) DELETE / TRASH
+   ========================================================= */
+
+/* ===== Button Function: Remove Item ===== */
 .trash-btn {
   border: none;
   background: transparent;
@@ -222,10 +252,12 @@
   opacity: .75;
 }
 
-/* ===== RIGHT SUMMARY ===== */
+
+/* =========================================================
+   10) CART SUMMARY (RIGHT SIDE)
+   ========================================================= */
 .cart-summary {
   padding-top: 72px;
-  /* biar sejajar kayak screenshot */
   text-align: center;
 }
 
@@ -236,6 +268,7 @@
   margin-bottom: 16px;
 }
 
+/* ===== Button Function: Checkout ===== */
 .sum-btn {
   padding: .55rem 1.25rem;
   border-radius: 10px;
@@ -244,25 +277,38 @@
   letter-spacing: .6px;
 }
 
-/* ===== Responsive ===== */
+
+/* =========================================================
+   11) RESPONSIVE
+   ========================================================= */
+
+/* ===== Tablet & Device (<= 991px) ===== */
+@media (max-width: 991px) {
+  /* NOTE:
+     Layout utama sudah kebantu Bootstrap container & spacing.
+     Tidak ada override khusus agar layout tetap sama.
+  */
+}
+
+/* ===== Mobile (<= 575px) ===== */
 @media (max-width: 575px) {
+  /* ===== Title ===== */
   .cart-title {
     font-size: 1.65rem;
     margin: 1rem 0 1.4rem;
   }
 
-  /* sembunyikan HANYA judul kolom (Product, Price Unit, dst) */
+  /* ===== Header ===== */
   .cart-head-left .c-h,
   .cart-head-right {
     display: none !important;
   }
 
-  /* optional: rapihin jarak header area */
   .cart-head-row {
     margin-bottom: .4rem;
   }
 
-  /* Body grid: summary turun ke bawah */
+  /* ===== Body Grid ===== */
   .cart-body-grid {
     grid-template-columns: 1fr;
     row-gap: 18px;
@@ -272,41 +318,37 @@
     border-top: 0;
   }
 
-  /* PRICE */
+  /* ===== Align Text ===== */
   .c-unit,
-  .c-total {
-    justify-self: start;
-    text-align: left;
-  }
-
+  .c-total,
   .c-qty {
     justify-self: start;
     text-align: left;
   }
 
+  /* ===== Trash Delete ===== */
   .c-del {
     grid-area: name;
-    /* pindah ke baris pertama (area name) */
     justify-self: end;
-    /* nempel kanan */
     align-self: center;
-    /* center vertikal */
     margin-left: 10px;
   }
 
-  /* biar nama produk gak ketabrak trash */
+  /* nama produk gak ketabrak trash */
   .c-name {
     padding-right: 34px;
-    /* kasih ruang untuk icon trash */
   }
 
+  /* ===== Button State Function : Disabled Checkout ===== */
   .sum-btn.disabled {
     pointer-events: none;
     opacity: .5;
   }
 
 
-  /* Card item */
+  /* =======================================================
+     CARD ITEM (MOBILE GRID AREAS)
+     ======================================================= */
   .cart-row {
     grid-template-columns: 26px 110px 1fr;
     grid-template-areas:
@@ -317,51 +359,31 @@
       "check img del";
     column-gap: 14px;
     row-gap: 8px;
-
     padding: 14px 0;
     border-bottom: 1px solid rgba(139, 30, 30, .28);
   }
 
-  /* checkbox center sejajar tengah gambar */
+  /* ===== Checkbox Center ===== */
   .c-check {
     grid-area: check;
     display: flex;
     align-items: center;
-    /* center vertikal di area check */
     justify-content: center;
-    /* center horizontal */
     padding-top: 0;
-    /* hapus yang bikin naik */
     align-self: stretch;
-    /* biar ngisi tinggi grid-area */
   }
 
-  /* tweak: geser sedikit ke bawah supaya pas center image */
+  /* tweak: geser sedikit biar center image */
   .c-check input {
     transform: translateY(6px);
-    /* naik/turun sesuai selera: 4-10px */
+    /* naik/turun : 4-10px */
   }
 
-  /* .c-check{ grid-area: check; align-self: start; padding-top: 6px; } */
-  .c-img {
-    grid-area: img;
-  }
-
-  .c-name {
-    grid-area: name;
-  }
-
-  .c-unit {
-    grid-area: unit;
-  }
-
-  .c-total {
-    grid-area: total;
-  }
-
-  .c-qty {
-    grid-area: qty;
-  }
+  .c-img  { grid-area: img; }
+  .c-name { grid-area: name; }
+  .c-unit { grid-area: unit; }
+  .c-total{ grid-area: total; }
+  .c-qty  { grid-area: qty; }
 
   .cart-imgbox {
     width: 105px;
@@ -378,7 +400,7 @@
     font-size: .95rem;
   }
 
-  /* Qty */
+  /* ===== Qty ===== */
   .qty {
     height: 32px;
     border-radius: 8px;
@@ -395,7 +417,9 @@
     height: 32px;
   }
 
-  /* Summary jadi section bawah yang jelas */
+  /* =======================================================
+     SUMMARY (MOBILE)
+     ======================================================= */
   .cart-summary {
     padding-top: 14px;
     border-top: 1px solid rgba(139, 30, 30, .28);
@@ -406,7 +430,6 @@
     font-size: 1.25rem;
     margin-bottom: 12px;
   }
-
 
   .sum-btn {
     width: 100%;

@@ -1,10 +1,21 @@
-/* Root Variables*/
+/* =========================================================
+   login.css
+   Dipakai untuk halaman: login.html
+   ========================================================= */
+
+
+/* =========================================================
+   0) ROOT VARIABLES
+   ========================================================= */
 :root {
   --panelPad: 64px;
   --radius: 18px;
 }
 
-/* Base Structure*/
+
+/* =========================================================
+   1) BASE STRUCTURE
+   ========================================================= */
 html,
 body {
   height: 100%;
@@ -18,21 +29,30 @@ body {
   overflow: hidden;
 }
 
-/* Login Page Wrapper*/
+
+/* =========================================================
+   2) LOGIN PAGE WRAPPER
+   ========================================================= */
 .login-page {
   min-height: 100vh;
   background: #fff;
   overflow: hidden;
 }
 
-/* Login Shell*/
+
+/* =========================================================
+   3) LOGIN SHELL (2 PANEL GRID)
+   ========================================================= */
 .login-shell {
   height: 100%;
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
 }
 
-/* Panel Gambar*/
+
+/* =========================================================
+   4) LEFT PANEL: IMAGE / PATTERN
+   ========================================================= */
 .login-pattern {
   height: 100%;
   overflow: hidden;
@@ -41,18 +61,21 @@ body {
 .pattern-img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Cover biar full */
+  object-fit: cover;
   display: block;
 }
 
-/* Panel Form*/
+
+/* =========================================================
+   5) RIGHT PANEL: FORM PANEL
+   ========================================================= */
 .login-panel {
   height: 100%;
   min-height: 0;
   display: flex;
-  align-items: flex-start; /* Naik ke atas */
-  justify-content: center; /* Center horizontal */
-  padding: 48px 15px 15px; /* Jarak dari atas */
+  align-items: flex-start;
+  justify-content: center;
+  padding: 48px 15px 15px;
 }
 
 .login-inner {
@@ -63,7 +86,10 @@ body {
   margin-top: 0px;
 }
 
-/* Logo Area*/
+
+/* =========================================================
+   6) LOGO / BRAND
+   ========================================================= */
 .login-logo {
   display: flex;
   align-items: center;
@@ -90,7 +116,10 @@ body {
   font-size: .72rem;
 }
 
-/* Title*/
+
+/* =========================================================
+   7) TITLE
+   ========================================================= */
 .login-title {
   font-family: "Calistoga", serif;
   color: var(--primary);
@@ -100,14 +129,20 @@ body {
   margin: 1rem 0 1rem;
 }
 
-/* Form Label*/
+
+/* =========================================================
+   8) FORM LABELS
+   ========================================================= */
 .ott-label {
   color: var(--primary);
   font-weight: 900;
   margin-bottom: 8px;
 }
 
-/* Input With Right Icon*/
+
+/* =========================================================
+   9) INPUT WITH ICON (EMAIL / PASSWORD)
+   ========================================================= */
 .ott-input {
   position: relative;
 }
@@ -118,12 +153,13 @@ body {
   font-weight: 800;
 }
 
+/* ===== Focus State Function ===== */
 .ott-input .form-control:focus {
   border-color: rgba(139, 30, 30, .55);
   box-shadow: 0 0 0 .12rem rgba(139, 30, 30, .12);
 }
 
-/* Input Icon (Email)*/
+/* ===== Icon (Email) ===== */
 .ott-input .icon {
   position: absolute;
   right: 12px;
@@ -134,7 +170,7 @@ body {
   pointer-events: none;
 }
 
-/* Toggle Password Button*/
+/* ===== Button Function: Toggle Password ===== */
 .ott-input .icon-btn {
   position: absolute;
   right: 8px;
@@ -148,7 +184,10 @@ body {
   border-radius: 10px;
 }
 
-/* Error Text*/
+
+/* =========================================================
+   10) ERROR TEXT
+   ========================================================= */
 .err-text {
   display: none;
   color: #b3261e;
@@ -156,7 +195,10 @@ body {
   margin-top: 6px;
 }
 
-/* Remember Me*/
+
+/* =========================================================
+   11) REMEMBER ME
+   ========================================================= */
 .remember {
   font-weight: 900;
   color: #222;
@@ -169,32 +211,44 @@ body {
   accent-color: var(--primary);
 }
 
-/* Action Buttons*/
+
+/* =========================================================
+   12) ACTION BUTTONS (FORGOT + LOGIN)
+   ========================================================= */
+
+/* ===== Button Function: Forgot Password ===== */
 .btn-forgot {
   border-radius: 10px;
   font-weight: 900;
   letter-spacing: .6px;
 }
 
+/* ===== Button Function: Login ===== */
 .btn-login {
   min-width: 120px;
 }
 
-/* Disabled Login Button*/
+/* ===== Disabled State Function ===== */
 #btnLogin:disabled {
   opacity: .45;
   cursor: not-allowed;
   box-shadow: none;
 }
 
-/* Divider*/
+
+/* =========================================================
+   13) DIVIDER
+   ========================================================= */
 .login-divider {
   height: 1px;
   background: rgba(139, 30, 30, .18);
   margin: 16px 0 14px;
 }
 
-/* Social Buttons*/
+
+/* =========================================================
+   14) SOCIAL / REGISTER BUTTONS
+   ========================================================= */
 .btn-social,
 .btn-register {
   border-radius: 999px;
@@ -209,7 +263,7 @@ body {
   gap: 10px;
 }
 
-/* Social Button Icon*/
+/* ===== Social Button Icon ===== */
 .gmark {
   width: 28px;
   height: 28px;
@@ -222,11 +276,11 @@ body {
   border: 2px solid rgba(139, 30, 30, .35);
 }
 
-/* Modal Responsive*/
-/* .modal-dialog {
-} */
 
-/* Tablet Responsive */
+/* =========================================================
+   16) RESPONSIVE
+   ========================================================= */
+/* ===== Tablet & bawah (<= 991px) ===== */
 @media (max-width: 991px) {
   .login-shell {
     grid-template-columns: 1.05fr 0.95fr;
@@ -249,16 +303,18 @@ body {
   }
 }
 
-/* Mobile Responsive*/
+/* ===== Mobile (<= 575px) ===== */
 @media (max-width: 575px) {
   .login-shell {
     grid-template-columns: 1fr;
   }
 
+  /* Hidden Panel Gambar */
   .login-pattern {
-    display: none; 
+    display: none;
   }
 
+  /* Panel Padding */
   .login-panel {
     padding: 28px 16px;
     align-items: flex-start;
@@ -266,13 +322,14 @@ body {
 
   .login-inner {
     max-width: 520px;
-    overflow-y: visible; 
+    overflow-y: visible;
   }
 
   .login-title {
     font-size: 1.8rem;
   }
 
+  /* Modal */
   .ott-modal-text {
     font-size: 1.25rem;
   }
@@ -281,21 +338,23 @@ body {
     min-width: 180px;
   }
 
-    /* Penyesuaian Tombol */
+  /* =======================================================
+     ACTION ROW (REMEMBER + BUTTONS)
+     ======================================================= */
   .login-page .d-flex.align-items-center.justify-content-between.mt-3 {
     flex-direction: column;
     align-items: stretch !important;
     gap: 12px;
   }
 
-  /* Remember Me Tetap Kiri */
+  /* Remember Me */
   .login-page .remember {
     justify-content: flex-start;
   }
 
   /* Forgot & Login Jadi 1 Baris */
   .login-action-row {
-    margin-top: 0 !important;    
+    margin-top: 0 !important;
     display: flex;
     gap: 10px;
     width: 100%;

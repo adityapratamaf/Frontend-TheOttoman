@@ -1,25 +1,30 @@
 /* =========================================================
    product-detail.css
-   Dipakai untuk: product-detail.html
-   Catatan:
-   - Spacing antar section pakai GLOBAL:
-     .section-space / .section-space-first / .section-space-bottom
-   - Tidak mengubah layout HTML
+   Dipakai untuk halaman: product-detail.html
    ========================================================= */
 
+
+/* =========================================================
+   0) ROOT VARIABLES
+   ========================================================= */
 :root {
   --arrowSize: 42px;
   --arrowGap: 14px;
 }
 
+
 /* =========================================================
-   TOP GRID (thumb | image | info)
+   1) TOP SECTION WRAPPER
    ========================================================= */
 .pd-top {
   padding: 0;
   /* spacing pakai global class */
 }
 
+
+/* =========================================================
+   2) TOP GRID (thumb | image | info)
+   ========================================================= */
 .pd-grid {
   display: grid;
   grid-template-columns: 74px 1fr 1fr;
@@ -27,8 +32,9 @@
   align-items: start;
 }
 
+
 /* =========================================================
-   THUMB STRIP
+   3) THUMB STRIP
    ========================================================= */
 .pd-thumbs {
   border: 2px solid rgba(139, 30, 30, .35);
@@ -41,7 +47,7 @@
   height: 520px;
 }
 
-/* tombol panah */
+/* ===== Button Function: Thumb Arrow (Up/Down) ===== */
 .thumb-nav {
   width: 42px;
   height: 42px;
@@ -67,7 +73,7 @@
   padding: 10px 12px;
 }
 
-/* thumbnail button (SATU KALI SAJA, gak duplikat) */
+/* ===== Button Function: Thumbnail ===== */
 .thumb {
   width: 46px;
   height: 46px;
@@ -86,10 +92,11 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
   object-position: center;
+  display: block;
 }
 
+/* ===== State Function: Active / Hover ===== */
 .thumb.active {
   border-color: var(--primary);
   transform: translateY(-1px);
@@ -99,8 +106,9 @@
   border-color: rgba(139, 30, 30, .45);
 }
 
+
 /* =========================================================
-   BIG IMAGE BOX
+   4) BIG IMAGE BOX
    ========================================================= */
 .pd-imagebox {
   border: 2px solid rgba(139, 30, 30, .35);
@@ -122,8 +130,9 @@
   padding: 0;
 }
 
+
 /* =========================================================
-   INFO
+   5) INFO (TITLE + DESC)
    ========================================================= */
 .pd-title {
   font-family: "Calistoga", serif;
@@ -142,7 +151,10 @@
   text-align: justify;
 }
 
-/* spec rows */
+
+/* =========================================================
+   6) SPEC ROWS
+   ========================================================= */
 .pd-spec {
   display: grid;
   gap: 20px;
@@ -172,7 +184,11 @@
   color: #222;
 }
 
-/* size pills */
+
+/* =========================================================
+   7) SIZE PILLS
+   ========================================================= */
+/* ===== Button Function: Size Pill ===== */
 .size-pill {
   border: none;
   background: var(--primary);
@@ -184,11 +200,15 @@
   margin-right: 8px;
 }
 
+/* ===== State Function: Active ===== */
 .size-pill.active {
   box-shadow: 0 10px 18px rgba(139, 30, 30, .18);
 }
 
-/* actions row */
+
+/* =========================================================
+   8) ACTIONS ROW (QTY + BUTTONS)
+   ========================================================= */
 .pd-actions {
   display: flex;
   align-items: center;
@@ -196,6 +216,7 @@
   margin-top: 20px;
 }
 
+/* ===== Qty Control ===== */
 .qty {
   display: inline-flex;
   align-items: center;
@@ -205,6 +226,7 @@
   height: 34px;
 }
 
+/* ===== Button Function: Minus / Plus ===== */
 .qty-btn {
   width: 34px;
   height: 34px;
@@ -218,6 +240,7 @@
   justify-content: center;
 }
 
+/* ===== Value Display ===== */
 .qty-num {
   width: 50px;
   height: 34px;
@@ -229,6 +252,7 @@
   font-weight: 900;
 }
 
+/* ===== Button Function: CTA (Add Cart / Buy Now) ===== */
 .pd-btn {
   padding: 0.45rem 0.95rem;
   border-radius: 8px;
@@ -237,18 +261,18 @@
   text-align: center;
 }
 
-/* =========================
-   PRODUCT DETAIL
-   ========================= */
+
+/* =========================================================
+   9) PRODUCT DETAIL (DESCRIPTION CARD)
+   ========================================================= */
 .pd-detail {
   margin: 0;
 }
 
+/* ===== Card Wrapper ===== */
 .product-detail-page .pd-detail {
   padding-left: 0;
   margin-top: 30px;
-  /* padding-left: calc(74px + 34px); */
-  /* padding-right: calc(74px + 34px); */
 }
 
 .product-detail-page .pd-detail-card {
@@ -274,9 +298,10 @@
   text-align: justify;
 }
 
-/* =========================
-   PD INFO -> CARD (product detail)
-   ========================= */
+
+/* =========================================================
+   10) PD INFO -> CARD (RIGHT PANEL)
+   ========================================================= */
 .product-detail-page .pd-info {
   background: #fff;
   border: 1px solid rgba(0, 0, 0, .06);
@@ -285,7 +310,6 @@
   padding: 18px 18px 16px;
 }
 
-/* header feel: biar title+desc rapih */
 .product-detail-page .pd-title {
   margin: 0 0 10px;
   line-height: 1.08;
@@ -297,7 +321,6 @@
   border-bottom: 1px solid rgba(139, 30, 30, .10);
 }
 
-/* spec rows: jadi mini-card rows */
 .product-detail-page .pd-spec {
   gap: 12px;
   margin-bottom: 14px;
@@ -310,7 +333,7 @@
   border: 1px solid rgba(139, 30, 30, .10);
 }
 
-/* SIZE: biar pill-nya rapi */
+/* SIZE */
 .product-detail-page .pd-row.is-size .pd-val {
   display: flex;
   flex-wrap: wrap;
@@ -322,7 +345,6 @@
   border-radius: 10px;
   padding: .42rem .72rem;
   margin-right: 0;
-  /* biar gap yang ngatur */
 }
 
 .product-detail-page .pd-actions {
@@ -357,9 +379,11 @@
   justify-content: center;
 }
 
+
 /* =========================================================
-   BEST SELLER
+   11) BEST SELLER (ANOTHER FAVORITE PRODUCT)
    ========================================================= */
+/* Header */
 .best-head {
   display: flex;
   align-items: center;
@@ -374,6 +398,7 @@
   transform: translateY(-50%);
 }
 
+/* Wrapper */
 .best-wrap {
   padding: 0.6rem 0;
 }
@@ -385,6 +410,7 @@
   column-gap: var(--arrowGap);
 }
 
+/* ===== Button Function: Arrow Slider ===== */
 .arrow-btn2 {
   width: var(--arrowSize);
   height: var(--arrowSize);
@@ -425,6 +451,7 @@
   border-radius: 999px;
 }
 
+/* card */
 .best-card {
   min-width: 190px;
   scroll-snap-align: start;
@@ -478,25 +505,29 @@
   border-radius: 8px;
 }
 
+
 /* =========================================================
-   GLOBAL BOX-SIZING (optional, aman)
+   12) GLOBAL BOX-SIZING
    ========================================================= */
 .product-detail-page,
 .product-detail-page * {
   box-sizing: border-box;
 }
 
+
+/* =========================================================
+   13) RESPONSIVE
+   ========================================================= */
+
+/* ===== Tablet & bawah (<= 991px) ===== */
 @media (max-width: 991px) {
   .best-head {
     margin-top: var(--section-space-sm);
   }
 }
 
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
+/* ===== Mobile (<= 575px) ===== */
 @media (max-width: 575px) {
-
   .product-detail-page {
     padding-left: 12px;
     padding-right: 12px;
@@ -507,7 +538,9 @@
     gap: 18px;
   }
 
-  /* thumb jadi horizontal */
+  /* =======================================================
+     THUMBS
+     ======================================================= */
   .pd-thumbs {
     width: 100%;
     height: auto;
@@ -552,7 +585,9 @@
     display: none;
   }
 
-  /* actions jadi grid */
+  /* =======================================================
+     ACTIONS
+     ======================================================= */
   .pd-actions {
     display: grid;
     grid-template-columns: auto 1fr 1fr;
@@ -575,7 +610,9 @@
     height: 40px;
   }
 
-  /* baris size: value turun */
+  /* =======================================================
+     SIZE ROW
+     ======================================================= */
   .pd-row.is-size {
     align-items: start;
   }

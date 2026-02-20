@@ -1,11 +1,12 @@
 /* =========================================================
    product.css
-   Dipakai untuk: product.html
-   Catatan:
-   - Spacing antar section pakai GLOBAL: .section-space / .section-space-first / .section-space-bottom
-   - Jangan pakai margin-top manual antar blok di sini
+   Dipakai untuk halaman: product.html
    ========================================================= */
 
+
+/* =========================================================
+   0) ROOT VARIABLES
+   ========================================================= */
 :root {
   --wrapMax: 1440px;
   --wrapPad: clamp(16px, 4vw, 50px);
@@ -13,17 +14,18 @@
   --shadowHover: 0 18px 36px rgba(0, 0, 0, .12);
 }
 
+
 /* =========================================================
-   PAGE WRAPPER
+   1) PAGE WRAPPER
    ========================================================= */
 .product-page {
   background: #fff;
   padding-bottom: 0;
-  /* bottom spacing dikontrol section-space-bottom */
 }
 
+
 /* =========================================================
-   HERO / BANNER
+   2) HERO / BANNER
    ========================================================= */
 .product-hero {
   height: 350px;
@@ -41,11 +43,10 @@
   pointer-events: none;
 }
 
-/* =========================================================
-   TOOLBAR
-   - margin-top DIHAPUS (jarak dari section-space)
-   ========================================================= */
 
+/* =========================================================
+   3) TOOLBAR (CATEGORY + SEARCH)
+   ========================================================= */
 .product-toolbar {
   max-width: var(--wrapMax);
   margin: 0 auto;
@@ -56,7 +57,7 @@
   gap: 14px;
 }
 
-/* tombol category */
+/* ===== Button Function: Category Dropdown ===== */
 .product-cat-btn {
   font-size: 1.05rem;
   border-radius: 12px;
@@ -64,7 +65,7 @@
   text-transform: none;
 }
 
-/* search */
+/* ===== Search Bar ===== */
 .product-search {
   display: flex;
   align-items: center;
@@ -73,13 +74,13 @@
 
 .product-search-input {
   height: 45px;
+  width: 220px;
   border: 2px solid rgba(139, 30, 30, .55);
   border-right: 0;
   padding: 0 14px;
   font-size: 1rem;
   border-radius: 12px 0 0 12px;
   outline: none;
-  width: 220px;
   line-height: 1;
   box-shadow: none;
 }
@@ -89,15 +90,17 @@
   font-weight: 700;
 }
 
+/* ===== Focus State Function ===== */
 .product-search-input:focus {
   box-shadow: none;
   border-color: rgba(139, 30, 30, .75);
 }
 
-.product-search-input:focus+.product-search-btn {
+.product-search-input:focus + .product-search-btn {
   border-color: rgba(139, 30, 30, .75);
 }
 
+/* ===== Button Function: Search Submit ===== */
 .product-search-btn {
   height: 45px;
   width: 46px;
@@ -111,12 +114,15 @@
   justify-content: center;
 }
 
-/* Product Not Available */
+
+/* =========================================================
+   4) EMPTY STATE (PRODUCT NOT AVAILABLE)
+   ========================================================= */
 .empty-state {
-  grid-column: 1 / -1;      
-  min-height: 40vh;        
+  grid-column: 1 / -1;
+  min-height: 40vh;
   display: flex;
-  align-items: center;   
+  align-items: center;
   justify-content: center;
   text-align: center;
   font-family: "Viga", sans-serif;
@@ -125,9 +131,9 @@
   color: var(--primary);
 }
 
+
 /* =========================================================
-   GRID WRAP
-   - padding-top dirapihin, jarak antar blok pakai section-space
+   5) GRID WRAP
    ========================================================= */
 .product-grid-wrap {
   max-width: var(--wrapMax);
@@ -142,8 +148,13 @@
   row-gap: clamp(18px, 2.2vw, 30px);
 }
 
+.product-grid-gap {
+  margin-top: 25px;
+}
+
+
 /* =========================================================
-   PRODUCT CARD
+   6) PRODUCT CARD
    ========================================================= */
 .p-card {
   background: #fff;
@@ -185,14 +196,6 @@
   padding-inline: 4px;
 }
 
-.p-cat {
-  font-family: "Viga", sans-serif;
-  font-size: .92rem;
-  font-weight: 800;
-  color: var(--primary);
-  margin-top: 15px;
-}
-
 .p-name {
   font-family: "Viga", sans-serif;
   font-weight: 800;
@@ -206,8 +209,12 @@
   min-height: calc(1.25em * 2);
 }
 
-.product-grid-gap {
-  margin-top: 25px;
+.p-cat {
+  font-family: "Viga", sans-serif;
+  font-size: .92rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-top: 15px;
 }
 
 .p-bottom {
@@ -226,7 +233,7 @@
   white-space: nowrap;
 }
 
-/* tombol view (boleh tetap di sini) */
+/* ===== Button Function: View ===== */
 .p-view {
   background: var(--primary);
   border: 1px solid var(--primary);
@@ -248,9 +255,12 @@
   color: #fff;
 }
 
+
 /* =========================================================
-   RESPONSIVE
+   7) RESPONSIVE
    ========================================================= */
+
+/* ===== Tablet (<= 991px) ===== */
 @media (max-width: 991px) {
   .product-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -269,6 +279,7 @@
   }
 }
 
+/* ===== Mobile (<= 575px) ===== */
 @media (max-width: 575px) {
   .product-toolbar {
     flex-direction: column;
