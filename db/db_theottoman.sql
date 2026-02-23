@@ -1,6 +1,7 @@
 CREATE TABLE `categories` (
   `id` bigint PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(255),
+  `image_path` varchar(255),
   `slug` varchar(255) UNIQUE,
   `created_by` int,
   `created_at` datetime,

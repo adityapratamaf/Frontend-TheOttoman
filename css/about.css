@@ -256,6 +256,61 @@
 
 
 /* =========================================================
+   6.5) FAQ (Bootstrap Accordion)
+   ========================================================= */
+.about-faq {
+  padding: 0;
+}
+
+.faq-wrap {
+  max-width: 860px;
+}
+
+.ott-accordion .ott-acc-item {
+  border: 1px solid rgba(0, 0, 0, .04);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, .08);
+  background: #fff;
+  margin-bottom: .9rem;
+}
+
+.ott-accordion .accordion-item + .accordion-item {
+  border-top: 0;
+}
+
+.ott-accordion .ott-acc-btn {
+  font-weight: 800;
+  color: var(--primary);
+  background: #fff;
+  padding: 1rem 1.1rem;
+  letter-spacing: .2px;
+}
+
+.ott-accordion .accordion-button:not(.collapsed) {
+  color: var(--primary);
+  background: #fff;
+  box-shadow: none;
+}
+
+.ott-accordion .ott-acc-body {
+  color: var(--primary);
+  font-weight: 600;
+  line-height: 1.65;
+  padding: 0 1.1rem 1.1rem;
+}
+
+.ott-accordion .accordion-button:focus {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.ott-accordion .accordion-button::after {
+  filter: brightness(0.2);
+}
+
+
+/* =========================================================
    7) GALLERY MOSAIC
    ========================================================= */
 .about-gallery {
@@ -292,7 +347,6 @@
 /* =========================================================
    8) RESPONSIVE
    ========================================================= */
-
 /* ===== Tablet & Device Bawah (<= 991px) ===== */
 @media (max-width: 991px) {
   /* ===== Ornament Hide ===== */
