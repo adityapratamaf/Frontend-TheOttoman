@@ -797,7 +797,7 @@
   </script>
 
   <!-- Play Video -->
-  <script>
+  <!-- <script>
   document.addEventListener("DOMContentLoaded", function () {
 
     const banner = document.querySelector(".video-banner");
@@ -825,6 +825,27 @@
 
     });
 
+  });
+  </script> -->
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const banner = document.querySelector(".video-banner");
+    const btn = banner?.querySelector(".play-btn");
+    if (!banner || !btn) return;
+
+    btn.addEventListener("click", () => {
+      const src = banner.dataset.video;
+      if (!src) return;
+
+      const iframe = document.createElement("iframe");
+      iframe.src = src;
+      iframe.allow = "autoplay; encrypted-media; picture-in-picture";
+      iframe.allowFullscreen = true;
+
+      banner.innerHTML = "";
+      banner.appendChild(iframe);
+    });
   });
   </script>
 
