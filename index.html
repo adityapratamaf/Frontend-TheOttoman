@@ -826,46 +826,6 @@
 
   <!-- Play Story Ig -->
   <script>
-  document.addEventListener("DOMContentLoaded", function () {
-
-    const cards = document.querySelectorAll(".story-card");
-    const modal = document.getElementById("igModal");
-    const closeBtn = document.getElementById("igClose");
-    const videoWrap = document.getElementById("igVideoWrap");
-
-    cards.forEach(card => {
-      card.addEventListener("click", function () {
-
-        const igLink = card.dataset.ig;
-        if (!igLink) return;
-
-        videoWrap.innerHTML = `
-          <iframe src="${igLink}" 
-                  allowtransparency="true"
-                  allowfullscreen>
-          </iframe>
-        `;
-
-        modal.classList.add("active");
-      });
-    });
-
-    closeBtn.addEventListener("click", function () {
-      modal.classList.remove("active");
-      videoWrap.innerHTML = "";
-    });
-
-    modal.addEventListener("click", function (e) {
-      if (e.target === modal) {
-        modal.classList.remove("active");
-        videoWrap.innerHTML = "";
-      }
-    });
-
-  });
-  </script>
-  
-  <!-- <script>
   document.addEventListener("DOMContentLoaded", () => {
     const modal = document.getElementById("igModal");
     const closeBtn = document.getElementById("igClose");
@@ -918,7 +878,7 @@
     closeBtn?.addEventListener("click", closeModal);
     modal?.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
   });
-  </script> -->
+  </script>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
