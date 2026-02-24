@@ -642,6 +642,12 @@
   line-height: 1.35;
 }
 
+.blog-track {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
 /* =========================================================
    STORIES / IG
    ========================================================= */
@@ -890,29 +896,13 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 575px) {
   :root {
     --arrowSize: 38px;
     --arrowGap: 10px;
   }
 
-  .best-scroll {
-    gap: 18px;
-    padding-inline: var(--arrowGap);
-    scroll-padding-inline: var(--arrowGap);
-  }
-
-  .testi-scroll {
-    gap: 18px;
-  }
-
-  .testi-card {
-    min-width: 260px;
-  }
-}
-
-@media (max-width: 575px) {
-  /* Video Story Ig */
+  /* ===== Video Story Ig ===== */
   .story-track {
     display: flex;
     gap: 16px;
@@ -933,5 +923,72 @@
 
   .story-card {
     height: 420px;
+  }
+
+    /* ===== Best Seller: View 1 Card Per Swipe ===== */
+  .best-scroll {
+    gap: 12px;                
+    padding-inline: 0;    
+    scroll-padding-inline: 0;
+  }
+
+  .best-card {
+    flex: 0 0 100%;
+    min-width: 100% !important;
+    scroll-snap-align: start;
+  }
+
+  .best-card .img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .best-card .n {
+    max-width: 240px;     
+  }
+
+  /* ===== Testimoni : View 1 Card Per Swipe ===== */
+  .testi-scroll {
+    gap: 12px;
+    padding-inline: 0;
+    scroll-padding-inline: 0;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .testi-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .testi-card {
+    flex: 0 0 100%;
+    min-width: 100% !important;
+    scroll-snap-align: start;
+  }
+
+  .testi-card {
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  /* ===== Blog : View 1 Card Per Swipe ===== */
+  .blog-track {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .blog-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .blog-item {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
   }
 }
