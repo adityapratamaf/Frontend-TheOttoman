@@ -677,9 +677,15 @@
   </footer>
 
   <!-- IG Modal Play -->
-  <div class="ig-modal" id="igModal">
+  <!-- <div class="ig-modal" id="igModal">
     <div class="ig-modal-inner">
       <button class="ig-close" id="igClose">&times;</button>
+      <div class="ig-video-wrap" id="igVideoWrap"></div>
+    </div>
+  </div> -->
+  <div class="ig-modal" id="igModal">
+    <div class="ig-modal-inner">
+      <button class="ig-close" id="igClose" aria-label="Close">&times;</button>
       <div class="ig-video-wrap" id="igVideoWrap"></div>
     </div>
   </div>
@@ -819,7 +825,7 @@
   </script>
 
   <!-- Play Story Ig -->
-  <script>
+  <!-- <script>
   document.addEventListener("DOMContentLoaded", function () {
 
     const cards = document.querySelectorAll(".story-card");
@@ -857,7 +863,61 @@
     });
 
   });
-  </script>
+  </script> -->
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("igModal");
+  const closeBtn = document.getElementById("igClose");
+  const wrap = document.getElementById("igVideoWrap");
+
+  function openIG(url){
+    // coba embed
+    const embedUrl = url.replace(/\/?$/, "/") + "embed";
+
+    modal.classList.add("active");
+    wrap.innerHTML = `
+      <iframe id="igFrame" src="${embedUrl}"
+        allowtransparency="true" allowfullscreen
+        referrerpolicy="no-referrer">
+      </iframe>
+    `;
+
+    // fallback kalau iframe diblok / tidak load (sering kejadian di production)
+    const frame = document.getElementById("igFrame");
+    const timer = setTimeout(() => {
+      wrap.innerHTML = `
+        <div class="ig-fallback">
+          Instagram embed tidak bisa ditampilkan di website ini.
+          <div>
+            <a class="btn btn-ott btn-sm" href="${url}" target="_blank" rel="noopener">
+              OPEN IN INSTAGRAM
+            </a>
+          </div>
+        </div>
+      `;
+    }, 1800);
+
+    // kalau load berhasil, batalin fallback
+    frame.addEventListener("load", () => clearTimeout(timer));
+  }
+
+  document.querySelectorAll(".story-card").forEach(card => {
+    card.addEventListener("click", () => {
+      const url = card.dataset.ig;
+      if (!url) return;
+      openIG(url);
+    });
+  });
+
+  function closeModal(){
+    modal.classList.remove("active");
+    wrap.innerHTML = "";
+  }
+
+  closeBtn?.addEventListener("click", closeModal);
+  modal?.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+});
+</script>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
