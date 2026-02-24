@@ -734,10 +734,20 @@
   cursor: pointer;
 }
 
+.story-slider {
+  width: 100%;
+}
+
+.story-track {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+
 /* =========================================================
    CUSTOMERS TESTIMONIAL
    ========================================================= */
-
 .testi-wrap {
   padding: .6rem 0;
 }
@@ -749,7 +759,7 @@
   column-gap: var(--arrowGap);
 }
 
-/* scroll area */
+/* Scroll */
 .testi-scroll {
   width: 100%;
   min-width: 0;
@@ -898,5 +908,30 @@
 
   .testi-card {
     min-width: 260px;
+  }
+}
+
+@media (max-width: 575px) {
+  /* Video Story Ig */
+  .story-track {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .story-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .story-item {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+  }
+
+  .story-card {
+    height: 420px;
   }
 }
