@@ -22,9 +22,13 @@
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg ott-navbar py-2">
+  <!-- Navbar Not Login -->
+  <nav class="navbar navbar-expand-lg ott-navbar ott-navbar-fixcenter py-2">
   <div class="container ott-container">
+
+    <a class="ott-left-title d-none d-lg-inline-flex align-items-center" href="index.html" aria-label="Home">
+      The Ottoman
+    </a>
 
     <!-- Mobile : Menu (Kiri) -->
     <button class="navbar-toggler ott-toggler me-2 d-lg-none" type="button"
@@ -40,9 +44,7 @@
 
     <!-- Desktop + Mobile : Icons (Kanan) -->
     <div class="ott-icons d-flex align-items-center gap-4 ms-auto ms-lg-0 order-lg-3">
-      <a class="icon-btn" href="cart.html" aria-label="Cart"><i class="fas fa-shopping-cart"></i></a>
-      <a class="icon-btn" href="profile.html" aria-label="User"><i class="fas fa-user"></i></a>
-      <a class="icon-btn" href="login.html" aria-label="Logout"><i class="fas fa-sign-out-alt"></i></a>
+      <a class="icon-btn" href="login.html" aria-label="Logout"><i class="fas fa-sign-in-alt"></i></a>
     </div>
 
     <!-- Menu : Desktop View Normal, Mobile Collapse -->
@@ -68,6 +70,67 @@
   </div>
   </nav>
 
+  <!-- Navbar With Login -->
+  <nav class="navbar navbar-expand-lg ott-navbar ott-navbar-fixcenter py-2">
+    <div class="container ott-container">
+
+      <a class="ott-left-title d-none d-lg-inline-flex align-items-center" href="index.html" aria-label="Home">
+        The Ottoman
+      </a>
+
+      <!-- Mobile : Menu (Kiri) -->
+      <button class="navbar-toggler ott-toggler me-2 d-lg-none" type="button"
+        data-bs-toggle="collapse" data-bs-target="#ottNav"
+        aria-controls="ottNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Mobile : Logo (After Menu) -->
+      <a class="navbar-brand ott-brand d-flex align-items-center d-lg-none" href="index.html" aria-label="Home">
+        <img src="image/logo/1.png" alt="Logo" class="ott-logo">
+      </a>
+
+      <!-- Desktop + Mobile : Icons (Kanan) -->
+      <div class="ott-icons d-flex align-items-center gap-4 ms-auto ms-lg-0 order-lg-3">
+        <a class="icon-btn" href="cart.html" aria-label="Cart"><i class="fas fa-shopping-cart"></i></a>
+
+        <!-- Profile Dropdown -->
+        <div class="dropdown ott-dd">
+          <a class="icon-btn dropdown-toggle ott-dd-toggle" href="#" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false" aria-label="User menu">
+            <i class="fas fa-user"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end ott-dd-menu">
+            <li><a class="dropdown-item ott-dd-item" href="profile.html"><i class="fas fa-id-card-alt"></i> &nbsp; Profile</a></li>
+            <li><hr class="dropdown-divider ott-dd-divider"></li>
+            <li><a class="dropdown-item ott-dd-item" href="register.html"> <i class="fas fa-sign-out-alt"></i> &nbsp; Logout</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Menu : Desktop View Normal, Mobile Collapse -->
+      <div class="collapse navbar-collapse order-lg-2" id="ottNav">
+        <ul class="navbar-nav mx-auto align-items-lg-center gap-lg-5 ott-menu">
+
+          <li class="nav-item"><a class="nav-link ott-navlink" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link ott-navlink" href="about.html">About</a></li>
+
+          <!-- Desktop : Logo Center -->
+          <li class="nav-item d-none d-lg-block">
+            <a class="nav-link p-0" href="index.html" aria-label="Home">
+              <img src="image/logo/1.png" alt="Logo" style="width:auto;height:50px;">
+            </a>
+          </li>
+
+          <li class="nav-item"><a class="nav-link ott-navlink" href="product.html">Product</a></li>
+          <li class="nav-item"><a class="nav-link ott-navlink" href="gallery.html">Gallery</a></li>
+
+        </ul>
+      </div>
+
+    </div>
+  </nav>
 
   <!-- Footer -->
   <footer class="ott-footer">

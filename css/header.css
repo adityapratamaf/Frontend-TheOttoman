@@ -117,6 +117,128 @@ h1, h2, h3, h4, h5, h6 {
   border-color: rgba(0, 0, 0, .15);
 }
 
+/* Dropdown Profile */
+.ott-dd .dropdown-toggle::after {
+  display: none; /* Hidden Arrow */
+}
+
+.ott-dd-menu {
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, .06);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, .10);
+  padding: .45rem;
+  min-width: 180px;
+}
+
+.ott-dd-item {
+  font-weight: 800;
+  color: var(--primary);
+  border-radius: 10px;
+  padding: .55rem .75rem;
+}
+
+.ott-dd-item:hover {
+  background: rgba(139, 30, 30, .08);
+  color: var(--primary-dark);
+}
+
+.ott-dd-divider {
+  margin: .35rem 0;
+}
+
+/* Teks The Ottoman (Kiri) */
+.ott-left-title {
+  color: var(--primary) !important;
+  font-weight: 1000;
+  text-transform: capitalize;
+  font-size: 1.25rem; 
+  text-decoration: none;
+  line-height: 1;
+}
+
+.ott-left-title:hover {
+  color: var(--primary-dark) !important;
+}
+
+/* Hover Menu Animasi + Underline */
+.ott-navlink {
+  position: relative;
+  display: inline-block;
+  transition: transform .22s ease, color .22s ease;
+}
+
+/* Underline */
+.ott-navlink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;              
+  width: 100%;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 999px;
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .22s ease, background .22s ease;
+}
+
+/* Hover Animasi Teks Gerak & Underline */
+.ott-navlink:hover {
+  transform: translateY(-2px);
+  color: var(--primary-dark) !important;
+}
+
+.ott-navlink:hover::after {
+  transform: scaleX(1);
+  background: var(--primary-dark);
+}
+
+/* Saat Active Page */
+.ott-navlink.active {
+  color: var(--primary-dark) !important;
+}
+
+.ott-navlink.active::after {
+  transform: scaleX(1);
+  background: var(--primary-dark);
+}
+
+
+/* Desktop */
+@media (min-width: 992px) {
+  /* Container 3 Column Kiri(1fr) - Tengah (Auto) - Kanan(1fr) */
+  .ott-navbar-fixcenter .ott-container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+  }
+
+  /* Toggler + Mobile */
+  .ott-navbar-fixcenter .navbar-toggler {
+    grid-column: 1;
+    justify-self: start;
+  }
+
+  /* Menu View Center Fix */
+  .ott-navbar-fixcenter .navbar-collapse {
+    grid-column: 2;
+    justify-self: center;
+    width: auto;
+  }
+
+  .ott-navbar-fixcenter .ott-menu {
+    margin: 0 !important;
+  }
+
+  /* Icon View Right Fix */
+  .ott-navbar-fixcenter .ott-icons {
+    grid-column: 3;
+    justify-self: end;
+    margin-left: 0 !important;
+  }
+}
+
 /* Responsive */
 @media (max-width: 991px) {
   .ott-container {
@@ -142,6 +264,20 @@ h1, h2, h3, h4, h5, h6 {
 
   .ott-menu .nav-link {
     padding: 10px 0;
+  }
+
+  .ott-navbar-fixcenter .ott-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .ott-navbar-fixcenter .navbar-collapse {
+    width: 100%;
+  }
+  
+  /* Icons Fix Right */
+  .ott-navbar-fixcenter .ott-icons {
+    margin-left: auto !important; 
   }
 }
 
