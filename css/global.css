@@ -190,6 +190,20 @@
   color: #fff;
 }
 
+/* Kondisi Kosong Tidak ada Data */
+.empty-state {
+  grid-column: 1 / -1;      
+  min-height: 40vh;        
+  display: flex;
+  align-items: center;   
+  justify-content: center;
+  text-align: center;
+  font-family: "Viga", sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--primary);
+}
+
 /* Mobile Responsive Global*/
 @media (max-width: 575px) {
   /* Modal Mobile*/

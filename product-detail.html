@@ -69,11 +69,8 @@
   </nav>
 
   <main class="container ott-container py-4 product-detail-page">
-
     <!-- Title -->
-    <section class="section-space-first">
-      <h2 class="section-title">PRODUCT DETAIL</h2>
-    </section>
+    <h2 class="section-title">PRODUCT DETAIL</h2>
 
     <!-- Product Picture -->
     <section class="pd-top product-grid-gap">
@@ -121,60 +118,81 @@
 
         <!-- Right : Detail -->
         <div class="pd-info">
-          <h1 class="pd-title">Traditional Carpet Turkey</h1>
+          <div class="pd-header">
+            <h1 class="pd-title">Traditional Carpet Turkey</h1>
+            <div class="pd-price-highlight" id="pdUnitPrice" data-unit="790000">
+              IDR 790.000,00
+            </div>
+          </div>
 
           <p class="pd-desc">
-            Handwoven in Turkey using time-honored techniques, this traditional Turkish carpet reflects the richness of
-            Anatolian heritage. Each pattern carries.
+            Handwoven in Turkey using time-honored techniques, reflecting
+            authentic Anatolian heritage and timeless Ottoman elegance.
           </p>
 
+          <!-- ===== Spesifikasi ===== -->
           <div class="pd-spec">
             <div class="pd-row">
-              <div class="pd-label">CATEGORY</div>
+              <div class="pd-label">Category</div>
               <div class="pd-sep">:</div>
-              <div class="pd-val"><strong>Carpet &amp; Rugs</strong></div>
+              <div class="pd-val"><strong>Carpet & Rugs</strong></div>
             </div>
+
+            <!-- Size -->
             <div class="pd-row is-size">
-              <div class="pd-label">SIZE</div>
+              <div class="pd-label">Size</div>
               <div class="pd-sep">:</div>
-              <div class="pd-val">
-                <button class="size-pill active" type="button">3 X 4</button>
-                <button class="size-pill" type="button">3 X 4</button>
-                <button class="size-pill" type="button">3 X 4</button>
-                <button class="size-pill" type="button">3 X 4</button>
-                <button class="size-pill" type="button">3 X 4</button>
+              <div class="pd-val variant-group" data-type="size">
+                <button class="variant-pill active" data-value="3x4">3 x 4</button>
+                <button class="variant-pill" data-value="4x6">4 x 6</button>
+                <button class="variant-pill" data-value="5x7">5 x 7</button>
+              </div>
+            </div>
+
+            <!-- Motif -->
+            <div class="pd-row is-motif">
+              <div class="pd-label">Motif</div>
+              <div class="pd-sep">:</div>
+              <div class="pd-val variant-group" data-type="motif">
+                <button class="variant-pill active" data-value="Anatolian">Anatolian</button>
+                <button class="variant-pill" data-value="Ottoman">Ottoman</button>
+                <button class="variant-pill" data-value="Vintage">Vintage</button>
               </div>
             </div>
 
             <div class="pd-row">
-              <div class="pd-label">STOCK</div>
+              <div class="pd-label">Stock</div>
               <div class="pd-sep">:</div>
               <div class="pd-val"><strong id="pdStock">10</strong></div>
             </div>
 
             <div class="pd-row">
-              <div class="pd-label">PRICE UNIT</div>
+              <div class="pd-label">Price</div>
               <div class="pd-sep">:</div>
               <div class="pd-val">
-                <strong id="pdUnitPrice" data-unit="790000">IDR 790.000,00</strong>
+                <strong>IDR 790.000,00</strong>
               </div>
             </div>
 
             <div class="pd-row">
-              <div class="pd-label">PRICE TOTAL</div>
+              <div class="pd-label">Total</div>
               <div class="pd-sep">:</div>
-              <div class="pd-val"><strong id="pdTotalPrice">IDR 2.370.000,00</strong></div>
+              <div class="pd-val">
+                <strong id="pdTotalPrice">IDR 790.000,00</strong>
+              </div>
             </div>
+
           </div>
 
+          <!-- Action -->
           <div class="pd-actions">
             <div class="qty" data-min="1">
-              <button class="qty-btn" id="qtyMinus" type="button" aria-label="Decrease">−</button>
+              <button class="qty-btn" id="qtyMinus">−</button>
               <div class="qty-num" id="qtyValue">1</div>
-              <button class="qty-btn" id="qtyPlus" type="button" aria-label="Increase">+</button>
+              <button class="qty-btn" id="qtyPlus">+</button>
             </div>
-            <a href="cart.html" class="btn btn-ott btn-sm pd-btn">ADD CART</a>
-            <a href="checkout.html" class="btn btn-ott btn-sm pd-btn">BUY NOW</a>
+            <a href="cart.html" class="btn btn-ott pd-btn">ADD CART</a>
+            <a href="checkout.html" class="btn btn-ott-outline pd-btn">BUY NOW</a>
           </div>
         </div>
 
@@ -207,7 +225,7 @@
     <!-- Another Product (Komponen Best Seller) -->
     <section class="section-space">
       <div class="best-head">
-        <h2 class="section-title">ANOTHER FAVORITE PRODUCT</h2>
+        <h2 class="section-title">BEST SELLER</h2>
         <div class="explore-right">
           <a href="product.html" class="btn btn-ott-outline btn-sm">EXPLORE</a>
         </div>
@@ -370,7 +388,7 @@
     </div>
   </footer>
 
-  <!-- Logic Transaksi -->
+  <!-- Logic -->
   <script>
     // Scroll Another Product
     function scrollBest(dir) {
@@ -383,6 +401,29 @@
         behavior: "smooth"
       });
     }
+
+    // Variant Choose
+    document.querySelectorAll(".variant-group").forEach(group => {
+      group.addEventListener("click", function (e) {
+        if (!e.target.classList.contains("variant-pill")) return;
+
+        const type = group.dataset.type;
+        group.querySelectorAll(".variant-pill")
+          .forEach(btn => btn.classList.remove("active"));
+
+        e.target.classList.add("active");
+
+        if (type === "size") {
+          document.getElementById("selectedSize").textContent =
+            e.target.dataset.value;
+        }
+
+        if (type === "motif") {
+          document.getElementById("selectedMotif").textContent =
+            e.target.dataset.value;
+        }
+      });
+    });
 
     /**
     Product Detail Interaksi
@@ -485,7 +526,7 @@
 
       if (!qtyEl || !minusBtn || !plusBtn || !stockEl || !unitEl || !totalEl) return;
 
-      const minQty = parseInt(document.querySelector(".qty")?.dataset.min || "1", 10);
+      const minQty = parseInt(document.querySelector(".qty") ?.dataset.min || "1", 10);
       const maxQty = parseInt(stockEl.textContent.trim() || "0", 10);
       const unit = parseInt(unitEl.dataset.unit || "0", 10);
 

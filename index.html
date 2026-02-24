@@ -407,8 +407,10 @@
   </main>
 
   <!-- Video -->
-  <section class="video-banner section-space">
-    <a class="play-btn" href="" aria-label="Play"><i class="fas fa-play"></i></a>
+  <section class="video-banner section-space" data-video="https://www.youtube.com/embed/0pOLpyUHeeM?autoplay=1&rel=0">
+    <button class="play-btn" type="button" aria-label="Play">
+      <i class="fas fa-play"></i>
+    </button>
   </section>
 
   <!-- Blog -->
@@ -459,35 +461,40 @@
       <h2 class="section-title">OUR STORY</h2>
       <div class="row row-cols-2 row-cols-md-5 g-3 justify-content-center">
         <div class="col">
-          <div class="story-card">
+          <div class="story-card" 
+              data-ig="https://www.instagram.com/reel/DQbhB58EhTr/embed">
             <img src="image/story/1.jpg" alt="">
             <span class="story-play"><i class="fas fa-play"></i></span>
           </div>
         </div>
 
         <div class="col">
-          <div class="story-card">
+          <div class="story-card" 
+              data-ig="https://www.instagram.com/reel/DQbhB58EhTr/embed">
             <img src="image/story/2.jpg" alt="">
             <span class="story-play"><i class="fas fa-play"></i></span>
           </div>
         </div>
 
         <div class="col">
-          <div class="story-card">
+          <div class="story-card" 
+              data-ig="https://www.instagram.com/reel/DQbhB58EhTr/embed">
             <img src="image/story/3.jpg" alt="">
             <span class="story-play"><i class="fas fa-play"></i></span>
           </div>
         </div>
 
         <div class="col">
-          <div class="story-card">
+          <div class="story-card" 
+              data-ig="https://www.instagram.com/reel/DQbhB58EhTr/embed">
             <img src="image/story/4.jpg" alt="">
             <span class="story-play"><i class="fas fa-play"></i></span>
           </div>
         </div>
 
         <div class="col">
-          <div class="story-card">
+          <div class="story-card" 
+              data-ig="https://www.instagram.com/reel/DQbhB58EhTr/embed">
             <img src="image/story/5.jpg" alt="">
             <span class="story-play"><i class="fas fa-play"></i></span>
           </div>
@@ -669,6 +676,14 @@
     </div>
   </footer>
 
+  <!-- IG Modal Play -->
+  <div class="ig-modal" id="igModal">
+    <div class="ig-modal-inner">
+      <button class="ig-close" id="igClose">&times;</button>
+      <div class="ig-video-wrap" id="igVideoWrap"></div>
+    </div>
+  </div>
+
   <!-- Hero Corousel -->
   <script>
     (function () {
@@ -779,6 +794,79 @@
         behavior: "smooth"
       });
     }
+  </script>
+
+  <!-- Play Video -->
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    const banner = document.querySelector(".video-banner");
+    const playBtn = document.querySelector(".play-btn");
+
+    if (!banner || !playBtn) return;
+
+    playBtn.addEventListener("click", function () {
+
+      const videoURL = banner.dataset.video;
+      if (!videoURL) return;
+
+      // Hapus overlay background
+      banner.classList.add("is-playing");
+
+      // Buat iframe
+      const iframe = document.createElement("iframe");
+      iframe.src = videoURL;
+      iframe.allow = "autoplay; encrypted-media";
+      iframe.allowFullscreen = true;
+
+      // Kosongkan banner
+      banner.innerHTML = "";
+      banner.appendChild(iframe);
+
+    });
+
+  });
+  </script>
+
+  <!-- Play Story Ig -->
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    const cards = document.querySelectorAll(".story-card");
+    const modal = document.getElementById("igModal");
+    const closeBtn = document.getElementById("igClose");
+    const videoWrap = document.getElementById("igVideoWrap");
+
+    cards.forEach(card => {
+      card.addEventListener("click", function () {
+
+        const igLink = card.dataset.ig;
+        if (!igLink) return;
+
+        videoWrap.innerHTML = `
+          <iframe src="${igLink}" 
+                  allowtransparency="true"
+                  allowfullscreen>
+          </iframe>
+        `;
+
+        modal.classList.add("active");
+      });
+    });
+
+    closeBtn.addEventListener("click", function () {
+      modal.classList.remove("active");
+      videoWrap.innerHTML = "";
+    });
+
+    modal.addEventListener("click", function (e) {
+      if (e.target === modal) {
+        modal.classList.remove("active");
+        videoWrap.innerHTML = "";
+      }
+    });
+
+  });
   </script>
 
   <!-- Bootstrap JS -->
