@@ -120,9 +120,6 @@
         <div class="pd-info">
           <div class="pd-header">
             <h1 class="pd-title">Traditional Carpet Turkey</h1>
-            <div class="pd-price-highlight" id="pdUnitPrice" data-unit="790000">
-              IDR 790.000,00
-            </div>
           </div>
 
           <p class="pd-desc">
@@ -170,7 +167,7 @@
               <div class="pd-label">Price</div>
               <div class="pd-sep">:</div>
               <div class="pd-val">
-                <strong>IDR 790.000,00</strong>
+                <strong id="pdUnitPrice" data-unit="790000">IDR 790.000,00</strong>
               </div>
             </div>
 
@@ -223,7 +220,7 @@
     </section>
 
     <!-- Another Product (Komponen Best Seller) -->
-    <section class="section-space">
+    <section class="section-space section-space-bottom">
       <div class="best-head">
         <h2 class="section-title">BEST SELLER</h2>
         <div class="explore-right">
@@ -528,7 +525,7 @@
 
       const minQty = parseInt(document.querySelector(".qty") ?.dataset.min || "1", 10);
       const maxQty = parseInt(stockEl.textContent.trim() || "0", 10);
-      const unit = parseInt(unitEl.dataset.unit || "0", 10);
+      const unit = parseInt(unitEl.getAttribute("data-unit") || "0", 10);
 
       /**
        * formatIDR(num)

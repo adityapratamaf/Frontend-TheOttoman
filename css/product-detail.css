@@ -23,7 +23,7 @@
 
 
 /* =========================================================
-   2) TOP GRID (thumb | image | info)
+   2) TOP GRID 
    ========================================================= */
 .pd-grid {
   display: grid;
@@ -385,9 +385,8 @@
 
 
 /* =========================================================
-   11) BEST SELLER (ANOTHER FAVORITE PRODUCT)
+   11) ANOTHER FAVORITE PRODUCT
    ========================================================= */
-/* Header */
 .best-head {
   display: flex;
   align-items: center;
@@ -402,7 +401,6 @@
   transform: translateY(-50%);
 }
 
-/* Wrapper */
 .best-wrap {
   padding: 0.6rem 0;
 }
@@ -414,7 +412,6 @@
   column-gap: var(--arrowGap);
 }
 
-/* ===== Button Function: Arrow Slider ===== */
 .arrow-btn2 {
   width: var(--arrowSize);
   height: var(--arrowSize);
@@ -444,9 +441,6 @@
 
 .best-scroll::-webkit-scrollbar {
   display: none;
-}
-
-.best-scroll::-webkit-scrollbar {
   height: 8px;
 }
 
@@ -455,7 +449,6 @@
   border-radius: 999px;
 }
 
-/* Card */
 .best-card {
   min-width: 190px;
   scroll-snap-align: start;
@@ -576,16 +569,6 @@
   color: var(--primary);
   margin-top: 6px;
 }
-
-/* ACTION */
-/* .pd-actions {
-  margin-top: 20px;
-  padding-top: 18px;
-  border-top: 1px solid rgba(0,0,0,.05);
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-} */
 
 
 /* =========================================================
@@ -789,6 +772,30 @@
     justify-content: center !important;
     padding: 0 8px !important;
     white-space: nowrap;
+  }
+
+  /* ===============================
+    ANOTHER FAVORITE PRODUCT : View 1 Card Per Swipe
+  =============================== */
+  .best-scroll {
+    gap: 12px;                
+    padding-inline: 0;
+    scroll-padding-inline: 0;
+  }
+
+  .best-card {
+    flex: 0 0 100%;
+    min-width: 100% !important;
+    scroll-snap-align: start;
+  }
+
+  .best-card .img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .best-card .n {
+    max-width: 240px;     
   }
   
 }

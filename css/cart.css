@@ -49,7 +49,6 @@
   grid-template-columns: 36px 130px 1.2fr 0.95fr 1fr 0.9fr 70px;
   align-items: center;
   column-gap: 25px;
-  /* SAMA kayak .cart-row */
   justify-items: center;
 }
 
@@ -67,7 +66,6 @@
   font-size: 1.35rem;
   text-align: center;
   margin-left: 0;
-  /* penting: hapus offset */
   justify-self: center;
 }
 
@@ -193,6 +191,30 @@
   font-size: 1.05rem;
 }
 
+/* Cart Detail Product (Category Size Motif) */
+.cart-meta {
+  margin-top: 4px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+  color: #000000;
+  font-weight: 700;
+}
+
+.cart-meta span {
+  position: relative;
+  padding-right: 8px;
+}
+
+.cart-meta span:not(:last-child)::after {
+  content: "•";
+  position: absolute;
+  right: 0;
+  color: var(--primary);
+  font-weight: 900;
+}
+
 
 /* =========================================================
    8) QTY CONTROL
@@ -283,12 +305,8 @@
    ========================================================= */
 
 /* ===== Tablet & Device (<= 991px) ===== */
-@media (max-width: 991px) {
-  /* NOTE:
-     Layout utama sudah kebantu Bootstrap container & spacing.
-     Tidak ada override khusus agar layout tetap sama.
-  */
-}
+/* @media (max-width: 991px) {
+} */
 
 /* ===== Mobile (<= 575px) ===== */
 @media (max-width: 575px) {
@@ -437,5 +455,43 @@
     padding: .70rem 1rem;
     font-size: .85rem;
     border-radius: 12px;
+  }
+
+  /* =======================================================
+     Category Desktipsi Size Motif
+     ======================================================= */
+  .c-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .cart-name {
+    font-size: 0.85rem;
+    line-height: 1.25;
+  }
+
+  .cart-meta {
+    margin-top: 6px;
+    font-size: 0.68rem;
+    color: #000000;
+    gap: 8px;
+  }
+
+  .cart-meta span {
+    padding-right: 10px;
+  }
+
+  .cart-meta span:not(:last-child)::after {
+    right: 2px;
+  }
+
+  .c-img {
+    margin-right: 6px;
+  }
+
+  .cart-imgbox {
+    width: 70px;
+    height: 70px;
   }
 }
