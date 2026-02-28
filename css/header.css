@@ -208,28 +208,40 @@ h1, h2, h3, h4, h5, h6 {
    CART BADGE 
 ================================ */
 .cart-badge-wrap{
-  display: inline-flex;
-  align-items: center;
-  gap: 3px; /* jarak badge ke icon */
-  line-height: 1;
-  text-decoration: none !important;
-}
-
-.cart-count{
-  height: 20px;
-  min-width: 26px;
-  padding: 0 8px;
-  border-radius: 10px;
-  background: var(--primary);
-  color: #fff;
-  font-size: 0.72rem;
-  font-weight: 900;
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  /* border: 2px solid #fff; */
-  box-shadow: 0 6px 14px rgba(0,0,0,.12);
+  line-height: 1;
+}
+
+.cart-count{
+  position: absolute;
+  top: -13px;
+  right: -17px;
+  height: 20px;
+  min-width: 20px; 
+  padding: 0 7px;       
+  border-radius: 10px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 500;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
   white-space: nowrap;
+  pointer-events: none;
+}
+
+.icon-btn{
+  text-decoration: none !important;
+}
+
+.icon-btn::after{
+  content: none !important;
 }
 
 
@@ -336,11 +348,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   /* Cart Count */
-  .cart-badge-wrap{ gap: 3px; }
   .cart-count{
-    height: 18px;
-    min-width: 24px;
-    padding: 0 7px;
-    font-size: 0.68rem;
+    top: -13px;
+    right: -17px;
+    height: 20px;
+    min-width: 20px;
+    padding: 0 6px;
+    font-size: 0.60rem;
   }
 }
