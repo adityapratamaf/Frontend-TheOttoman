@@ -70,22 +70,17 @@
     </nav>
 
     <main class="container ott-container py-4 gallery-page">
-
         <h1 class="gallery-title">GALLERY</h1>
 
         <section class="gallery-bar section-space-first">
-            <div class="g-3 align-items-center">
-                <div class="gallery-note">
-                    Curated moments of Turkish & lifestyle.
-                </div>
+            <div class="gallery-note">
+                Curated moments of Turkish & lifestyle.
             </div>
         </section>
 
-        <!-- GRID -->
         <section class="gallery-grid-wrap section-space section-space-bottom">
-            <div class="gallery-grid" id="galleryGrid" aria-label="Gallery grid"></div>
+            <div class="gallery-grid" id="galleryGrid"></div>
         </section>
-
     </main>
 
     <!-- Modal View Gambar -->
@@ -112,128 +107,123 @@
         </div>
     </div>
 
+    <!-- TODO : Source Data Image From Controller / ($images contoh variable from controller) -->
+    <script>
+        const galleryData = @json($images); 
+    </script>
+
     <!-- Gallery -->
     <script>
-        const TOTAL = 40;
-
-        // Dummy Gambar
-        const seeds = Array.from({
-            length: TOTAL
-        }, (_, i) => `ottoman-${i + 1}`);
-
-        // Shuffle
-        function shuffle(arr) {
-            const a = [...arr];
-            for (let i = a.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [a[i], a[j]] = [a[j], a[i]];
-            }
-            return a;
-        }
-
+        const images = galleryData;
+        const TOTAL = images.length;
         const gridEl = document.getElementById("galleryGrid");
-
-        // Modal Gambar View
         const modal = document.getElementById("gModal");
         const modalImg = document.getElementById("gModalImg");
         const modalCap = document.getElementById("gModalCap");
         const btnClose = modal.querySelector(".gmodal-close");
         const btnPrev = modal.querySelector(".gmodal-prev");
         const btnNext = modal.querySelector(".gmodal-next");
-
-        let orderedSeeds = [];
+        let orderedImages = [];
         let currentIndex = 0;
 
-        function buildGrid(seedOrder) {
-            gridEl.innerHTML = "";
+        // SHUFFLE
+        function shuffle(arr){
+            const a = [...arr];
+            for(let i=a.length-1;i>0;i--){
+                const j = Math.floor(Math.random()*(i+1));
+                [a[i],a[j]]=[a[j],a[i]]
+            }
+            return a
+        }
 
-            seedOrder.forEach((seed, idx) => {
+        // BUILD GRID
+        function buildGrid(order){
+            gridEl.innerHTML="";
+            order.forEach((img,idx)=>{
                 const tall = (idx % 9 === 0) ? "is-tall" : "";
                 const wide = (idx % 13 === 0) ? "is-wide" : "";
-
                 const card = document.createElement("button");
-                card.type = "button";
-                card.className = `gcard ${tall} ${wide}`;
-                card.setAttribute("aria-label", `Open image ${idx+1}`);
-                card.dataset.index = idx;
-
-                const thumb = `https://picsum.photos/seed/${seed}/700/700`;
-                const full = `https://picsum.photos/seed/${seed}/1800/1200`;
-
-                card.dataset.full = full;
-
-                card.innerHTML = `
-          <div class="gthumb">
-            <img loading="lazy" src="${thumb}" alt="Gallery photo ${idx+1}">
-          </div>
-          <div class="gshine" aria-hidden="true"></div>
-        `;
-
-                card.addEventListener("click", () => openModal(idx));
+                card.type="button";
+                card.className=`gcard ${tall} ${wide}`;
+                card.dataset.index=idx;
+                card.dataset.full=img;
+                card.innerHTML=`
+                <div class="gthumb">
+                    <img 
+                        data-src="${img}"
+                        alt="Gallery ${idx+1}"
+                        class="lazy-img"
+                    >
+                </div>
+                <div class="gshine"></div>
+                `;
+                card.addEventListener("click",()=>openModal(idx));
                 gridEl.appendChild(card);
-
-                // Animasi Stagger Soft
-                requestAnimationFrame(() => {
-                    card.style.setProperty("--d", `${Math.min(idx * 18, 500)}ms`);
+                requestAnimationFrame(()=>{
+                    card.style.setProperty("--d",`${Math.min(idx*18,500)}ms`);
                     card.classList.add("is-in");
+
                 });
             });
+            initLazy();
         }
 
-        function openModal(idx) {
-            currentIndex = idx;
-            const seed = orderedSeeds[currentIndex];
-            const full = `https://picsum.photos/seed/${seed}/1800/1200`;
-
-            modalImg.src = full;
-            modalImg.alt = `Gallery image ${currentIndex+1}`;
-            modalCap.textContent = `${currentIndex + 1} / ${TOTAL}`;
-
+        // MODAL
+        function openModal(idx){
+            currentIndex=idx;
+            modalImg.src=orderedImages[currentIndex];
+            modalCap.textContent=`${currentIndex+1} / ${TOTAL}`;
             modal.classList.add("is-open");
             document.body.classList.add("no-scroll");
-            modal.setAttribute("aria-hidden", "false");
         }
 
-        function closeModal() {
+        function closeModal(){
             modal.classList.remove("is-open");
             document.body.classList.remove("no-scroll");
-            modal.setAttribute("aria-hidden", "true");
-            // optional: reset image src biar ringan
-            setTimeout(() => {
-                modalImg.src = "";
-            }, 200);
+            setTimeout(()=>modalImg.src="",200);
         }
 
-        function nav(dir) {
-            currentIndex = (currentIndex + dir + TOTAL) % TOTAL;
-            const seed = orderedSeeds[currentIndex];
-            modalImg.classList.remove("img-in");
-
-            void modalImg.offsetWidth;
-            modalImg.src = `https://picsum.photos/seed/${seed}/1800/1200`;
-            modalCap.textContent = `${currentIndex + 1} / ${TOTAL}`;
-            modalImg.classList.add("img-in");
+        function nav(dir){
+            currentIndex=(currentIndex+dir+TOTAL)%TOTAL;
+            modalImg.src=orderedImages[currentIndex];
+            modalCap.textContent=`${currentIndex+1} / ${TOTAL}`;
         }
 
-        // Event
-        btnClose.addEventListener("click", closeModal);
-        modal.addEventListener("click", (e) => {
-            if (e.target?.dataset?.close === "true") closeModal();
-        });
-        btnPrev.addEventListener("click", () => nav(-1));
-        btnNext.addEventListener("click", () => nav(1));
+        // EVENTS
+        btnClose.addEventListener("click",closeModal);
+        modal.addEventListener("click",(e)=>{
+            if(e.target?.dataset?.close==="true") closeModal()
+        })
+        btnPrev.addEventListener("click",()=>nav(-1));
+        btnNext.addEventListener("click",()=>nav(1));
 
-        // Tombol Navigass View
-        window.addEventListener("keydown", (e) => {
-            if (!modal.classList.contains("is-open")) return;
-            if (e.key === "Escape") closeModal();
-            if (e.key === "ArrowLeft") nav(-1);
-            if (e.key === "ArrowRight") nav(1);
+        window.addEventListener("keydown",(e)=>{
+            if(!modal.classList.contains("is-open")) return;
+            if(e.key==="Escape") closeModal();
+            if(e.key==="ArrowLeft") nav(-1);
+            if(e.key==="ArrowRight") nav(1);
         });
 
-        // Random & Refresh At Load Page
-        orderedSeeds = shuffle(seeds);
-        buildGrid(orderedSeeds);
+        // LAZY LOAD
+        function initLazy(){
+            const imgs=document.querySelectorAll(".lazy-img");
+            const observer=new IntersectionObserver((entries,obs)=>{
+                entries.forEach(entry=>{
+                    if(!entry.isIntersecting) return;
+                    const img=entry.target;
+                    img.src=img.dataset.src;
+                    img.onload=()=>img.classList.add("img-loaded");
+                    obs.unobserve(img);
+                });
+            },{
+                rootMargin:"200px"
+            });
+            imgs.forEach(img=>observer.observe(img));
+        }
+
+        // INIT
+        orderedImages=shuffle(images);
+        buildGrid(orderedImages);
     </script>
 
     <!-- Footer -->
