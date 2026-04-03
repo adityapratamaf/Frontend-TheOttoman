@@ -129,7 +129,7 @@
                     <div class="subcategory-menu">
                       <a href="#" class="subcategory-link" data-category="home & living" data-subcategory="tableware & dining">Tableware &amp; Dining</a>
                       <a href="#" class="subcategory-link" data-category="home & living" data-subcategory="handmade ceramics">Handmade Ceramics</a>
-                      <a href="#" class="subcategory-link" data-category="home & living" data-subcategory="home décor">Home Decor</a>
+                      <a href="#" class="subcategory-link" data-category="home & living" data-subcategory="home decor">Home Decor</a>
                       <a href="#" class="subcategory-link" data-category="home & living" data-subcategory="textiles (home)">Textiles (Home)</a>
                     </div>
                   </div>
@@ -165,7 +165,7 @@
           </div>
         </aside>
 
-        <!-- Product Area -->
+        <!-- Product -->
         <div class="product-main">
           <section class="product-grid-wrap">
             <div class="product-grid">
@@ -510,6 +510,74 @@
                 </div>
               </article>
 
+              <article class="p-card" data-category="home & living" data-subcategory="tableware & dining" data-type="hand made">
+                <div class="p-img">
+                  <img src="image/product/5.jpg" alt="Ottoman Dining Set">
+                </div>
+                <div class="p-body">
+                  <div class="p-name">Ottoman Dining Set</div>
+                  <div class="p-cat">Home &amp; Living</div>
+                  <div class="p-subcat">Tableware &amp; Dining</div>
+                  <div class="p-classification">Hand Made</div>
+
+                  <div class="p-bottom">
+                    <div class="p-price">IDR 7.190.000</div>
+                    <a href="product-detail.html" class="p-view">VIEW</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="p-card" data-category="home & living" data-subcategory="handmade ceramics" data-type="hand made">
+                <div class="p-img">
+                  <img src="image/product/4.jpg" alt="Anatolian Ceramic Bowl Set">
+                </div>
+                <div class="p-body">
+                  <div class="p-name">Anatolian Ceramic Bowl Set</div>
+                  <div class="p-cat">Home &amp; Living</div>
+                  <div class="p-subcat">Handmade Ceramics</div>
+                  <div class="p-classification">Hand Made</div>
+
+                  <div class="p-bottom">
+                    <div class="p-price">IDR 6.890.000</div>
+                    <a href="product-detail.html" class="p-view">VIEW</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="p-card" data-category="home & living" data-subcategory="home decor" data-type="hand made">
+                <div class="p-img">
+                  <img src="image/product/3.jpg" alt="Ottoman Wall Decor Plate">
+                </div>
+                <div class="p-body">
+                  <div class="p-name">Ottoman Wall Decor Plate</div>
+                  <div class="p-cat">Home &amp; Living</div>
+                  <div class="p-subcat">Home Decor</div>
+                  <div class="p-classification">Hand Made</div>
+
+                  <div class="p-bottom">
+                    <div class="p-price">IDR 5.490.000</div>
+                    <a href="product-detail.html" class="p-view">VIEW</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="p-card" data-category="home & living" data-subcategory="textiles (home)" data-type="non hand made">
+                <div class="p-img">
+                  <img src="image/product/2.jpg" alt="Premium Ottoman Cushion Cover">
+                </div>
+                <div class="p-body">
+                  <div class="p-name">Premium Ottoman Cushion Cover</div>
+                  <div class="p-cat">Home &amp; Living</div>
+                  <div class="p-subcat">Textiles (Home)</div>
+                  <div class="p-classification">Non Hand Made</div>
+
+                  <div class="p-bottom">
+                    <div class="p-price">IDR 4.290.000</div>
+                    <a href="product-detail.html" class="p-view">VIEW</a>
+                  </div>
+                </div>
+              </article>
+
             </div>
           </section>
         </div>
@@ -720,6 +788,7 @@
         });
       }
 
+      // Category Bertingkat
       const categoryTree = document.getElementById('categoryTree');
       if (categoryTree) {
         categoryTree.addEventListener('click', (e) => {
@@ -732,6 +801,33 @@
           currentSubcat = item.dataset.subcategory || 'all';
 
           applyFilters();
+        });
+      }
+
+      // Collapse Category
+      if (categoryTree) {
+        categoryTree.addEventListener('click', (e) => {
+          const categoryLink = e.target.closest('.category-link');
+          if (!categoryLink) return;
+
+          const parentItem = categoryLink.closest('.category-item');
+
+          // hanya untuk category yang punya subcategory
+          if (parentItem && parentItem.querySelector('.subcategory-menu')) {
+            e.preventDefault();
+
+            const isOpen = parentItem.classList.contains('open');
+
+            // tutup semua category lain
+            document.querySelectorAll('.category-item.open').forEach(item => {
+              item.classList.remove('open');
+            });
+
+            // kalau sebelumnya tab belum open, buka yang sekarang
+            if (!isOpen) {
+              parentItem.classList.add('open');
+            }
+          }
         });
       }
 
