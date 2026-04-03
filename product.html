@@ -99,13 +99,8 @@
 
         <!-- Sidebar Filter -->
         <aside class="product-sidebar">
-          <button
-            class="filter-toggle-btn d-lg-none"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#mobileFilterBox"
-            aria-expanded="false"
-            aria-controls="mobileFilterBox">
+          <button class="filter-toggle-btn d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#mobileFilterBox" 
+          aria-expanded="false" aria-controls="mobileFilterBox">
             <span><i class="fas fa-sliders-h me-2"></i>Filter Product</span>
             <i class="fas fa-chevron-down"></i>
           </button>
@@ -116,7 +111,7 @@
 
               <div class="filter-group">
                 <div class="filter-label">Product Type</div>
-                <select id="typeFilter" class="filter-select" aria-label="Select Handmade Type">
+                <select id="typeFilter" class="form-select co-select" aria-label="Select Handmade Type">
                   <option value="all">General</option>
                   <option value="hand made">Hand Made</option>
                   <option value="non hand made">Non Hand Made</option>
@@ -527,75 +522,7 @@
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="ott-footer">
-    <div class="footer-top">
-      <div class="container ott-container">
-        <div class="row g-4 align-items-start">
-          <div class="col-lg-4">
-            <div class="footer-title">THE OTTOMAN</div>
-            <p class="footer-p mt-3">
-              Inspired by the rich heritage of Turkey, The Ottoman curates timeless pieces that tell stories of
-              culture, craftsmanship, and beauty.
-            </p>
-            <div class="footer-icons mt-3">
-              <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="#" aria-label="Instagram"><i class="fab fa-tiktok"></i></a>
-              <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            </div>
-          </div>
-
-          <div class="col-6 col-lg-2">
-            <div class="footer-head">Product</div>
-            <ul class="footer-list">
-              <li><a class="footer-link" href="#">Home & Living</a></li>
-              <li><a class="footer-link" href="#">Carpets & Rugs</a></li>
-              <li><a class="footer-link" href="#">Mosaic Lamps</a></li>
-              <li><a class="footer-link" href="#">Fashion & Textiles</a></li>
-              <li><a class="footer-link" href="#">Gourmet</a></li>
-            </ul>
-          </div>
-
-          <div class="col-6 col-lg-2">
-            <div class="footer-head">About</div>
-            <ul class="footer-list">
-              <li><a class="footer-link" href="#">Our Story</a></li>
-              <li><a class="footer-link" href="#">Blog</a></li>
-              <li><a class="footer-link" href="#">Gallery</a></li>
-            </ul>
-          </div>
-
-          <div class="col-6 col-lg-2">
-            <div class="footer-head">Customer</div>
-            <ul class="footer-list">
-              <li><a class="footer-link" href="#">Contact Us</a></li>
-              <li><a class="footer-link" href="#">FAQ</a></li>
-              <li><a class="footer-link" href="#">Privacy Policy</a></li>
-              <li><a class="footer-link" href="#">Terms & Conditions</a></li>
-            </ul>
-          </div>
-
-          <div class="col-6 col-lg-2">
-            <div class="footer-head">Contact</div>
-            <div class="footer-contact">
-              <div>info@theottoman.com</div>
-              <div>BSD - Ruko Pasar Modern Timur 2</div>
-              <div>Lotte Mall Jakarta - 2F HomeLiving</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-bottom-bar">
-      <div class="container ott-container">
-        © 2026 The Ottoman. All Rights Reserved.
-      </div>
-    </div>
-  </footer>
-
-  <!-- Pagination -->
+  <!-- Pagination & Filter -->
   <script>
     (() => {
       const cardsAll = Array.from(document.querySelectorAll('.product-grid .p-card'));
@@ -628,6 +555,7 @@
         rangeEl.textContent = `View ${start} - ${end} From ${total} Products`;
       }
 
+      // Product Empty
       function showEmptyState() {
         const grid = document.querySelector('.product-grid');
         let emptyState = grid.querySelector('.empty-state');
@@ -684,6 +612,7 @@
         return a;
       }
 
+      // Pagination
       function renderPager() {
         pager.innerHTML = '';
         const pages = totalPages();
@@ -809,6 +738,74 @@
       applyFilters();
     })();
   </script>
+
+  <!-- Footer -->
+  <footer class="ott-footer">
+    <div class="footer-top">
+      <div class="container ott-container">
+        <div class="row g-4 align-items-start">
+          <div class="col-lg-4">
+            <div class="footer-title">THE OTTOMAN</div>
+            <p class="footer-p mt-3">
+              Inspired by the rich heritage of Turkey, The Ottoman curates timeless pieces that tell stories of
+              culture, craftsmanship, and beauty.
+            </p>
+            <div class="footer-icons mt-3">
+              <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-tiktok"></i></a>
+              <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <div class="footer-head">Product</div>
+            <ul class="footer-list">
+              <li><a class="footer-link" href="#">Home & Living</a></li>
+              <li><a class="footer-link" href="#">Carpets & Rugs</a></li>
+              <li><a class="footer-link" href="#">Mosaic Lamps</a></li>
+              <li><a class="footer-link" href="#">Fashion & Textiles</a></li>
+              <li><a class="footer-link" href="#">Gourmet</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <div class="footer-head">About</div>
+            <ul class="footer-list">
+              <li><a class="footer-link" href="#">Our Story</a></li>
+              <li><a class="footer-link" href="#">Blog</a></li>
+              <li><a class="footer-link" href="#">Gallery</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <div class="footer-head">Customer</div>
+            <ul class="footer-list">
+              <li><a class="footer-link" href="#">Contact Us</a></li>
+              <li><a class="footer-link" href="#">FAQ</a></li>
+              <li><a class="footer-link" href="#">Privacy Policy</a></li>
+              <li><a class="footer-link" href="#">Terms & Conditions</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <div class="footer-head">Contact</div>
+            <div class="footer-contact">
+              <div>info@theottoman.com</div>
+              <div>BSD - Ruko Pasar Modern Timur 2</div>
+              <div>Lotte Mall Jakarta - 2F HomeLiving</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="container ott-container">
+        © 2026 The Ottoman. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
