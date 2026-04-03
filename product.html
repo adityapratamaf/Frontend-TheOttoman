@@ -70,37 +70,17 @@
   </nav>
 
   <main class="product-page">
-    <!-- Banner -->
-    <section class="product-hero" aria-label="Product banner">
-    </section>
+    <section class="product-hero" aria-label="Product banner"></section>
 
-    <!-- Title -->
     <section class="section-space-first">
       <h2 class="section-title">PRODUCT CATALOG</h2>
     </section>
 
-    <!-- Toolbar -->
+    <!-- Search -->
     <section class="product-toolbar-wrap section-space product-grid-gap">
       <div class="product-toolbar">
+        <div class="toolbar-left-placeholder"></div>
 
-        <!-- Category -->
-        <div class="toolbar-left">
-          <div class="dropdown">
-            <button id="catBtn" class="btn btn-ott dropdown-toggle product-cat-btn" type="button"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              Category
-            </button>
-            <ul class="dropdown-menu" id="catMenu">
-              <li><a class="dropdown-item" href="#" data-cat="all">All Category</a></li>
-              <li><a class="dropdown-item" href="#" data-cat="rugs & carpet">Rugs & Carpet</a></li>
-              <li><a class="dropdown-item" href="#" data-cat="mosaic lamps">Mosaic Lamps</a></li>
-              <li><a class="dropdown-item" href="#" data-cat="home & living">Home & Living</a></li>
-              <li><a class="dropdown-item" href="#" data-cat="gourmet">Gourmet</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Search -->
         <div class="toolbar-right">
           <form class="product-search" role="search">
             <input type="text" class="form-control product-search-input" placeholder="Search"
@@ -110,276 +90,439 @@
             </button>
           </form>
         </div>
-
       </div>
     </section>
 
-    <!-- Product -->
-    <section class="product-grid-wrap section-space product-grid-gap">
-      <div class="product-grid">
+    <!-- Content -->
+    <section class="product-content-wrap section-space product-grid-gap">
+      <div class="product-layout">
 
-        <!-- Card -->
-        <article class="p-card">
-          <div class="p-img">
-            <img src="image/blog/1.jpg" alt="Traditional Carpet Turkey">
-          </div>
-          <div class="p-body">
-            <div class="p-name">Traditional Carpet Turkey The Best of Origin Craftman Turkish</div>
-            <div class="p-cat">Rugs & Carpet</div>
+        <!-- Sidebar Filter -->
+        <aside class="product-sidebar">
+          <button
+            class="filter-toggle-btn d-lg-none"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mobileFilterBox"
+            aria-expanded="false"
+            aria-controls="mobileFilterBox">
+            <span><i class="fas fa-sliders-h me-2"></i>Filter Product</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
 
-            <div class="p-bottom">
-              <div class="p-price">IDR 7.190.000</div>
-              <a href="product-detail.html" class="p-view">VIEW</a>
+          <div class="collapse d-lg-block" id="mobileFilterBox">
+            <div class="filter-box">
+              <div class="filter-box-title d-none d-lg-block">Filter Product</div>
+
+              <div class="filter-group">
+                <div class="filter-label">Product Type</div>
+                <select id="typeFilter" class="filter-select" aria-label="Select Handmade Type">
+                  <option value="all">General</option>
+                  <option value="hand made">Hand Made</option>
+                  <option value="non hand made">Non Hand Made</option>
+                </select>
+              </div>
+
+              <div class="filter-group">
+                <div class="filter-label">Category</div>
+
+                <div class="category-tree" id="categoryTree">
+                  <a href="#" class="category-link active" data-category="all" data-subcategory="all">GENERAL</a>
+
+                  <div class="category-item">
+                    <a href="#" class="category-link" data-category="home & living" data-subcategory="all">HOME &amp; LIVING</a>
+                    <div class="subcategory-menu">
+                      <a href="#" class="subcategory-link" data-category="home & living" data-subcategory="tableware & dining">Tableware &amp; Dining</a>
+                      <a href="#" class="subcategory-link" data-category="home & living" data-subcategory="handmade ceramics">Handmade Ceramics</a>
+                      <a href="#" class="subcategory-link" data-category="home & living" data-subcategory="home décor">Home Decor</a>
+                      <a href="#" class="subcategory-link" data-category="home & living" data-subcategory="textiles (home)">Textiles (Home)</a>
+                    </div>
+                  </div>
+
+                  <div class="category-item">
+                    <a href="#" class="category-link" data-category="tableware & dining" data-subcategory="all">TABLEWARE &amp; DINING</a>
+                    <div class="subcategory-menu">
+                      <a href="#" class="subcategory-link" data-category="tableware & dining" data-subcategory="dinnerware sets">Dinnerware Sets</a>
+                      <a href="#" class="subcategory-link" data-category="tableware & dining" data-subcategory="plates & serving plates">Plates &amp; Serving Plates</a>
+                      <a href="#" class="subcategory-link" data-category="tableware & dining" data-subcategory="glassware & mugs">Glassware &amp; Mugs</a>
+                      <a href="#" class="subcategory-link" data-category="tableware & dining" data-subcategory="turkish coffee cup and tea cup set">Turkish Coffee Cup and tea cup set</a>
+                      <a href="#" class="subcategory-link" data-category="tableware & dining" data-subcategory="teapots & coffee pots">Teapots &amp; Coffee Pots</a>
+                      <a href="#" class="subcategory-link" data-category="tableware & dining" data-subcategory="serving stand">Serving Stand</a>
+                      <a href="#" class="subcategory-link" data-category="tableware & dining" data-subcategory="trays">Trays</a>
+                      <a href="#" class="subcategory-link" data-category="tableware & dining" data-subcategory="candy & turkish delight bowls">Candy &amp; Turkish Delight Bowls</a>
+                    </div>
+                  </div>
+
+                  <div class="category-item">
+                    <a href="#" class="category-link" data-category="rugs & carpet" data-subcategory="all">RUGS &amp; CARPET</a>
+                  </div>
+
+                  <div class="category-item">
+                    <a href="#" class="category-link" data-category="mosaic lamps" data-subcategory="all">MOSAIC LAMPS</a>
+                  </div>
+
+                  <div class="category-item">
+                    <a href="#" class="category-link" data-category="gourmet" data-subcategory="all">GOURMET</a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </article>
+        </aside>
 
-        <article class="p-card">
-          <div class="p-img">
-            <img src="image/product/3.jpg" alt="Mosaic Table Lamp">
-          </div>
-          <div class="p-body">
-            <div class="p-name">Mosaic Table Lamp</div>
-            <div class="p-cat">Mosaic Lamps</div>
+        <!-- Product Area -->
+        <div class="product-main">
+          <section class="product-grid-wrap">
+            <div class="product-grid">
 
-            <div class="p-bottom">
-              <div class="p-price">IDR 7.190.000</div>
-              <a href="product-detail.html" class="p-view">VIEW</a>
+              <article class="p-card" data-category="carpets & rugs" data-subcategory="handmade carpets" data-type="hand made">
+                <div class="p-img">
+                  <img src="image/blog/1.jpg" alt="Traditional Carpet Turkey">
+                </div>
+                <div class="p-body">
+                  <div class="p-name">Traditional Carpet Turkey The Best of Origin Craftman Turkish</div>
+                  <div class="p-cat">Carpets &amp; Rugs</div>
+                  <div class="p-subcat">Handmade Carpets</div>
+                  <div class="p-classification">Hand Made</div>
+
+                  <div class="p-bottom">
+                    <div class="p-price">IDR 7.190.000</div>
+                    <a href="product-detail.html" class="p-view">VIEW</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="p-card" data-category="mosaic lamps" data-subcategory="table lamps" data-type="hand made">
+                <div class="p-img">
+                  <img src="image/product/3.jpg" alt="Mosaic Table Lamp">
+                </div>
+                <div class="p-body">
+                  <div class="p-name">Mosaic Table Lamp</div>
+                  <div class="p-cat">Mosaic Lamps</div>
+                  <div class="p-subcat">Table Lamps</div>
+                  <div class="p-classification">Hand Made</div>
+
+                  <div class="p-bottom">
+                    <div class="p-price">IDR 7.190.000</div>
+                    <a href="product-detail.html" class="p-view">VIEW</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="p-card" data-category="tableware & dining" data-subcategory="trays" data-type="hand made">
+                <div class="p-img">
+                  <img src="image/product/4.jpg" alt="Cooper Serving Tray">
+                </div>
+                <div class="p-body">
+                  <div class="p-name">Cooper Serving Tray</div>
+                  <div class="p-cat">Tableware &amp; Dining</div>
+                  <div class="p-subcat">Trays</div>
+                  <div class="p-classification">Hand Made</div>
+
+                  <div class="p-bottom">
+                    <div class="p-price">IDR 7.190.000</div>
+                    <a href="product-detail.html" class="p-view">VIEW</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="p-card" data-category="gourmet" data-subcategory="turkish tea" data-type="non hand made">
+                <div class="p-img">
+                  <img src="image/product/2.jpg" alt="Premium Turkish Tea">
+                </div>
+                <div class="p-body">
+                  <div class="p-name">Premium Turkish Tea</div>
+                  <div class="p-cat">Gourmet</div>
+                  <div class="p-subcat">Turkish Tea</div>
+                  <div class="p-classification">Non Hand Made</div>
+
+                  <div class="p-bottom">
+                    <div class="p-price">IDR 7.190.000</div>
+                    <a href="product-detail.html" class="p-view">VIEW</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="p-card" data-category="carpets & rugs" data-subcategory="handmade carpets" data-type="hand made">
+                <div class="p-img">
+                  <img src="image/blog/1.jpg" alt="Traditional Carpet Turkey">
+                </div>
+                <div class="p-body">
+                  <div class="p-name">Traditional Carpet Turkey The Best of Origin Craftman Turkish</div>
+                  <div class="p-cat">Carpets &amp; Rugs</div>
+                  <div class="p-subcat">Handmade Carpets</div>
+                  <div class="p-classification">Hand Made</div>
+
+                  <div class="p-bottom">
+                    <div class="p-price">IDR 7.190.000</div>
+                    <a href="product-detail.html" class="p-view">VIEW</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="p-card" data-category="mosaic lamps" data-subcategory="table lamps" data-type="hand made">
+                <div class="p-img">
+                  <img src="image/product/3.jpg" alt="Mosaic Table Lamp">
+                </div>
+                <div class="p-body">
+                  <div class="p-name">Mosaic Table Lamp</div>
+                  <div class="p-cat">Mosaic Lamps</div>
+                  <div class="p-subcat">Table Lamps</div>
+                  <div class="p-classification">Hand Made</div>
+
+                  <div class="p-bottom">
+                    <div class="p-price">IDR 7.190.000</div>
+                    <a href="product-detail.html" class="p-view">VIEW</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="p-card" data-category="tableware & dining" data-subcategory="trays" data-type="hand made">
+                <div class="p-img">
+                  <img src="image/product/4.jpg" alt="Cooper Serving Tray">
+                </div>
+                <div class="p-body">
+                  <div class="p-name">Cooper Serving Tray</div>
+                  <div class="p-cat">Tableware &amp; Dining</div>
+                  <div class="p-subcat">Trays</div>
+                  <div class="p-classification">Hand Made</div>
+
+                  <div class="p-bottom">
+                    <div class="p-price">IDR 7.190.000</div>
+                    <a href="product-detail.html" class="p-view">VIEW</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="p-card" data-category="gourmet" data-subcategory="turkish tea" data-type="non hand made">
+                <div class="p-img">
+                  <img src="image/product/2.jpg" alt="Premium Turkish Tea">
+                </div>
+                <div class="p-body">
+                  <div class="p-name">Premium Turkish Tea</div>
+                  <div class="p-cat">Gourmet</div>
+                  <div class="p-subcat">Turkish Tea</div>
+                  <div class="p-classification">Non Hand Made</div>
+
+                  <div class="p-bottom">
+                    <div class="p-price">IDR 7.190.000</div>
+                    <a href="product-detail.html" class="p-view">VIEW</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="p-card" data-category="carpets & rugs" data-subcategory="handmade carpets" data-type="hand made">
+                <div class="p-img">
+                  <img src="image/blog/1.jpg" alt="Traditional Carpet Turkey">
+                </div>
+                <div class="p-body">
+                  <div class="p-name">Traditional Carpet Turkey The Best of Origin Craftman Turkish</div>
+                  <div class="p-cat">Carpets &amp; Rugs</div>
+                  <div class="p-subcat">Handmade Carpets</div>
+                  <div class="p-classification">Hand Made</div>
+
+                  <div class="p-bottom">
+                    <div class="p-price">IDR 7.190.000</div>
+                    <a href="product-detail.html" class="p-view">VIEW</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="p-card" data-category="mosaic lamps" data-subcategory="table lamps" data-type="hand made">
+                <div class="p-img">
+                  <img src="image/product/3.jpg" alt="Mosaic Table Lamp">
+                </div>
+                <div class="p-body">
+                  <div class="p-name">Mosaic Table Lamp</div>
+                  <div class="p-cat">Mosaic Lamps</div>
+                  <div class="p-subcat">Table Lamps</div>
+                  <div class="p-classification">Hand Made</div>
+
+                  <div class="p-bottom">
+                    <div class="p-price">IDR 7.190.000</div>
+                    <a href="product-detail.html" class="p-view">VIEW</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="p-card" data-category="tableware & dining" data-subcategory="trays" data-type="hand made">
+                <div class="p-img">
+                  <img src="image/product/4.jpg" alt="Cooper Serving Tray">
+                </div>
+                <div class="p-body">
+                  <div class="p-name">Cooper Serving Tray</div>
+                  <div class="p-cat">Tableware &amp; Dining</div>
+                  <div class="p-subcat">Trays</div>
+                  <div class="p-classification">Hand Made</div>
+
+                  <div class="p-bottom">
+                    <div class="p-price">IDR 7.190.000</div>
+                    <a href="product-detail.html" class="p-view">VIEW</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="p-card" data-category="gourmet" data-subcategory="turkish tea" data-type="non hand made">
+                <div class="p-img">
+                  <img src="image/product/2.jpg" alt="Premium Turkish Tea">
+                </div>
+                <div class="p-body">
+                  <div class="p-name">Premium Turkish Tea</div>
+                  <div class="p-cat">Gourmet</div>
+                  <div class="p-subcat">Turkish Tea</div>
+                  <div class="p-classification">Non Hand Made</div>
+
+                  <div class="p-bottom">
+                    <div class="p-price">IDR 7.190.000</div>
+                    <a href="product-detail.html" class="p-view">VIEW</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="p-card" data-category="carpets & rugs" data-subcategory="handmade carpets" data-type="hand made">
+                <div class="p-img">
+                  <img src="image/blog/1.jpg" alt="Traditional Carpet Turkey">
+                </div>
+                <div class="p-body">
+                  <div class="p-name">Traditional Carpet Turkey The Best of Origin Craftman Turkish</div>
+                  <div class="p-cat">Carpets &amp; Rugs</div>
+                  <div class="p-subcat">Handmade Carpets</div>
+                  <div class="p-classification">Hand Made</div>
+
+                  <div class="p-bottom">
+                    <div class="p-price">IDR 7.190.000</div>
+                    <a href="product-detail.html" class="p-view">VIEW</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="p-card" data-category="mosaic lamps" data-subcategory="table lamps" data-type="hand made">
+                <div class="p-img">
+                  <img src="image/product/3.jpg" alt="Mosaic Table Lamp">
+                </div>
+                <div class="p-body">
+                  <div class="p-name">Mosaic Table Lamp</div>
+                  <div class="p-cat">Mosaic Lamps</div>
+                  <div class="p-subcat">Table Lamps</div>
+                  <div class="p-classification">Hand Made</div>
+
+                  <div class="p-bottom">
+                    <div class="p-price">IDR 7.190.000</div>
+                    <a href="product-detail.html" class="p-view">VIEW</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="p-card" data-category="tableware & dining" data-subcategory="trays" data-type="hand made">
+                <div class="p-img">
+                  <img src="image/product/4.jpg" alt="Cooper Serving Tray">
+                </div>
+                <div class="p-body">
+                  <div class="p-name">Cooper Serving Tray</div>
+                  <div class="p-cat">Tableware &amp; Dining</div>
+                  <div class="p-subcat">Trays</div>
+                  <div class="p-classification">Hand Made</div>
+
+                  <div class="p-bottom">
+                    <div class="p-price">IDR 7.190.000</div>
+                    <a href="product-detail.html" class="p-view">VIEW</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="p-card" data-category="gourmet" data-subcategory="turkish tea" data-type="non hand made">
+                <div class="p-img">
+                  <img src="image/product/2.jpg" alt="Premium Turkish Tea">
+                </div>
+                <div class="p-body">
+                  <div class="p-name">Premium Turkish Tea</div>
+                  <div class="p-cat">Gourmet</div>
+                  <div class="p-subcat">Turkish Tea</div>
+                  <div class="p-classification">Non Hand Made</div>
+
+                  <div class="p-bottom">
+                    <div class="p-price">IDR 7.190.000</div>
+                    <a href="product-detail.html" class="p-view">VIEW</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="p-card" data-category="carpets & rugs" data-subcategory="handmade carpets" data-type="hand made">
+                <div class="p-img">
+                  <img src="image/blog/1.jpg" alt="Traditional Carpet Turkey">
+                </div>
+                <div class="p-body">
+                  <div class="p-name">Traditional Carpet Turkey The Best of Origin Craftman Turkish</div>
+                  <div class="p-cat">Carpets &amp; Rugs</div>
+                  <div class="p-subcat">Handmade Carpets</div>
+                  <div class="p-classification">Hand Made</div>
+
+                  <div class="p-bottom">
+                    <div class="p-price">IDR 7.190.000</div>
+                    <a href="product-detail.html" class="p-view">VIEW</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="p-card" data-category="mosaic lamps" data-subcategory="table lamps" data-type="hand made">
+                <div class="p-img">
+                  <img src="image/product/3.jpg" alt="Mosaic Table Lamp">
+                </div>
+                <div class="p-body">
+                  <div class="p-name">Mosaic Table Lamp</div>
+                  <div class="p-cat">Mosaic Lamps</div>
+                  <div class="p-subcat">Table Lamps</div>
+                  <div class="p-classification">Hand Made</div>
+
+                  <div class="p-bottom">
+                    <div class="p-price">IDR 7.190.000</div>
+                    <a href="product-detail.html" class="p-view">VIEW</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="p-card" data-category="tableware & dining" data-subcategory="trays" data-type="hand made">
+                <div class="p-img">
+                  <img src="image/product/4.jpg" alt="Cooper Serving Tray">
+                </div>
+                <div class="p-body">
+                  <div class="p-name">Cooper Serving Tray</div>
+                  <div class="p-cat">Tableware &amp; Dining</div>
+                  <div class="p-subcat">Trays</div>
+                  <div class="p-classification">Hand Made</div>
+
+                  <div class="p-bottom">
+                    <div class="p-price">IDR 7.190.000</div>
+                    <a href="product-detail.html" class="p-view">VIEW</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="p-card" data-category="gourmet" data-subcategory="turkish tea" data-type="non hand made">
+                <div class="p-img">
+                  <img src="image/product/2.jpg" alt="Premium Turkish Tea">
+                </div>
+                <div class="p-body">
+                  <div class="p-name">Premium Turkish Tea</div>
+                  <div class="p-cat">Gourmet</div>
+                  <div class="p-subcat">Turkish Tea</div>
+                  <div class="p-classification">Non Hand Made</div>
+
+                  <div class="p-bottom">
+                    <div class="p-price">IDR 7.190.000</div>
+                    <a href="product-detail.html" class="p-view">VIEW</a>
+                  </div>
+                </div>
+              </article>
+
             </div>
-          </div>
-        </article>
-
-        <article class="p-card">
-          <div class="p-img">
-            <img src="image/product/4.jpg" alt="Cooper Serving Tray">
-          </div>
-          <div class="p-body">
-            <div class="p-name">Cooper Serving Tray</div>
-            <div class="p-cat">Home & Living</div>
-
-            <div class="p-bottom">
-              <div class="p-price">IDR 7.190.000</div>
-              <a href="product-detail.html" class="p-view">VIEW</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="p-card">
-          <div class="p-img">
-            <img src="image/product/2.jpg" alt="Premium Turkish Tea">
-          </div>
-          <div class="p-body">
-            <div class="p-name">Premium Turkish Tea</div>
-            <div class="p-cat">Gourmet</div>
-
-            <div class="p-bottom">
-              <div class="p-price">IDR 7.190.000</div>
-              <a href="product-detail.html" class="p-view">VIEW</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="p-card">
-          <div class="p-img">
-            <img src="image/product/1.jpg" alt="Traditional Carpet Turkey">
-          </div>
-          <div class="p-body">
-            <div class="p-name">Traditional Carpet Turkey</div>
-            <div class="p-cat">Rugs & Carpet</div>
-
-            <div class="p-bottom">
-              <div class="p-price">IDR 7.190.000</div>
-              <a href="product-detail.html" class="p-view">VIEW</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="p-card">
-          <div class="p-img">
-            <img src="image/product/3.jpg" alt="Mosaic Table Lamp">
-          </div>
-          <div class="p-body">
-            <div class="p-name">Mosaic Table Lamp</div>
-            <div class="p-cat">Mosaic Lamps</div>
-
-            <div class="p-bottom">
-              <div class="p-price">IDR 7.190.000</div>
-              <a href="product-detail.html" class="p-view">VIEW</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="p-card">
-          <div class="p-img">
-            <img src="image/product/4.jpg" alt="Cooper Serving Tray">
-          </div>
-          <div class="p-body">
-            <div class="p-name">Cooper Serving Tray</div>
-            <div class="p-cat">Home & Living</div>
-
-            <div class="p-bottom">
-              <div class="p-price">IDR 7.190.000</div>
-              <a href="product-detail.html" class="p-view">VIEW</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="p-card">
-          <div class="p-img">
-            <img src="image/product/2.jpg" alt="Premium Turkish Tea">
-          </div>
-          <div class="p-body">
-            <div class="p-name">Premium Turkish Tea</div>
-            <div class="p-cat">Gourmet</div>
-
-            <div class="p-bottom">
-              <div class="p-price">IDR 7.190.000</div>
-              <a href="product-detail.html" class="p-view">VIEW</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="p-card">
-          <div class="p-img">
-            <img src="image/product/1.jpg" alt="Traditional Carpet Turkey">
-          </div>
-          <div class="p-body">
-            <div class="p-name">Traditional Carpet Turkey</div>
-            <div class="p-cat">Rugs & Carpet</div>
-
-            <div class="p-bottom">
-              <div class="p-price">IDR 7.190.000</div>
-              <a href="product-detail.html" class="p-view">VIEW</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="p-card">
-          <div class="p-img">
-            <img src="image/product/3.jpg" alt="Mosaic Table Lamp">
-          </div>
-          <div class="p-body">
-            <div class="p-name">Mosaic Table Lamp</div>
-            <div class="p-cat">Mosaic Lamps</div>
-
-            <div class="p-bottom">
-              <div class="p-price">IDR 7.190.000</div>
-              <a href="product-detail.html" class="p-view">VIEW</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="p-card">
-          <div class="p-img">
-            <img src="image/product/4.jpg" alt="Cooper Serving Tray">
-          </div>
-          <div class="p-body">
-            <div class="p-name">Cooper Serving Tray</div>
-            <div class="p-cat">Home & Living</div>
-
-            <div class="p-bottom">
-              <div class="p-price">IDR 7.190.000</div>
-              <a href="product-detail.html" class="p-view">VIEW</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="p-card">
-          <div class="p-img">
-            <img src="image/product/2.jpg" alt="Premium Turkish Tea">
-          </div>
-          <div class="p-body">
-            <div class="p-name">Premium Turkish Tea</div>
-            <div class="p-cat">Gourmet</div>
-
-            <div class="p-bottom">
-              <div class="p-price">IDR 7.190.000</div>
-              <a href="product-detail.html" class="p-view">VIEW</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="p-card">
-          <div class="p-img">
-            <img src="image/product/2.jpg" alt="Premium Turkish Tea">
-          </div>
-          <div class="p-body">
-            <div class="p-name">Premium Turkish Tea</div>
-            <div class="p-cat">Gourmet</div>
-
-            <div class="p-bottom">
-              <div class="p-price">IDR 7.190.000</div>
-              <a href="product-detail.html" class="p-view">VIEW</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="p-card">
-          <div class="p-img">
-            <img src="image/product/2.jpg" alt="Premium Turkish Tea">
-          </div>
-          <div class="p-body">
-            <div class="p-name">Premium Turkish Tea</div>
-            <div class="p-cat">Gourmet</div>
-
-            <div class="p-bottom">
-              <div class="p-price">IDR 7.190.000</div>
-              <a href="product-detail.html" class="p-view">VIEW</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="p-card">
-          <div class="p-img">
-            <img src="image/product/2.jpg" alt="Premium Turkish Tea">
-          </div>
-          <div class="p-body">
-            <div class="p-name">Premium Turkish Tea</div>
-            <div class="p-cat">Gourmet</div>
-
-            <div class="p-bottom">
-              <div class="p-price">IDR 7.190.000</div>
-              <a href="product-detail.html" class="p-view">VIEW</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="p-card">
-          <div class="p-img">
-            <img src="image/product/2.jpg" alt="Premium Turkish Tea">
-          </div>
-          <div class="p-body">
-            <div class="p-name">Premium Turkish Tea</div>
-            <div class="p-cat">Gourmet</div>
-
-            <div class="p-bottom">
-              <div class="p-price">IDR 7.190.000</div>
-              <a href="product-detail.html" class="p-view">VIEW</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="p-card">
-          <div class="p-img">
-            <img src="image/product/2.jpg" alt="Premium Turkish Tea">
-          </div>
-          <div class="p-body">
-            <div class="p-name">Premium Turkish Tea</div>
-            <div class="p-cat">Gourmet</div>
-
-            <div class="p-bottom">
-              <div class="p-price">IDR 7.190.000</div>
-              <a href="product-detail.html" class="p-view">VIEW</a>
-            </div>
-          </div>
-        </article>
-
+          </section>
+        </div>
       </div>
     </section>
 
-    <!-- Pagination -->
     <section class="pagination-title section-space section-space-bottom">
-      <div class="pagination-range" id="productRange">View 1 - 15 From 0 Products</div>
+      <div class="pagination-range" id="productRange">View 1 - 16 From 0 Products</div>
       <nav class="pager" id="productPager" aria-label="Product pagination"></nav>
     </section>
   </main>
@@ -454,158 +597,217 @@
 
   <!-- Pagination -->
   <script>
-  (() => {
-    const cardsAll = Array.from(document.querySelectorAll('.product-grid .p-card'));
-    const pager = document.getElementById('productPager');
-    const rangeEl = document.getElementById('productRange');
+    (() => {
+      const cardsAll = Array.from(document.querySelectorAll('.product-grid .p-card'));
+      const pager = document.getElementById('productPager');
+      const rangeEl = document.getElementById('productRange');
 
-    // Setting Pagination
-    const perPage = 15;
-    let currentPage = 1;
+      const perPage = 16;
+      let currentPage = 1;
 
-    // State Filter
-    let activeCards = cardsAll.slice();
-    let currentQuery = '';
-    let currentCat = 'all';
+      let activeCards = cardsAll.slice();
+      let currentQuery = '';
+      let currentCat = 'all';
+      let currentSubcat = 'all';
+      let currentType = 'all';
 
-    const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
+      const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
 
-    function totalPages() {
-      return Math.max(1, Math.ceil(activeCards.length / perPage));
-    }
-
-    function setRangeText() {
-      const total = activeCards.length;
-      if (total === 0) {
-        rangeEl.textContent = 'View 0 - 0 From 0 Products';
-        return;
+      function totalPages() {
+        return Math.max(1, Math.ceil(activeCards.length / perPage));
       }
-      const start = (currentPage - 1) * perPage + 1;
-      const end = Math.min(currentPage * perPage, total);
-      rangeEl.textContent = `View ${start} - ${end} From ${total} Products`;
-    }
 
-    function showPage(page) {
-      const pages = totalPages();
-      currentPage = clamp(page, 1, pages);
+      function setRangeText() {
+        const total = activeCards.length;
+        if (total === 0) {
+          rangeEl.textContent = 'View 0 - 0 From 0 Products';
+          return;
+        }
+        const start = (currentPage - 1) * perPage + 1;
+        const end = Math.min(currentPage * perPage, total);
+        rangeEl.textContent = `View ${start} - ${end} From ${total} Products`;
+      }
 
-      // Hide All
-      cardsAll.forEach(c => (c.style.display = 'none'));
+      function showEmptyState() {
+        const grid = document.querySelector('.product-grid');
+        let emptyState = grid.querySelector('.empty-state');
 
-      // Show Sesuai Halaman
-      const startIdx = (currentPage - 1) * perPage;
-      const endIdx = startIdx + perPage;
-      activeCards.slice(startIdx, endIdx).forEach(c => (c.style.display = ''));
+        if (!emptyState) {
+          emptyState = document.createElement('div');
+          emptyState.className = 'empty-state';
+          emptyState.textContent = 'PRODUCT NOT FOUND';
+          grid.appendChild(emptyState);
+        }
+      }
 
-      setRangeText();
-      renderPager();
-    }
+      function removeEmptyState() {
+        const emptyState = document.querySelector('.product-grid .empty-state');
+        if (emptyState) emptyState.remove();
+      }
 
-    function makeLink(label, opts = {}) {
-      const a = document.createElement('a');
-      a.href = '#';
-      a.className = 'pg' + (opts.active ? ' active' : '');
-      if (opts.ariaLabel) a.setAttribute('aria-label', opts.ariaLabel);
-      a.textContent = label;
+      function showPage(page) {
+        const pages = totalPages();
+        currentPage = clamp(page, 1, pages);
 
-      a.addEventListener('click', (e) => {
-        e.preventDefault();
-        if (opts.disabled) return;
-        opts.onClick?.();
-      });
+        cardsAll.forEach(c => (c.style.display = 'none'));
 
-      return a;
-    }
+        removeEmptyState();
 
-    function renderPager() {
-      pager.innerHTML = '';
-      const pages = totalPages();
+        if (activeCards.length === 0) {
+          showEmptyState();
+          setRangeText();
+          renderPager();
+          return;
+        }
 
-      pager.appendChild(makeLink('←', {
-        ariaLabel: 'Prev',
-        disabled: currentPage === 1,
-        onClick: () => showPage(currentPage - 1),
-      }));
+        const startIdx = (currentPage - 1) * perPage;
+        const endIdx = startIdx + perPage;
+        activeCards.slice(startIdx, endIdx).forEach(c => (c.style.display = ''));
 
-      for (let i = 1; i <= pages; i++) {
-        pager.appendChild(makeLink(String(i), {
-          active: i === currentPage,
-          onClick: () => showPage(i),
+        setRangeText();
+        renderPager();
+      }
+
+      function makeLink(label, opts = {}) {
+        const a = document.createElement('a');
+        a.href = '#';
+        a.className = 'pg' + (opts.active ? ' active' : '') + (opts.disabled ? ' disabled' : '');
+        if (opts.ariaLabel) a.setAttribute('aria-label', opts.ariaLabel);
+        a.textContent = label;
+
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (opts.disabled) return;
+          opts.onClick?.();
+        });
+
+        return a;
+      }
+
+      function renderPager() {
+        pager.innerHTML = '';
+        const pages = totalPages();
+
+        const groupSize = 10;
+        const currentGroup = Math.floor((currentPage - 1) / groupSize);
+        const startPage = currentGroup * groupSize + 1;
+        const endPage = Math.min(startPage + groupSize - 1, pages);
+
+        // Prev
+        pager.appendChild(makeLink('←', {
+          ariaLabel: 'Prev',
+          disabled: currentPage === 1 || activeCards.length === 0,
+          onClick: () => showPage(currentPage - 1),
+        }));
+
+        // Ellipsis Depan
+        if (startPage > 1) {
+          const dotsStart = document.createElement('span');
+          dotsStart.textContent = '...';
+          dotsStart.className = 'pg disabled';
+          pager.appendChild(dotsStart);
+        }
+
+        // Halaman Dalam Grup Aktif
+        for (let i = startPage; i <= endPage; i++) {
+          pager.appendChild(makeLink(String(i), {
+            active: i === currentPage,
+            disabled: activeCards.length === 0,
+            onClick: () => showPage(i),
+          }));
+        }
+
+        // Ellipsis Belakang
+        if (endPage < pages) {
+          const dotsEnd = document.createElement('span');
+          dotsEnd.textContent = '...';
+          dotsEnd.className = 'pg disabled';
+          pager.appendChild(dotsEnd);
+        }
+
+        // Next
+        pager.appendChild(makeLink('→', {
+          ariaLabel: 'Next',
+          disabled: currentPage === pages || activeCards.length === 0,
+          onClick: () => showPage(currentPage + 1),
         }));
       }
 
-      pager.appendChild(makeLink('→', {
-        ariaLabel: 'Next',
-        disabled: currentPage === pages,
-        onClick: () => showPage(currentPage + 1),
-      }));
-    }
+      function setActiveCategoryLink(category, subcategory) {
+        document.querySelectorAll('.category-link, .subcategory-link').forEach(link => {
+          link.classList.remove('active');
+        });
 
-    // Filter Logic (Search + Category) 
-    function applyFilters() {
-      const q = currentQuery.trim().toLowerCase();
-      const cat = (currentCat || 'all').toLowerCase();
+        const selector = `[data-category="${CSS.escape(category)}"][data-subcategory="${CSS.escape(subcategory)}"]`;
+        const activeLink = document.querySelector(selector);
+        if (activeLink) activeLink.classList.add('active');
+      }
 
-      activeCards = cardsAll.filter(card => {
-        const name = card.querySelector('.p-name')?.textContent?.toLowerCase() || '';
-        const ccat = card.querySelector('.p-cat')?.textContent?.toLowerCase() || '';
+      function applyFilters() {
+        const q = currentQuery.trim().toLowerCase();
+        const cat = (currentCat || 'all').toLowerCase();
+        const subcat = (currentSubcat || 'all').toLowerCase();
+        const type = (currentType || 'all').toLowerCase();
 
-        const matchSearch = (q === '') ? true : (name.includes(q) || ccat.includes(q));
-        const matchCat = (cat === 'all') ? true : (ccat === cat);
+        activeCards = cardsAll.filter(card => {
+          const name = card.querySelector('.p-name')?.textContent?.toLowerCase() || '';
+          const ccat = card.dataset.category?.toLowerCase() || '';
+          const csubcat = card.dataset.subcategory?.toLowerCase() || '';
+          const ctype = card.dataset.type?.toLowerCase() || '';
 
-        return matchSearch && matchCat;
-      });
+          const matchSearch = (q === '') ? true : (name.includes(q) || ccat.includes(q) || csubcat.includes(q) || ctype.includes(q));
+          const matchCat = (cat === 'all') ? true : (ccat === cat);
+          const matchSubcat = (subcat === 'all') ? true : (csubcat === subcat);
+          const matchType = (type === 'all') ? true : (ctype === type);
 
-      showPage(1);
-    }
+          return matchSearch && matchCat && matchSubcat && matchType;
+        });
 
-    // Search Logic
-    const searchForm = document.querySelector('.product-search');
-    const searchInput = document.querySelector('.product-search-input');
+        setActiveCategoryLink(currentCat, currentSubcat);
+        showPage(1);
+      }
 
-    if (searchForm && searchInput) {
-      searchForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        currentQuery = searchInput.value || '';
-        applyFilters();
-      });
+      const searchForm = document.querySelector('.product-search');
+      const searchInput = document.querySelector('.product-search-input');
 
-      // Realtime Search
-      searchInput.addEventListener('input', () => {
-        currentQuery = searchInput.value || '';
-        applyFilters();
-      });
-    }
+      if (searchForm && searchInput) {
+        searchForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          currentQuery = searchInput.value || '';
+          applyFilters();
+        });
 
-    // Category Dropdown 
-    const catMenu = document.getElementById('catMenu');
-    const catBtn = document.getElementById('catBtn');
+        searchInput.addEventListener('input', () => {
+          currentQuery = searchInput.value || '';
+          applyFilters();
+        });
+      }
 
-    if (catMenu) {
-      catMenu.addEventListener('click', (e) => {
-        const item = e.target.closest('[data-cat]');
-        if (!item) return;
+      const typeFilter = document.getElementById('typeFilter');
+      if (typeFilter) {
+        typeFilter.addEventListener('change', () => {
+          currentType = typeFilter.value || 'all';
+          applyFilters();
+        });
+      }
 
-        e.preventDefault();
-        currentCat = item.dataset.cat || 'all';
+      const categoryTree = document.getElementById('categoryTree');
+      if (categoryTree) {
+        categoryTree.addEventListener('click', (e) => {
+          const item = e.target.closest('[data-category]');
+          if (!item) return;
 
-        // Text Tombol
-        // if (catBtn) {
-        //   catBtn.textContent = (currentCat === 'all') ? 'Category' : item.textContent.trim().toUpperCase();
-        // }
-        if (catBtn) {
-          catBtn.textContent = (currentCat === 'all')
-            ? 'Category'
-            : item.textContent.trim();
-        }
+          e.preventDefault();
 
-        applyFilters();
-      });
-    }
+          currentCat = item.dataset.category || 'all';
+          currentSubcat = item.dataset.subcategory || 'all';
 
-    // Initial
-    applyFilters();
-  })();
+          applyFilters();
+        });
+      }
+
+      applyFilters();
+    })();
   </script>
 
   <!-- Bootstrap JS -->
