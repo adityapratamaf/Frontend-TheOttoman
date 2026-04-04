@@ -101,31 +101,26 @@
         <aside class="product-sidebar">
           <button class="filter-toggle-btn d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#mobileFilterBox" 
           aria-expanded="false" aria-controls="mobileFilterBox">
-            <span><i class="fas fa-sliders-h me-2"></i>Filter Product</span>
+            <span><i class="fas fa-sliders-h me-2"></i>Filter</span>
             <i class="fas fa-chevron-down"></i>
           </button>
 
           <div class="collapse d-lg-block" id="mobileFilterBox">
             <div class="filter-box">
-              <div class="filter-box-title d-none d-lg-block">Filter Product</div>
+              <div class="filter-box-title d-none d-lg-block">Filter</div>
 
-              <div class="filter-group">
-                <div class="filter-label">Product Type</div>
-                <select id="typeFilter" class="form-select co-select" aria-label="Select Handmade Type">
-                  <option value="all">General</option>
-                  <option value="hand made">Hand Made</option>
-                  <option value="non hand made">Non Hand Made</option>
-                </select>
-              </div>
-
+              <!-- Product Filter Catgeory & Sub Category -->
               <div class="filter-group">
                 <div class="filter-label">Category</div>
 
                 <div class="category-tree" id="categoryTree">
-                  <a href="#" class="category-link active" data-category="all" data-subcategory="all">GENERAL</a>
+                  <!-- <a href="#" class="category-link active" data-category="all" data-subcategory="all">GENERAL</a> -->
 
-                  <div class="category-item">
-                    <a href="#" class="category-link" data-category="home & living" data-subcategory="all">HOME &amp; LIVING</a>
+                  <div class="category-item has-child">
+                    <a href="#" class="category-link" data-category="home & living" data-subcategory="all">
+                      <span>HOME &amp; LIVING</span>
+                      <i class="toggle-icon fas fa-chevron-right"></i>
+                    </a>
                     <div class="subcategory-menu">
                       <a href="#" class="subcategory-link" data-category="home & living" data-subcategory="tableware & dining">Tableware &amp; Dining</a>
                       <a href="#" class="subcategory-link" data-category="home & living" data-subcategory="handmade ceramics">Handmade Ceramics</a>
@@ -134,8 +129,11 @@
                     </div>
                   </div>
 
-                  <div class="category-item">
-                    <a href="#" class="category-link" data-category="tableware & dining" data-subcategory="all">TABLEWARE &amp; DINING</a>
+                  <div class="category-item has-child">
+                    <a href="#" class="category-link" data-category="tableware & dining" data-subcategory="all">
+                      <span>TABLEWARE &amp; DINING</span>
+                      <i class="toggle-icon fas fa-chevron-right"></i>
+                    </a>
                     <div class="subcategory-menu">
                       <a href="#" class="subcategory-link" data-category="tableware & dining" data-subcategory="dinnerware sets">Dinnerware Sets</a>
                       <a href="#" class="subcategory-link" data-category="tableware & dining" data-subcategory="plates & serving plates">Plates &amp; Serving Plates</a>
@@ -161,6 +159,27 @@
                   </div>
                 </div>
               </div>
+
+              <!-- Product Type -->
+              <div class="filter-group">
+                <div class="filter-label">Type</div>
+                <div class="checkbox-group" id="typeFilter">
+                  <label class="checkbox-item">
+                    <input type="checkbox" value="hand made">
+                    <span>Hand Made</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" value="non hand made">
+                    <span>Non Hand Made</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Reset -->
+              <div class="filter-group">
+                <button id="resetFilter" class="btn-reset">Reset</button>
+              </div>
+
             </div>
           </div>
         </aside>
@@ -425,7 +444,6 @@
                 </div>
               </article>
 
-
               <article class="p-card" data-category="home & living" data-subcategory="tableware & dining" data-type="hand made">
                 <div class="p-img">
                   <img src="image/product/5.jpg" alt="Ottoman Dining Set">
@@ -493,7 +511,6 @@
                   </div>
                 </div>
               </article>
-
 
               <article class="p-card" data-category="tableware & dining" data-subcategory="dinnerware sets" data-type="hand made">
                 <div class="p-img">
@@ -627,6 +644,7 @@
             </div>
           </section>
         </div>
+
       </div>
     </section>
 
@@ -642,6 +660,7 @@
       const cardsAll = Array.from(document.querySelectorAll('.product-grid .p-card'));
       const pager = document.getElementById('productPager');
       const rangeEl = document.getElementById('productRange');
+      const savedCategory = localStorage.getItem('selectedCategory');
 
       const perPage = 16;
       let currentPage = 1;
@@ -650,14 +669,33 @@
       let currentQuery = '';
       let currentCat = 'all';
       let currentSubcat = 'all';
-      let currentType = 'all';
+      let currentType = [];
 
       const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
 
+      // Auto Open Category From Action Click Category From Home
+      if (savedCategory) {
+        currentCat = savedCategory;
+        currentSubcat = 'all';
+
+        // buka category yang punya subcategory
+        const categoryItem = document.querySelector(
+          `.category-item [data-category="${CSS.escape(savedCategory)}"]`
+        )?.closest('.category-item');
+
+        if (categoryItem && categoryItem.querySelector('.subcategory-menu')) {
+          categoryItem.classList.add('open');
+        }
+
+        localStorage.removeItem('selectedCategory');
+      }
+
+      // Set Total Product Per Halaman
       function totalPages() {
         return Math.max(1, Math.ceil(activeCards.length / perPage));
       }
 
+      // Pagination Range Filter
       function setRangeText() {
         const total = activeCards.length;
         if (total === 0) {
@@ -669,7 +707,45 @@
         rangeEl.textContent = `View ${start} - ${end} From ${total} Products`;
       }
 
-      // Product Empty
+      // Reset Filter
+      document.getElementById('resetFilter')?.addEventListener('click', () => {
+
+        // reset checkbox product type
+        document.querySelectorAll('#typeFilter input[type="checkbox"]').forEach(cb => {
+          cb.checked = false;
+        });
+
+        // reset search input
+        const searchInput = document.querySelector('.product-search-input');
+        if (searchInput) {
+          searchInput.value = '';
+        }
+
+        // reset state variable
+        currentType = [];
+        currentQuery = '';
+        currentCat = 'all';
+        currentSubcat = 'all';
+
+        // reset active category UI
+        document.querySelectorAll('.category-link, .subcategory-link').forEach(link => {
+          link.classList.remove('active');
+        });
+
+        // set GENERAL jadi active
+        const defaultCat = document.querySelector('[data-category="all"][data-subcategory="all"]');
+        if (defaultCat) defaultCat.classList.add('active');
+
+        // tutup semua category (collapse)
+        document.querySelectorAll('.category-item.open').forEach(item => {
+          item.classList.remove('open');
+        });
+
+        // apply filter ulang
+        applyFilters();
+      });
+
+      // Tampilkan Product Empty 
       function showEmptyState() {
         const grid = document.querySelector('.product-grid');
         let emptyState = grid.querySelector('.empty-state');
@@ -682,11 +758,13 @@
         }
       }
 
+      // Hapus Tulisan Kosong Jika Ada Product
       function removeEmptyState() {
         const emptyState = document.querySelector('.product-grid .empty-state');
         if (emptyState) emptyState.remove();
       }
 
+      // Set Atur Produk Tampil Sesuai Logic
       function showPage(page) {
         const pages = totalPages();
         currentPage = clamp(page, 1, pages);
@@ -716,6 +794,7 @@
         }
       }
 
+      // Pagination UI
       function makeLink(label, opts = {}) {
         const a = document.createElement('a');
         a.href = '#';
@@ -782,6 +861,7 @@
         }));
       }
 
+      // Action setActiveCategoryLink(currentCat, currentSubcat);
       function setActiveCategoryLink(category, subcategory) {
         document.querySelectorAll('.category-link, .subcategory-link').forEach(link => {
           link.classList.remove('active');
@@ -792,11 +872,13 @@
         if (activeLink) activeLink.classList.add('active');
       }
 
+      // Logic Filter
       function applyFilters() {
         const q = currentQuery.trim().toLowerCase();
         const cat = (currentCat || 'all').toLowerCase();
         const subcat = (currentSubcat || 'all').toLowerCase();
-        const type = (currentType || 'all').toLowerCase();
+        const types = currentType || [];
+        const resetBtn = document.getElementById('resetFilter');
 
         activeCards = cardsAll.filter(card => {
           const name = card.querySelector('.p-name')?.textContent?.toLowerCase() || '';
@@ -807,18 +889,34 @@
           const matchSearch = (q === '') ? true : (name.includes(q) || ccat.includes(q) || csubcat.includes(q) || ctype.includes(q));
           const matchCat = (cat === 'all') ? true : (ccat === cat);
           const matchSubcat = (subcat === 'all') ? true : (csubcat === subcat);
-          const matchType = (type === 'all') ? true : (ctype === type);
+          const matchType = (types.length === 0)
+          ? true
+          : types.includes(ctype);
 
           return matchSearch && matchCat && matchSubcat && matchType;
         });
 
+        // disabled reset filter jika belum ada filter yang aktif
+        function updateResetButtonState() {
+          const hasFilter =
+            currentQuery !== '' ||
+            currentCat !== 'all' ||
+            currentSubcat !== 'all' ||
+            (currentType && currentType.length > 0);
+
+          if (resetBtn) {
+            resetBtn.disabled = !hasFilter;
+          }
+        }
+
         setActiveCategoryLink(currentCat, currentSubcat);
         showPage(1);
+        updateResetButtonState();
       }
 
+      // Search
       const searchForm = document.querySelector('.product-search');
       const searchInput = document.querySelector('.product-search-input');
-
       if (searchForm && searchInput) {
         searchForm.addEventListener('submit', (e) => {
           e.preventDefault();
@@ -832,10 +930,15 @@
         });
       }
 
+      // Product Type Check Box
       const typeFilter = document.getElementById('typeFilter');
       if (typeFilter) {
         typeFilter.addEventListener('change', () => {
-          currentType = typeFilter.value || 'all';
+          const checked = Array.from(
+            typeFilter.querySelectorAll('input[type="checkbox"]:checked')
+          ).map(cb => cb.value.toLowerCase());
+
+          currentType = checked;
           applyFilters();
         });
       }

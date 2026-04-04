@@ -127,25 +127,29 @@
     <section class="section-space-first">
       <h2 class="section-title">FEATURED CATEGORIES</h2>
       <div class="row justify-content-center g-4">
-        <div class="col-6 col-md-2 cat">
+        <div class="col-6 col-md-2 cat" data-category="rugs & carpet">
           <div class="cat-thumb"><img src="image/category/1.jpg" alt=""></div>
           <div class="cat-label">Carpets & Rugs</div>
         </div>
-        <div class="col-6 col-md-2 cat">
+        <div class="col-6 col-md-2 cat" data-category="mosaic lamps">
           <div class="cat-thumb"><img src="image/category/2.jpg" alt=""></div>
           <div class="cat-label">Mosaic Lamps</div>
         </div>
-        <div class="col-6 col-md-2 cat">
+        <div class="col-6 col-md-2 cat" data-category="home & living">
           <div class="cat-thumb"><img src="image/category/3.jpg" alt=""></div>
           <div class="cat-label">Home & Living</div>
         </div>
-        <div class="col-6 col-md-2 cat">
+        <div class="col-6 col-md-2 cat" data-category="gourmet">
           <div class="cat-thumb"><img src="image/category/4.jpg" alt=""></div>
           <div class="cat-label">Gourmet</div>
         </div>
-        <div class="col-6 col-md-2 cat">
+        <div class="col-6 col-md-2 cat" data-category="fashion & textiles">
           <div class="cat-thumb"><img src="image/category/5.jpg" alt=""></div>
           <div class="cat-label">Fashion & Textiles</div>
+        </div>
+        <div class="col-6 col-md-2 cat" data-category="tableware & dining">
+          <div class="cat-thumb"><img src="image/category/6.jpg" alt=""></div>
+          <div class="cat-label">Tableware & Dining</div>
         </div>
       </div>
     </section>
@@ -869,6 +873,21 @@
     closeBtn?.addEventListener("click", closeModal);
     modal?.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
   });
+  </script>
+
+  <!-- Redirect To Category -->
+  <script>
+    document.querySelectorAll('.cat').forEach(cat => {
+      cat.addEventListener('click', () => {
+        const category = cat.dataset.category;
+
+        // simpan ke localStorage
+        localStorage.setItem('selectedCategory', category);
+
+        // redirect ke product page
+        window.location.href = 'product.html';
+      });
+    });
   </script>
 
   <!-- Bootstrap JS -->
