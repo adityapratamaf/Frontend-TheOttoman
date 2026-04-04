@@ -708,6 +708,12 @@
 
         setRangeText();
         renderPager();
+
+        // auto scroll ke atas top title
+        const target = document.querySelector('.section-title');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       }
 
       function makeLink(label, opts = {}) {
